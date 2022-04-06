@@ -1,0 +1,6 @@
+codigo_icao,codigo_iata,nombre,latitud,longitud,id_ciudad
+KMIA,MIA,Miami International Airport,25.793,-80.291,1
+SCEL,SCL,Comodoro Arturo Benitez International,-33.393,-70.786,2
+EGKK,LGW,London Gatwick Airport,51.148,-0.19,4
+EGLL,LHR,London Heathrow Airport,51.471,-0.462,4
+KAFJ,WSG,Washington County Airport,40.137,-80.29,3

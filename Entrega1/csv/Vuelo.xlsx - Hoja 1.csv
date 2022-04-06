@@ -1,0 +1,5 @@
+id_vuelo,numero_vuelo,origen_icao,destino_icao,codigo_aerolinea,fecha_salida,fecha_llegada,velocidad,altitud,id_ruta,codigo_aeronave,id_piloto,id_copiloto,estado
+1,LAN588,SCEL,KMIA,LAN,2022-04-20 08:00:00,2022-04-21 03:05:00,800,9970,6,LPPQCNS,3,2,pendiente
+2,SKY101,SCEL,EGKK,SKY,2022-04-07 14:30:00,2022-04-07 22:15:00,850,10560,2,PPQOSVM,2,4,publicado
+3,SKY334,EGLL,KAFJ,AAL,2022-05-02 03:00:00,2022-05-02 17:30:00,870,10380,4,NAXJKQQ,1,3,aprobado
+4,AAL870,EGLL,EGKK,AAL,2022-04-15 08:30:00,2022-04-15 13:00:00,500,8560,8,PPQOSVM,1,4,rechazado
