@@ -7,12 +7,13 @@
   require("../config/conexion.php");
 
   $nombre_escogido = $_POST["nombre_escogido"];
+  $nombre_escogido = strtoupper($nombre_escogido);
 
- 	$query = " SELECT CompaniaAerea.nombre_aerolinea, Vuelo.estado, COUNT(Vuelo.id)
-						FROM Vuelo, CompaniaAerea
-						WHERE  UPPER(CompaniaAerea.nombre_aerolinea) LIKE '%$nombre_escogido%'
-								AND CompaniaAerea.codigo_aerolinea = Vuelo.codigo_aerolinea
-						GROUP BY CompaniaAerea.nombre_aerolinea, Vuelo.estado;";
+ 	$query = " SELECT CompaniaAerea.nombre_aerolinea, Vuelo.estado, COUNT(Vuelo.id_vuelo) as cantidad
+	 FROM Vuelo, CompaniaAerea
+	 WHERE UPPER(CompaniaAerea.nombre_aerolinea) = 'KALITTA AIR'
+		 AND CompaniaAerea.codigo_aerolinea = Vuelo.codigo_aerolinea
+	 GROUP BY CompaniaAerea.nombre_aerolinea, Vuelo.estado;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$dataCollected = $result -> fetchAll();
