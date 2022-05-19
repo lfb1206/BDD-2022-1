@@ -57,7 +57,7 @@
       <select name="aerolinea_escogida" id="ar">
         <?php
         foreach ($dataCollected as $data) {
-            echo "<option value=\"$data[0]\">$data[0]</option>";
+            echo "<option value=\"aerolinea_escogida\">$data[0]</option>";
         }
         ?>
       </select>
