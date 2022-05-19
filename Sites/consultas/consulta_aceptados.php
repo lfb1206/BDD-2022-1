@@ -17,7 +17,7 @@
               AND $codigo = Vuelo.destino_icao 
               AND Vuelo.estado = 'aceptado'
               AND Vuelo.origen_icao = Origen.codigo_icao
-              AND Vuelo.destino_icao = Destino.codigo_icao;;";
+              AND Vuelo.destino_icao = Destino.codigo_icao;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$dataCollected = $result -> fetchAll();
