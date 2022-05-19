@@ -9,18 +9,18 @@
   $codigo_reserva = $_POST["codigo_reserva"];
 
  	$query = "SELECT Ticket.id_ticket, Vuelo.numero_vuelo, Origen.nombre as origen,
-							Destino.nombre as destino, Vuelo.fecha_salida, Vuelo.fecha_llegada,
-							Vuelo.estado, Ticket.numero_asiento, Ticket.clase,
-							Ticket.incluye_comida_y_maleta, Pasajero.pasaporte,
-							Pasajero.nombre, Costo.precio
-						FROM Ticket, Pasajero, Vuelo, Costo, Aerodromo as Origen, Aerodromo as Destino
-						WHERE Ticket.id_reserva = $codigo_reserva 
-							AND ticket.id_pasajero = Pasajero.id_pasajero 
-							AND Vuelo.id_vuelo = Ticket.id_vuelo 
-							AND Vuelo.id_ruta = Costo.id_ruta
-							AND Vuelo.codigo_aeronave = Costo.codigo_aeronave
-							AND Vuelo.origen_icao = Origen.codigo_icao
-							AND Vuelo.destino_icao = Destino.codigo_icao;";
+				Destino.nombre as destino, Vuelo.fecha_salida, Vuelo.fecha_llegada,
+				Vuelo.estado, Ticket.numero_asiento, Ticket.clase,
+				Ticket.incluye_comida_y_maleta, Pasajero.pasaporte,
+				Pasajero.nombre, Costo.precio
+			FROM Ticket, Pasajero, Vuelo, Costo, Aerodromo as Origen, Aerodromo as Destino
+			WHERE Ticket.id_reserva = $codigo_reserva 
+				AND ticket.id_pasajero = Pasajero.id_pasajero 
+				AND Vuelo.id_vuelo = Ticket.id_vuelo 
+				AND Vuelo.id_ruta = Costo.id_ruta
+				AND Vuelo.codigo_aeronave = Costo.codigo_aeronave
+				AND Vuelo.origen_icao = Origen.codigo_icao
+				AND Vuelo.destino_icao = Destino.codigo_icao;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$pokemones = $result -> fetchAll();
