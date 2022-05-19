@@ -1,6 +1,9 @@
 <?php include('templates/header.html');   ?>
 
+
+
 <body>
+  <style><?php include 'styles/style.css'; ?></style>
   <h1 align="center">Plataforma de gestión comercial de vuelos</h1>
   <p style="text-align:center;">Aquí puedes buscar información sobre la gestión comercial de los vuelos.</p>
 
