@@ -11,7 +11,7 @@
 
  	$query = " SELECT CompaniaAerea.nombre_aerolinea, Vuelo.estado, COUNT(Vuelo.id)
 						FROM Vuelo, CompaniaAerea
-						WHERE CompaniaAerea.nombre_aerolinea = nombre_escogido
+						WHERE CompaniaAerea.nombre_aerolinea = $nombre_escogido
 								AND CompaniaAerea.codigo_aerolinea = Vuelo.codigo_aerolinea
 						GROUP BY CompaniaAerea.nombre_aerolinea, Vuelo.estado;";
 	$result = $db -> prepare($query);

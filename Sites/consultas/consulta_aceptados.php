@@ -15,7 +15,7 @@
             WHERE $aerolinea_escogida = CompaniaAerea.nombre_aerolinea 
               AND CompaniaAerea.codigo_aerolinea = Vuelo.codigo_aerolinea 
               AND $codigo = Vuelo.destino_icao 
-              AND estado = 'aceptado'
+              AND Vuelo.estado = 'aceptado'
               AND Vuelo.origen_icao = Origen.codigo_icao
               AND Vuelo.destino_icao = Destino.codigo_icao;;";
 	$result = $db -> prepare($query);

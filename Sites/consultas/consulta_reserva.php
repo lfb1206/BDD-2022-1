@@ -14,7 +14,7 @@
 							Ticket.incluye_comida_y_maleta, Pasajero.pasaporte,
 							Pasajero.nombre, Costo.precio
 						FROM Ticket, Pasajero, Vuelo, Costo, Aerodromo as Origen, Aerodromo as Destino
-						WHERE Ticket.id_reserva = codigo_reserva 
+						WHERE Ticket.id_reserva = $codigo_reserva 
 							AND ticket.id_pasajero = Pasajero.id_pasajero 
 							AND Vuelo.id_vuelo = Ticket.id_vuelo 
 							AND Vuelo.id_ruta = Costo.id_ruta
