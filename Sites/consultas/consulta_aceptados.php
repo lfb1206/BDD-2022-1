@@ -5,7 +5,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $aerolinea_escogida = $_POST["aerolinea_escogida"];
+  $aerolinea_escogida = $_POST["ar"];
   $codigo = $_POST["codigo"];
   $codigo = strtoupper($codigo);
 
