@@ -9,21 +9,25 @@
 	$tipo = $_POST["tipo_elegido"];
 	$nombre = $_POST["nombre_pokemon"];
 
- 	$query = "SELECT pid,nombre, tipo FROM pokemones WHERE tipo LIKE '%$tipo%' AND nombre LIKE '%$nombre%';";
+ 	$query = " SELECT CompaniaAerea.nombre_aerolinea, Vuelo.estado, COUNT(Vuelo.id)
+						FROM Vuelo, CompaniaAerea
+						WHERE CompaniaAerea.nombre_aerolinea = nombre_escogido
+								AND CompaniaAerea.codigo_aerolinea = Vuelo.codigo_aerolinea
+						GROUP BY CompaniaAerea.nombre_aerolinea, Vuelo.estado;";
 	$result = $db -> prepare($query);
 	$result -> execute();
-	$pokemones = $result -> fetchAll();
+	$dataCollected = $result -> fetchAll();
   ?>
 
 	<table>
     <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Tipo</th>
+      <th>Nombre aaerolínea</th>
+      <th>Estado</th>
+      <th>Cantidad de vuelos</th>
     </tr>
   <?php
-	foreach ($pokemones as $pokemon) {
-  		echo "<tr> <td>$pokemon[0]</td> <td>$pokemon[1]</td> <td>$pokemon[2]</td> </tr>";
+	foreach ($dataCollected as $data) {
+  		echo "<tr> <td>$data[0]</td> <td>$data[1]</td> <td>$data[2]</td> </tr>";
 	}
   ?>
 	</table>

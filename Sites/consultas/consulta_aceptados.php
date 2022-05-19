@@ -7,26 +7,33 @@
 
   $id_nuevo = $_POST["id_elegido"];
 
- 	$query = "SELECT * FROM pokemones where pid = $id_nuevo;";
+ 	$query = "SELECT Vuelo.numero_vuelo, Origen.nombre as origen, Destino.nombre as destino,
+              Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.estado
+            FROM Vuelo, CompaniaAerea, Aerodromo as Origen, Aerodromo as Destino
+            WHERE aerolinea_escogida = CompaniaAerea.nombre_aerolinea 
+              AND CompaniaAerea.codigo_aerolinea = Vuelo.codigo_aerolinea 
+              AND codigo = Vuelo.destino_icao 
+              AND estado = 'aceptado'
+              AND Vuelo.origen_icao = Origen.codigo_icao
+              AND Vuelo.destino_icao = Destino.codigo_icao;;";
 	$result = $db -> prepare($query);
 	$result -> execute();
-	$pokemones = $result -> fetchAll();
+	$dataCollected = $result -> fetchAll();
   ?>
 
-	<table>
+  <table>
     <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Altura</th>
-      <th>Peso</th>
-      <th>Experiencia Base</th>
-      <th>Tipo</th>
+      <th>Numero</th>
+      <th>Aerodromo origen</th>
+      <th>Aerodromo destino</th>
+      <th>Fecha salida</th>
+      <th>Fecha llegada</th>
     </tr>
   <?php
-	foreach ($pokemones as $pokemon) {
-  		echo "<tr><td>$pokemon[0]</td><td>$pokemon[1]</td><td>$pokemon[2]</td><td>$pokemon[3]</td><td>$pokemon[4]</td><td>$pokemon[5]</td></tr>";
-	}
+  foreach ($dataCollected as $data) {
+      echo "<tr><td>$data[0]</td><td>$data[1]</td><td>$data[2]</td><td>$data[3]</td><td>$data[4]</td></tr>";
+  }
   ?>
-	</table>
+  </table>
 
 <?php include('../templates/footer.html'); ?>
