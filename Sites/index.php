@@ -1,8 +1,8 @@
 <?php include('templates/header.html');   ?>
 
 <body>
-  <h1 align="center">Servicio DGAC</h1>
-  <p style="text-align:center;">Aquí puedes buscar información en la base de datos de la DGAC.</p>
+  <h1 align="center">Plataforma de gestión comercial de vuelos</h1>
+  <p style="text-align:center;">Aquí puedes buscar información sobre la gestión comercial de los vuelos.</p>
 
   <br>
 
