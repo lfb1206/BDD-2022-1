@@ -38,23 +38,22 @@
   <br>
   <br>
 
-  <h3 align="center"> ¿Quieres buscar los vuelos aceptados por su aerolínea y el codigo ICAO del aeródromo?</h3>
+  <h3 align="center"> ¿Quieres buscar los vuelos aceptados por su aerolínea y el aeródromo de destino?</h3>
 
   <?php
   # Se buscan los vuelos pendientes
   require("config/conexion.php");
-  $result = $db -> prepare("SELECT nombre
-                          FROM Aerodromo;");
+  $result = $db -> prepare("SELECT nombre_aerolinea
+                          FROM CompaniaAerea;");
   $result -> execute();
   $dataCollected = $result -> fetchAll();
   ?>
 
   <form align="center" action="consultas/consulta_aceptados.php" method="post">
-    Codigo ICAO:
+    Codigo ICAO destino:
     <input type="text" name="codigo">
     <br/>
-    Aerolínea:
-    <label for="ar">Aerodromo</label>
+    <label for="ar">Aerolínea</label>
       <select name="aerolinea_escogida" id="ar">
         <?php
         foreach ($dataCollected as $data) {
@@ -86,28 +85,33 @@
   <?php
   # Se busca el cliente con la mayor cantidad de tickets por aerolinea
   require("config/conexion.php");
-  $result = $db -> prepare("SELECT CompaniaAerea.nombre, Pasajero.pasaporte, Pasajero.nombre, Cantidades.cantidad
+  $result = $db -> prepare("SELECT CompaniaAerea.nombre_aerolinea, Pasajero.pasaporte,
+                            Pasajero.nombre, Cantidades.cantidad
+                          FROM CompaniaAerea, Pasajero, (
+                            SELECT Cantidades.codigo_aerolinea, 
+                                MAX(Cantidades.cantidad) as max_cantidad
                             FROM (
-                                SELECT Cantidades.codigo_aerolinea, max(Cantidades.cantidad) as max_cantidad
-                                FROM (
-                                    SELECT Vuelo.codigo_aerolinea, Reserva.id_reservador as id_cliente, count(*) as cantidad
-                                    FROM Ticket, Vuelo, Reserva
-                                    WHERE Ticket.id_reserva = Reserva.id_reserva
-                                        AND Ticket.id_vuelo = Vuelo.id_vuelo
-                                    GROUP BY Vuelo.codigo_aerolinea, Reserva.id_reservador
-                                ) as Cantidades
-                                GROUP BY Cantidades.codigo_aerolinea
-                            ) as MaxCantidades, (
-                                SELECT Vuelo.codigo_aerolinea, Reserva.id_reservador as id_cliente, count(*) as cantidad
+                                SELECT Vuelo.codigo_aerolinea, 
+                                    Reserva.id_reservador as id_cliente, COUNT(*) as cantidad
                                 FROM Ticket, Vuelo, Reserva
                                 WHERE Ticket.id_reserva = Reserva.id_reserva
                                     AND Ticket.id_vuelo = Vuelo.id_vuelo
                                 GROUP BY Vuelo.codigo_aerolinea, Reserva.id_reservador
                             ) as Cantidades
-                            WHERE Cantidades.codigo_aerolinea = MaxCantidades.codigo_aerolinea
-                                AND Cantidades.cantidad = MaxCantidades.max_cantidad
-                                AND Cantidades.codigo_aerolinea = CompaniaAerea.codigo_aerolinea
-                                AND Cantidades.id_cliente = Pasajero.id_pasajero;");
+                            GROUP BY Cantidades.codigo_aerolinea
+                          ) as MaxCantidades, (
+                            SELECT Vuelo.codigo_aerolinea, 
+                                Reserva.id_reservador as id_cliente, COUNT(*) as cantidad
+                            FROM Ticket, Vuelo, Reserva
+                            WHERE Ticket.id_reserva = Reserva.id_reserva
+                                AND Ticket.id_vuelo = Vuelo.id_vuelo
+                            GROUP BY Vuelo.codigo_aerolinea, Reserva.id_reservador
+                          ) as Cantidades
+                          WHERE Cantidades.codigo_aerolinea = MaxCantidades.codigo_aerolinea
+                            AND Cantidades.cantidad = MaxCantidades.max_cantidad
+                            AND Cantidades.codigo_aerolinea = CompaniaAerea.codigo_aerolinea
+                            AND Cantidades.id_cliente = Pasajero.id_pasajero
+                          ORDER BY CompaniaAerea.nombre_aerolinea, Pasajero.nombre;");
   $result -> execute();
   $dataCollected = $result -> fetchAll();
   ?>
