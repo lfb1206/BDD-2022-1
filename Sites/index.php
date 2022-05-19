@@ -6,6 +6,8 @@
 
   <br>
 
+  <h3 align="center"> Los vuelos pendientes de aprobación son los siguientes </h3>
+
   <?php
   # Se buscan los vuelos pendientes
   require("config/conexion.php");
@@ -82,6 +84,8 @@
   <br>
   <br>
 
+  <h3 align="center"> El(Los) cliente(s) con mayor cantidad de tickets por aerolinea es(son) el(los) siguiente(s)</h3>
+
   <?php
   # Se busca el cliente con la mayor cantidad de tickets por aerolinea
   require("config/conexion.php");
@@ -130,6 +134,8 @@
     ?>
     </table>
 
+    <h3 align="center"> ¿Quieres buscar la cantidad de vuelos por estado de una aerolínea? </h3>
+
     <form align="center" action="consultas/consulta_estados.php" method="post">
     Nombre Aerolínea:
     <input type="text" name="nombre_escogido">
@@ -140,6 +146,8 @@
   <br>
   <br>
   <br>
+
+  <h3 align="center"> La(s) aerolínea con mayor porcentaje(s) de vuelos aprobados es(son) la siguiente(s)</h3>
 
   <?php
   # Se busca la aerolinea con el mayor porcentaje de vuelos aceptados
