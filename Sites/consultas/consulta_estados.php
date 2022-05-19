@@ -6,8 +6,8 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-	$tipo = $_POST["tipo_elegido"];
-	$nombre = $_POST["nombre_pokemon"];
+  $nombre_escogido = $_POST["nombre_escogido"];
+  $nombre_escogido = strtoupper($nombre_escogido);
 
  	$query = " SELECT CompaniaAerea.nombre_aerolinea, Vuelo.estado, COUNT(Vuelo.id)
 						FROM Vuelo, CompaniaAerea

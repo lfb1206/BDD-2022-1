@@ -6,8 +6,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-	$tipo = $_POST["tipo_elegido"];
-	$nombre = $_POST["nombre_pokemon"];
+  $codigo_reserva = $_POST["codigo_reserva"];
 
  	$query = "SELECT Ticket.id_ticket, Vuelo.numero_vuelo, Origen.nombre as origen,
 							Destino.nombre as destino, Vuelo.fecha_salida, Vuelo.fecha_llegada,
