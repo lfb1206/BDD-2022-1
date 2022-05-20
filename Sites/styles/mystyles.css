@@ -46,7 +46,7 @@ body {
     background-size: cover;
 }
 
-table.center {
+table {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid black;
