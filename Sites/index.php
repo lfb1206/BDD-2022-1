@@ -49,7 +49,7 @@
     $dataCollected = $result -> fetchAll();
     ?>
 
-    <form align="center" action="consultas/consulta_aceptados.php" method="post">
+    <form align="center" action="consulta_aceptados.php" method="post">
       Codigo ICAO destino:
       <input type="text" name="codigo">
       <br/>
@@ -69,7 +69,7 @@
   <div class="surface">
     <h3 align="center"> ¿Quieres conocer los tickets asociados a un codigo de reserva?</h3>
 
-    <form align="center" action="consultas/consulta_reserva.php" method="post">
+    <form align="center" action="consulta_reserva.php" method="post">
       Codigo de reserva:
       <input type="text" name="codigo_reserva">
       <br/><br/>
@@ -132,7 +132,7 @@
   <div class="surface">
     <h3 align="center"> ¿Quieres buscar la cantidad de vuelos por estado de una aerolínea? </h3>
 
-    <form align="center" action="consultas/consulta_estados.php" method="post">
+    <form align="center" action="consulta_estados.php" method="post">
       Nombre Aerolínea:
       <input type="text" name="nombre_escogido">
       <br/><br/>
