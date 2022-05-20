@@ -33,10 +33,13 @@
     <table>
       <tr>
         <th>Código de vuelo</th>
+        <th>ICAO origen</th>
         <th>Aeródromo origen</th>
+        <th>ICAO destino</th>
         <th>Aeródromo destino</th>
         <th>Fecha salida</th>
         <th>Fecha llegada</th>
+        <th>Estado</th>
       </tr>
     <?php
     foreach ($dataCollected as $data) {
