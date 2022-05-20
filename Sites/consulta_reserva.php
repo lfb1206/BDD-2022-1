@@ -52,6 +52,7 @@
 			</tr>
 			<?php
 			foreach ($pokemones as $pokemon) {
+				$comida_maleta = $pokemon[9] ? 'SI' : 'NO';
 				echo "<tr>
 					<td>$pokemon[0]</td>
 					<td>$pokemon[1]</td>
@@ -62,7 +63,7 @@
 					<td>$pokemon[6]</td>
 					<td>$pokemon[7]</td>
 					<td>$pokemon[8]</td>
-					<td>$pokemon[9]</td>
+					<td>$comida_maleta</td>
 					<td>$pokemon[10]</td>
 					<td>$pokemon[11]</td>
 					<td>$pokemon[12]</td>
