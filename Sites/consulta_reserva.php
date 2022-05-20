@@ -52,7 +52,21 @@
 			</tr>
 			<?php
 			foreach ($pokemones as $pokemon) {
-				echo "<tr> <td>$pokemon[0]</td> <td>$pokemon[1]</td> <td>$pokemon[2]</td> <td>$pokemon[0]</td> <td>$pokemon[1]</td> <td>$pokemon[2]</td> <td>$pokemon[0]</td> <td>$pokemon[1]</td> <td>$pokemon[2]</td></tr>";
+				echo "<tr>
+					<td>$pokemon[0]</td>
+					<td>$pokemon[1]</td>
+					<td>$pokemon[2]</td>
+					<td>$pokemon[3]</td>
+					<td>$pokemon[4]</td>
+					<td>$pokemon[5]</td>
+					<td>$pokemon[6]</td>
+					<td>$pokemon[7]</td>
+					<td>$pokemon[8]</td>
+					<td>$pokemon[9]</td>
+					<td>$pokemon[10]</td>
+					<td>$pokemon[11]</td>
+					<td>$pokemon[12]</td>
+				</tr>";
 			}
 			?>
 		</table>
