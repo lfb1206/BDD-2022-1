@@ -74,4 +74,5 @@ tr:nth-child(even) {
     padding: 12px;
     width: 80%;
     border-radius: 10px;
+    text-align: center;
 }

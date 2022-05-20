@@ -24,8 +24,8 @@
     <table>
       <tr>
         <th>Numero</th>
-        <th>Aerodromo origen</th>
-        <th>Aerodromo destino</th>
+        <th>Aeródromo origen</th>
+        <th>Aeródromo destino</th>
         <th>Fecha salida</th>
         <th>Fecha llegada</th>
       </tr>
