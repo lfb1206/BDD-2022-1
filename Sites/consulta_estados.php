@@ -1,10 +1,10 @@
-<?php include('../templates/header.html');   ?>
+<?php include('templates/header.html');   ?>
 
 <body>
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+  require("config/conexion.php");
 
   $nombre_escogido = $_POST["nombre_escogido"];
   $nombre_escogido = strtoupper($nombre_escogido);
@@ -32,4 +32,4 @@
   ?>
 	</table>
 
-<?php include('../templates/footer.html'); ?>
+<?php include('templates/footer.html'); ?>

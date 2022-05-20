@@ -1,10 +1,10 @@
-<?php include('../templates/header.html');   ?>
+<?php include('templates/header.html');   ?>
 
 <body>
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+  require("config/conexion.php");
 
   $codigo_reserva = $_POST["codigo_reserva"];
 
@@ -47,4 +47,4 @@
   ?>
 	</table>
 
-<?php include('../templates/footer.html'); ?>
+<?php include('templates/footer.html'); ?>

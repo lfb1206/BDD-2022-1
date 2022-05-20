@@ -1,9 +1,9 @@
-<?php include('../templates/header.html');   ?>
+<?php include('templates/header.html');   ?>
 
 <body>
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+  require("config/conexion.php");
 
   $aerolinea_escogida = $_POST["aerolinea_escogida"];
   $codigo = $_POST["codigo"];
@@ -38,4 +38,4 @@
   ?>
   </table>
 
-<?php include('../templates/footer.html'); ?>
+<?php include('templates/footer.html'); ?>
