@@ -21,8 +21,11 @@ $q -> execute();
 $result = $q -> fetchAll();
 
 if (empty($result)) {
-	
+	header('Location: /index.php');
+	die();
 }
+
+
 
 $query = "
 MERGE Usuarios as Dst
@@ -52,7 +55,7 @@ $result = $q -> fetchAll();
 
 	<h1 align="center">
 		<?php
-		echo "Tickets asociados a la reserva #$codigo_reserva"
+		echo "Usuarios que no "
 		?>
 	</h1>
 
@@ -64,7 +67,6 @@ $result = $q -> fetchAll();
 			</tr>
 			<?php
 			foreach ($pokemones as $pokemon) {
-				$comida_maleta = $pokemon[9] ? 'SI' : 'NO';
 				echo "<tr>
 					<td>$pokemon[0]</td>
 					<td>$pokemon[1]</td>

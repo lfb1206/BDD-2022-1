@@ -1,9 +1,9 @@
 <?php
-//require_once "./__init__.php";
+require_once "./__init__.php";
 
 // Hay que obtener los pokemones a elegir
-//$query = $DB->query('SELECT id, name FROM poke1;');
-//$pokemones = $query->fetchAll(PDO::FETCH_ASSOC);
+$query = $DB->query('SELECT id, name FROM poke1;');
+$pokemones = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php include('templates/header.html'); ?>
