@@ -58,3 +58,4 @@ function table_from_query($query) { ?>
     </table>
   </div>
 <? }
+?>
