@@ -1,16 +1,18 @@
 <?php
 require_once './__init__.php';
 
+// HOLA
 // Vemos si se esta mandando el form o se está recibiendo
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method  === 'POST') {
   // Se está recibiendo datos para el login
-
+  session_start();
   // Aquí se tendría que buscar el id del usuario en la BDD con el mail y la contraseña
   $user_id = 1;
   $user_name = "Ash";
 
   // Se guardan estos valores en la sesión
+  // falta que de alguna parte salgan el user_id y User_name que están hardcodeados arriba
   $_SESSION['user_id'] = $user_id;
   $_SESSION['user_name'] = $user_name;
 

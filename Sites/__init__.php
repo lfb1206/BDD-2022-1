@@ -38,7 +38,7 @@ function table_from_query($query) { ?>
       <thead>
         <tr>
           <!-- Por cada columna, muestra el nombre -->
-          <? foreach (range(0, $query->columnCount() - 1) as $col_index) { ?>
+          <?php foreach (range(0, $query->columnCount() - 1) as $col_index) { ?>
             <th><?php echo htmlentities($query->getColumnMeta($col_index)['name']) ?></th>
           <?php } ?>
         </tr>
@@ -57,5 +57,4 @@ function table_from_query($query) { ?>
       </tbody>
     </table>
   </div>
-<? }
-?>
+<?php } ?>

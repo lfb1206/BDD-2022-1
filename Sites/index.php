@@ -18,7 +18,7 @@
   <?php if (isset($_SESSION['user_name'])) { ?>
     <!-- Se muestra un mensaje si hay una sesión de usuario -->
     <h2 class="title is-1"> Hola <?php echo $_SESSION['user_name'] ?></h2>
-    <form class="buttons" action="/~grupo157/logout.php">
+    <form class="buttons" action="logout.php">
       <input class="button" type="submit" value="Cerrar Sesión">
     </form>
   <?php } else { ?>
@@ -36,21 +36,6 @@
 
 <!-- https://bulma.io/documentation/layout/tiles/ -->
 <main class="section">
-  <div class="tile is-ancestor">
-    <div class="tile is-parent">
-      <div class="tile is-child box">
-        <h2 class="title">Pokemones</h2>
-        <a href="./consultas/pokemones.php" class="button is-primary">Ver pokemones</a>
-      </div>
-    </div>
-    <div class="tile is-parent">
-      <div class="tile is-child box">
-        <h2 class="title">Batallas</h2>
-        <a href="./consultas/pelea_pokemon.php" class="button is-primary">Ver registro de peleas</a>
-      </div>
-    </div>
-  </div>
-  <!-- Aquí agregamos una parte que solo está disponible a los usuarios con sesión iniciada -->
   <?php if (isset($_SESSION['user_id'])) { ?>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
