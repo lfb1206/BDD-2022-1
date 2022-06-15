@@ -12,16 +12,16 @@ MERGE Usuarios as Dst
 USING (
 	SELECT 'DGAC' as username, 'admin' as contrasena, 'dgac' as tipo
 	UNION ALL
-	SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RAND()*1000000000) as varchar(255)) as contrasena, 
+	SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RAND()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
 	FROM CompaniaAerea
-	SELECT Pasajero.pasaporte as username, 
+	UNION ALL
+	SELECT Pasajero.pasaporte as username, (CONVERT(NVARCHAR(32),HashBytes('MD5', Pasajero.nombre),2)
 	FROM Pasajero 
 ) as Src
 ON Src.username = Dst.username
 WHEN NOT MATCHED BY Dst THEN
 	INSERT (username, contrasena, tipo)
 	VALUES (Src.username, Src.contrasena, Src.tipo);
-
 	";
 	$result = $db -> prepare($query);
 	$result -> execute();

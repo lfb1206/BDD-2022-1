@@ -1,5 +1,5 @@
 <?php
-require_once "./__init__.php";
+//require_once "./__init__.php";
 
 // Hay que obtener los pokemones a elegir
 //$query = $DB->query('SELECT id, name FROM poke1;');
