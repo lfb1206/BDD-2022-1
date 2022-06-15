@@ -6,7 +6,7 @@
 //$pokemones = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include('templates/header.php'); ?>
+<?php include('templates/header.html'); ?>
 
 <section class="hero is-success is-halfheight pokebaner">
   <div class="hero-body">
@@ -87,4 +87,4 @@
   <?php } ?>
 </main>
 
-<?php include('templates/footer.php'); ?>
+<?php include('templates/footer.html'); ?>
