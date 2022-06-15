@@ -25,8 +25,6 @@ if (empty($result)) {
 	die();
 }
 
-
-
 $query = "
 MERGE Usuarios as Dst
 USING (
@@ -45,7 +43,6 @@ WHEN NOT MATCHED BY Dst THEN
 ";
 $q = $db -> prepare($query);
 $q -> execute();
-$result = $q -> fetchAll();
 ?>
 
 <?php include('templates/header.html');?>
