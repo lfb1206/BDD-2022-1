@@ -15,13 +15,15 @@ USING (
 	SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RAND()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
 	FROM CompaniaAerea
 	UNION ALL
-	SELECT Pasajero.pasaporte as username, (CONVERT(NVARCHAR(32),HashBytes('MD5', Pasajero.nombre),2)
+	SELECT Pasajero.pasaporte as username, (CONVERT(NVARCHAR(32),HashBytes('MD5', Pasajero.nombre),2)+CONVERT(NVARCHAR(32),HashBytes('MD5', Pasajero.pasaporte),2)) as contrasena, 'Pasajero' as tipo
 	FROM Pasajero 
 ) as Src
 ON Src.username = Dst.username
 WHEN NOT MATCHED BY Dst THEN
 	INSERT (username, contrasena, tipo)
-	VALUES (Src.username, Src.contrasena, Src.tipo);
+	VALUES (Src.username, Src.contrasena, Src.tipo)
+WHEN MATCHED THEN
+	;
 	";
 	$result = $db -> prepare($query);
 	$result -> execute();

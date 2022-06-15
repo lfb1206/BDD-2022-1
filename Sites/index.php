@@ -6,7 +6,7 @@
 //$pokemones = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include('./templates/header.php'); ?>
+<?php include('templates/header.php'); ?>
 
 <section class="hero is-success is-halfheight pokebaner">
   <div class="hero-body">
@@ -24,10 +24,10 @@
   <?php } else { ?>
     <!-- En el caso que no, se muestran los botones para iniciar sesión -->
     <div class="buttons">
-      <a disabled class="button is-primary" title="Esto no está implementado aquí!">
-        Registrarse
+      <a class="button is-primary" title="Esto no está implementado aquí!">
+        Importar usuarios
       </a>
-      <a href="/~grupo157/login.php" class="button is-light">
+      <a href="login.php" class="button is-light">
         Iniciar sesión
       </a>
     </div>
@@ -87,4 +87,4 @@
   <?php } ?>
 </main>
 
-<?php include('./templates/footer.php'); ?>
+<?php include('templates/footer.php'); ?>
