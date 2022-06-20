@@ -1,34 +1,30 @@
-<?php include('templates/header.html');   ?>
+<?php include('templates/header.php');   ?>
 
 <body>
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("config/conexion.php");
-
-  $fecha_minima = $_POST["fecha_minima"];
-  $fecha_maxima = $_POST["fecha_maxima"];
-
-  if (empty($fecha_minima) or empty($fecha_maxima)) {
-	$query = "SELECT id_vuelo, numero_vuelo 
-              FROM vuelo
-              WHERE estado = 'pendiente' ;";
-	$result = $db -> prepare($query);
-	$result -> execute();
-	$vuelos = $result -> fetchAll();
-    ;}
-
-    else {
- 	$query = "SELECT id_vuelo, numero_vuelo 
+  if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
+    $fecha_minima = $_POST["fecha_minima"];
+    $fecha_maxima = $_POST["fecha_maxima"];
+    $query = "SELECT id_vuelo, numero_vuelo 
               FROM vuelo
               WHERE estado = 'pendiente' 
               AND '$fecha_minima' <= fecha_salida 
               AND fecha_salida <= '$fecha_maxima'
               ORDER BY fecha_salida;";
-	$result = $db -> prepare($query);
-	$result -> execute();
-	$vuelos = $result -> fetchAll();
-    }
+    $result = $db -> prepare($query);
+    $result -> execute();
+    $vuelos = $result -> fetchAll();
+  } else {
+    $query = "SELECT id_vuelo, numero_vuelo 
+              FROM vuelo
+              WHERE estado = 'pendiente' ;";
+    $result = $db -> prepare($query);
+    $result -> execute();
+    $vuelos = $result -> fetchAll();
+  }
 
   ?>
 	<table>
@@ -46,7 +42,7 @@
     <div class="columns is-mobile is-centered is-vcentered cover-all">
       <div class="column is-half">
         <!-- https://bulma.io/documentation/form/general/ -->
-        <form method="post">
+        <form action="sesion_admin.php" method="post">
           <div class="field">
             <label class="label">Fecha minima de los vuelos (yyyy-mm-dd)</label>
             <div class="control">
@@ -59,9 +55,9 @@
               <input class="input" type="text" name="fecha_maxima">
             </div>
           </div>
-          <button class="button is-primary" type="submit" name="login">Login</button>
+          <button class="button is-primary" type="submit" name="login">Recargar</button>
         </form>
       </div>
     </div>
 
-<?php include('templates/footer.html'); ?>
+<?php include('templates/footer.php'); ?>

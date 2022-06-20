@@ -10,7 +10,7 @@ FROM (
 	SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RANDOM()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
 	FROM CompaniaAerea
 	UNION ALL
-	SELECT Pasajero.pasaporte as username, (CONVERT(NVARCHAR(8),HashBytes('MD5', Pasajero.nombre),2)+CONVERT(NVARCHAR(8),HashBytes('MD5', Pasajero.pasaporte),2)) as contrasena, 'pasajero' as tipo
+	SELECT Pasajero.pasaporte as username, CONCAT(LEFT(MD5(Pasajero.nombre), 8), LEFT(MD5(Pasajero.pasaporte), 8)) as contrasena, 'pasajero' as tipo
 	FROM Pasajero 
 ) as Src, Usuarios as Dst
 WHERE Src.username NOT IN (

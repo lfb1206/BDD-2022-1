@@ -22,7 +22,7 @@ if ($request_method  === 'POST') {
 //} else {print("El usuario no existe :(");
     // username does not exist
 //} 
-  $hoola = "Catalina";
+  $holahola = "Catalina";
   echo $user_name;
   $select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = '".$_POST['username']."'");
   if(mysqli_num_rows($select)) {
