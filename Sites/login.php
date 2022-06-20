@@ -10,11 +10,24 @@ if ($request_method  === 'POST') {
   // Aquí se tendría que buscar el id del usuario en la BDD con el mail y la contraseña
   $user_name = $_POST['username'];
   $password = $_POST['password'];
+//prepare the statement
+$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE username=$user_name");
+//execute the statement
+$stmt->execute([$user_name]); 
+//fetch result
+$user = $stmt->fetch();
+if ($user) { print("El usuario existe :)");
+    // username already exists
+} else {print("El usuario no existe :(");
+    // username does not exist
+} 
 
   // Se guardan estos valores en la sesión
   // falta que de alguna parte salgan el user_id y User_name que están hardcodeados arriba
   $_SESSION['user_name'] = $user_name;
   $_SESSION['password'] = $password;
+
+
 
   // Mandamos al usuario al inicio
   go_home();

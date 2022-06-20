@@ -5,7 +5,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("config/conexion.php");
 
-  $aerolinea_escogida = $_POST["aerolinea_escogida"];
+  $aerolinea_escogida = $_SESSION['user_name'];
 
   $query = "SELECT Vuelo.numero_vuelo, Origen.codigo_icao, Origen.nombre as origen,
               Destino.codigo_icao, Destino.nombre as destino,
@@ -35,7 +35,7 @@
   ?>
 
   <?php
-  echo "<h1 align=\"center\">Vuelos rechazados para aerolínea \"$aerolinea_escogida\" y con destino \"$codigo\"</h1>";
+  echo "<h1 align=\"center\">Vuelos aprobados para la aerolínea \"$aerolinea_escogida\" ";
   ?>
 
   <div class="surface">
@@ -62,6 +62,40 @@
           <td>$data[5]</td>
           <td>$data[6]</td>
           <td>$data[7]</td>
+        </tr>";
+    }
+    ?>
+    </table>
+  </div>
+
+  <?php
+  echo "<h1 align=\"center\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\" ";
+  ?>
+
+  <div class="surface">
+
+    <table>
+      <tr>
+        <th>Código de vuelo</th>
+        <th>ICAO origen</th>
+        <th>Aeródromo origen</th>
+        <th>ICAO destino</th>
+        <th>Aeródromo destino</th>
+        <th>Fecha salida</th>
+        <th>Fecha llegada</th>
+        <th>Estado</th>
+      </tr>
+    <?php
+    foreach ($dataCollected2 as $data2) {
+        echo "<tr>
+          <td>$data2[0]</td>
+          <td>$data2[1]</td>
+          <td>$data2[2]</td>
+          <td>$data2[3]</td>
+          <td>$data2[4]</td>
+          <td>$data2[5]</td>
+          <td>$data2[6]</td>
+          <td>$data2[7]</td>
         </tr>";
     }
     ?>
