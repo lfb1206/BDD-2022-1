@@ -23,9 +23,9 @@ if ($request_method  === 'POST') {
     // username does not exist
 //} 
   $select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = '".$_POST['username']."'");
-  if(mysqli_num_rows($select)) { $holahola = "existe";
+  if(mysqli_num_rows($select)) { $holahola = "ya existe :)";
       //exit('This username already exists')
-      ;}  else{ $holahola = "no existe";}
+      ;}  else{ $holahola = "no existe :(";}
 
     // Se guardan estos valores en la sesión
     // falta que de alguna parte salgan el user_id y User_name que están hardcodeados arriba

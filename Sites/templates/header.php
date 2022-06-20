@@ -47,7 +47,7 @@
                         <?php } else { ?>
                             
                         <?php } ?>
-                        <hr class="dropdown-divider">
+                        <hr class="dropdown-divider" style = "background-color: hsl(0, 0%, 4%);">
                         <?php if (isset($_SESSION['user_name'])) { ?>
                             <form class="title is-5 has-text-info is-active" action="logout.php">
                                 <input class="title is-5 has-text-info is-active" type="submit" value="Cerrar Sesión">
