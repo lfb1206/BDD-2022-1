@@ -11,16 +11,17 @@ if ($request_method  === 'POST') {
   $user_name = $_POST['username'];
   $password = $_POST['password'];
 //prepare the statement
-$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE username=$user_name");
+// DESCOMENTAR 
+// $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE username=$user_name");
 //execute the statement
-$stmt->execute([$user_name]); 
+//$stmt->execute([$user_name]); 
 //fetch result
-$user = $stmt->fetch();
-if ($user) { print("El usuario existe :)");
+//$user = $stmt->fetch();
+//if ($user) { print("El usuario existe :)");
     // username already exists
-} else {print("El usuario no existe :(");
+//} else {print("El usuario no existe :(");
     // username does not exist
-} 
+//} 
 
   // Se guardan estos valores en la sesión
   // falta que de alguna parte salgan el user_id y User_name que están hardcodeados arriba
