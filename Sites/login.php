@@ -16,15 +16,15 @@ if ($request_method  === 'POST') {
   //fetch result
   $user = $stmt->fetch();
 
-  if (empty($user)) {
-    // username o contrasena incorrecta
-    $falla_inicio = true;
-  }else{
+  if ($user) {
     // se inicia sesion
-    $_SESSION['username'] = $user[0][0];
-    $_SESSION['tipo'] = $user[0][1];
+    $_SESSION['username'] = $user[0];
+    $_SESSION['tipo'] = $user[1];
     // Mandamos al usuario al inicio
     go_home();
+  }else{
+    // username o contrasena incorrecta
+    $falla_inicio = true;
   }
 }
 // En este caso, que se trata de obtener la página de inicio de sesión
