@@ -1,6 +1,8 @@
 <?php
 require_once './__init__.php';
 
+$falla_inicio = false;
+
 // Vemos si se esta mandando el form o se está recibiendo
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method  === 'POST') {
@@ -12,8 +14,6 @@ if ($request_method  === 'POST') {
   //prepare the statement
   $stmt = $db->prepare("SELECT username, tipo FROM usuarios WHERE username=? AND contrasena=?;");
   $stmt->execute([$user_name, $password]);
-
-  $falla_inicio = false;
 
   //fetch result
   $user = $stmt->fetch();
@@ -54,6 +54,14 @@ if ($request_method  === 'POST') {
           </div>
           <button class="button is-primary" type="submit" name="login">Login</button>
         </form>
+
+        <?php
+        if ($falla_inicio) {
+          ?>
+          <p class="help is-danger">Username o contraseña incorrecta</p>
+          <?php
+        }
+        ?>
       </div>
     </div>
   </section>
