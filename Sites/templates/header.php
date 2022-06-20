@@ -38,18 +38,20 @@
 
                 <div class="navbar-dropdown is-center is-boxed" style = "background-color: hsl(0, 0%, 4%);">
                     <div class="dropdown-content" style = "background-color: hsl(0, 0%, 4%);">
-                        <?php if ($_SESSION['tipo'] == "dgac") { ?>
-                            <a href="sesion_admin.php" class="title is-5 has-text-info is-active">
-                                <div align="center"  class="title is-5 has-text-info is-active">Sesión admin</div>
-                            </a>
-                        <?php } elseif ($_SESSION['tipo'] == "aerolinea") { ?>
-                            <a href="sesion_aerolineas.php" class="title is-5 has-text-info is-active">
-                                <div align="center"  class="title is-5 has-text-info is-active">Sesion aerolineas</div>
-                            </a>
-                        <?php } elseif ($_SESSION['tipo'] == "pasajero") { ?>
-                            <a href="pasajeros.php" class="title is-5 has-text-info is-active">
-                                <div align="center"  class="title is-5 has-text-info is-active">Pasajeros</div>
-                            </a>
+                        <?php if (isset($_SESSION['user_name'])) { ?>
+                            <?php if ($_SESSION['tipo'] == "dgac") { ?>
+                                <a href="sesion_admin.php" class="title is-5 has-text-info is-active">
+                                    <div align="center"  class="title is-5 has-text-info is-active">Sesión admin</div>
+                                </a>
+                            <?php } elseif ($_SESSION['tipo'] == "aerolinea") { ?>
+                                <a href="sesion_aerolineas.php" class="title is-5 has-text-info is-active">
+                                    <div align="center"  class="title is-5 has-text-info is-active">Sesion aerolineas</div>
+                                </a>
+                            <?php } elseif ($_SESSION['tipo'] == "pasajero") { ?>
+                                <a href="pasajeros.php" class="title is-5 has-text-info is-active">
+                                    <div align="center"  class="title is-5 has-text-info is-active">Pasajeros</div>
+                                </a>
+                        <?php } ?>
                         <?php } else { ?>
                             <a href="sesion_admin.php" class="title is-5 has-text-info is-active">
                                 <div align="center"  class="title is-5 has-text-info is-active">Sesión admin</div>
@@ -61,6 +63,7 @@
                                 <div align="center"  class="title is-5 has-text-info is-active">Pasajeros</div>
                             </a>
                         <?php } ?>
+                        
                         <hr class="dropdown-divider" style = "background-color: hsl(0, 0%, 4%);">
                         <?php if (isset($_SESSION['user_name'])) { ?>
                             <a href="logout.php" class="title is-5 has-text-info is-active">

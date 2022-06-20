@@ -32,6 +32,7 @@ if ($request_method  === 'POST') {
     $_SESSION['user_name'] = $user_name;
     $_SESSION['password'] = $password;
     $_SESSION['holahola'] = $holahola;
+    $_SESSION['tipo'] == "dgac";
 
 
 
