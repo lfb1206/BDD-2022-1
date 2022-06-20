@@ -20,7 +20,7 @@ session_start();
  * Volver al inicio, tiene que se llamada antes de entregar HTML.
  */
 function go_home() {
-  header("Location: " . '/~grupo157/');
+  header("Location: " . '/~grupo19/');
   exit();
 }
 
