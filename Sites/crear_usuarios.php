@@ -7,13 +7,15 @@ SELECT count(username), tipo
 FROM (
 	SELECT 'DGAC' as username, 'admin' as contrasena, 'dgac' as tipo
 	UNION ALL
-	SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RAND()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
+	SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RANDOM()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
 	FROM CompaniaAerea
 	UNION ALL
 	SELECT Pasajero.pasaporte as username, (CONVERT(NVARCHAR(8),HashBytes('MD5', Pasajero.nombre),2)+CONVERT(NVARCHAR(8),HashBytes('MD5', Pasajero.pasaporte),2)) as contrasena, 'pasajero' as tipo
 	FROM Pasajero 
 ) as Src, Usuarios as Dst
-WHERE Src.username NOT IN Dst.username
+WHERE Src.username NOT IN (
+	SELECT username FROM Dst
+)
 GROUP BY tipo;
 ";
 $q = $db -> prepare($query);
@@ -25,7 +27,7 @@ MERGE INTO Usuarios as Dst
 USING (
 	SELECT 'DGAC' as username, 'admin' as contrasena, 'dgac' as tipo
 	UNION ALL
-	SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RAND()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
+	SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RANDOM()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
 	FROM CompaniaAerea
 	UNION ALL
 	SELECT Pasajero.pasaporte as username, (CONVERT(NVARCHAR(8),HashBytes('MD5', Pasajero.nombre),2)+CONVERT(NVARCHAR(8),HashBytes('MD5', Pasajero.pasaporte),2)) as contrasena, 'pasajero' as tipo

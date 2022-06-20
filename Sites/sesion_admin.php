@@ -48,13 +48,13 @@
         <!-- https://bulma.io/documentation/form/general/ -->
         <form method="post">
           <div class="field">
-            <label class="label">Fecha minima de los vuelos</label>
+            <label class="label">Fecha minima de los vuelos (yyyy-mm-dd)</label>
             <div class="control">
               <input class="input" type="text" name="fecha_minima">
             </div>
           </div>
           <div class="field">
-            <label class="label">Fecha maxima de los vuelos</label>
+            <label class="label">Fecha maxima de los vuelos (yyyy-mm-dd)</label>
             <div class="control">
               <input class="input" type="text" name="fecha_maxima">
             </div>
