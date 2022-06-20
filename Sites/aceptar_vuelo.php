@@ -1,17 +1,9 @@
 <?php include('templates/header.php');
 
-$id_vuelo = $_GET['id_vuelo']
+$vuelo = $_GET['vuelo']
 ?>
-<h2 class="title">Aceptar vuelo <?php echo "$id_vuelo" ?></h2>
-<?php
-    require("config/conexion.php");
-    $query = "UPDATE vuelo 
-              SET estado = 'aceptado' 
-              WHERE id_vuelo = $id_vuelo";
-    $result = $db -> prepare($query);
-    $result -> execute();
-    $vuelos = $result -> fetchAll();
-?>
+<h2 class="title">Aceptar vuelo <?php echo "$vuelo[0]" ?></h2>
+
 <div class="buttons">
     <a class="button is-info is-rounded is-outlined is-right" href="sesion_admin.php">
         Volver

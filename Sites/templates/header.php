@@ -9,7 +9,7 @@
         <title> Plataforma de gestión comercial de vuelos </title>
     </head>
 
-    <body style="font-size: 20px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align: center;background-image: url(assets/background.jpg);background-position: center center;background-repeat:  no-repeat;background-size: auto;background-attachment: fixed;background-color: #bebfba;margin: 0;height: 100%;">
+    <body>
 
         <nav class="navbar is-black" role="navigation" aria-label="dropdown navigation">
         <div class="navbar-brand">
