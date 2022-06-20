@@ -25,7 +25,7 @@ if ($request_method  === 'POST') {
 
 //  $select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = '".$_POST['username']."'");
   $select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = 'DGAC'");
-  if(mysqli_num_rows($select)) { $holahola = "ya existe :)";
+  if(mysqli_num_rows($select)> 0) { $holahola = "ya existe :)";
       //exit('This username already exists')
       ;}  else{ $holahola = "no existe :(";}
 
