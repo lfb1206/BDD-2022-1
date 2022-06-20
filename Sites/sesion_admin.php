@@ -6,14 +6,28 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("config/conexion.php");
 
+  $fecha_minima = $_POST["fecha_minima"];
+  $fecha_maxima = $_POST["fecha_maxima"];
+
+  if (empty($fecha_minima) or ) {
+	$query = "SELECT propuesta_vuelo_id, codigo 
+              FROM propuesta_vuelo
+              WHERE estado = 'pendiente' ;";
+	$result = $db -> prepare($query);
+	$result -> execute();
+	$vuelos = $result -> fetchAll();
+    ;}
+
+    else {
  	$query = "SELECT propuesta_vuelo_id, codigo 
               FROM propuesta_vuelo
               WHERE estado = 'pendiente' ;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$vuelos = $result -> fetchAll();
-  ?>
+    }
 
+  ?>
 	<table>
     <tr>
       <th>ID</th>
