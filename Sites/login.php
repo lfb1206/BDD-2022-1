@@ -12,7 +12,7 @@ if ($request_method  === 'POST') {
   $password = $_POST['password'];
 //prepare the statement
 // DESCOMENTAR 
- $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE username=$user_name");
+ $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE username=?");
 //execute the statement
 $stmt->execute([$user_name]); 
 //fetch result
