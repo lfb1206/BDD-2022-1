@@ -37,7 +37,7 @@
                 </a>
 
                 <div class="navbar-dropdown is-center is-boxed">
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" style = "background-color: hsl(0, 0%, 4%);">
                         <?php if (isset($_SESSION['user_name'])) { ?>
                             
                         <?php } elseif (isset($_SESSION['user_name'])) { ?>

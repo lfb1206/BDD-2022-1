@@ -86,16 +86,3 @@ tr:nth-child(even) {
     border-radius: 10px;
     text-align: center;
 }
-
-.navbar-dropdown
-{
-  background-color: hsl(0, 0%, 4%);
-}
-.dropdown-content
-{
-  background-color: hsl(0, 0%, 4%);
-}
-.dropdown-divider
-{
-  background-color: hsl(0, 0%, 4%);
-}

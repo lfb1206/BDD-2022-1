@@ -12,7 +12,7 @@ require_once "./__init__.php";
   <?php if (isset($_SESSION['user_name'])) { ?>
     <!-- Se muestra un mensaje si hay una sesión de usuario -->
     <h2 class="title is-1"> Hola <?php echo $_SESSION['user_name'] ?></h2>
-    <h2 class="title is-1"> Hola <?php echo $_SESSION['holahola'] ?></h2>
+    <h2 class="title is-1"> El usuario ingresado <?php echo $_SESSION['holahola'] ?></h2>
   <?php } ?>
 </section>
 

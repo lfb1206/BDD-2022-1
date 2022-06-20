@@ -31,12 +31,17 @@
     <tr>
       <th>ID</th>
       <th>codigo</th>
-      <th><a href="borrar.php?Id_persona=<? echo $row["Id_persona"]; ?>">Borrar</a></th>
-      <th><a href="borrar.php?Id_persona=<? echo $row["Id_persona"]; ?>">Borrar</a></th>
+      <th>Aceptar</th>
+      <th>Rechazar</th>
     </tr>
   <?php
 	foreach ($vuelos as $vuelo) {
-  		echo "<tr> <td>$vuelo[0]</td> <td>$vuelo[1]</td> </tr>";
+  		echo "<tr> 
+            <td>$vuelo[0]</td> 
+            <td>$vuelo[1]</td> 
+            <td><a href="aceptar_vuelo.php?Id_persona=<? echo $row["Id_persona"]; ?>">Aceptar</a></td>
+            <td><a href="rechazar_vuelo.php?Id_persona=<? echo $row["Id_persona"]; ?>">Rechazar</a></td>
+            </tr>";
 	}
   ?>
 	</table> 

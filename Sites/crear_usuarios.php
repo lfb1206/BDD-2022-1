@@ -24,6 +24,8 @@ $result = $q -> fetchAll();
 
 $query = "
 INSERT INTO Usuarios (username, contrasena, tipo)
+SELECT *
+FROM (
 	SELECT 'DGAC' as username, 'admin' as contrasena, 'dgac' as tipo
 	UNION ALL
 	SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RANDOM()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
@@ -31,6 +33,7 @@ INSERT INTO Usuarios (username, contrasena, tipo)
 	UNION ALL
 	SELECT Pasajero.pasaporte as username, CONCAT(LEFT(MD5(Pasajero.nombre), 8), LEFT(MD5(Pasajero.pasaporte), 8)) as contrasena, 'pasajero' as tipo
 	FROM Pasajero
+) as Src
 ON CONFLICT (username) DO NOTHING;
 ";
 $q = $db -> prepare($query);
