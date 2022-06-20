@@ -64,7 +64,6 @@
                             <a href="pasajeros.php" class="title is-5 has-text-info is-active">
                                 <div align="center"  class="title is-5 has-text-info is-active">Pasajeros</div>
                             </a>
-                            <br/>
                         <?php } ?>
                         
                         <hr class="dropdown-divider" style = "background-color: hsl(0, 0%, 4%);">
