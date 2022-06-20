@@ -10,11 +10,11 @@
     <h2 class="title is-1"> Hola <?php echo "$username"; ?> </h2>
     <?php
     if ($tipo == 'dgac') {
-      ?> <a class="button is-link" href="sesion_admin.php">Aprobar o rechazar vuelos</button> <?php
+      ?> <a class="button is-link" href="sesion_admin.php">Aprobar o rechazar vuelos</a> <?php
     }elseif ($tipo == 'aerolinea') {
-      ?> <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</button> <?php
+      ?> <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</a> <?php
     }elseif ($tipo == 'pasajero') {
-      ?> <a class="button is-link" href="sesion_pasajeros.php">Reservar</button> <?php
+      ?> <a class="button is-link" href="sesion_pasajeros.php">Reservar</a> <?php
     }
   }
   ?>
