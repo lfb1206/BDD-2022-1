@@ -24,7 +24,7 @@ require_once "./__init__.php";
   <?php } else { ?>
     <!-- En el caso que no, se muestran los botones para iniciar sesión -->
     <div class="buttons">
-      <a class="button is-primary" title="Esto no está implementado aquí!">
+      <a class="button is-primary" href="crear_usuarios.php">
         Importar usuarios
       </a>
       <a href="login.php" class="button is-light">

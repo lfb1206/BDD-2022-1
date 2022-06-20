@@ -22,7 +22,7 @@ if ($request_method  === 'POST') {
   // En este caso, que se trata de obtener la página de inicio de sesión
   // y no hay una sesión iniciada, se muestra el form
 
-  include './templates/header.php'; ?>
+  include './templates/header.html'; ?>
   <!-- https://bulma.io/documentation/columns -->
   <section class="section">
 
@@ -41,5 +41,5 @@ if ($request_method  === 'POST') {
       </div>
     </div>
   </section>
-<?php include './templates/footer.php';
+<?php include './templates/footer.html';
 } ?>
