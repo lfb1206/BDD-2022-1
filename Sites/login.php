@@ -12,25 +12,24 @@ if ($request_method  === 'POST') {
   $password = $_POST['password'];
 //prepare the statement
 // DESCOMENTAR 
-// $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE username=?");
-//execute the statement
-//$stmt->execute([$user_name]); 
+$stmt = $db->prepare("SELECT * FROM usuarios WHERE username=? AND contrasena=?;");
+$stmt->execute([$user_name, $password]); 
 //fetch result
-//$user = $stmt->fetch();
-//if ($user) { print("El usuario existe :)");
+$user = $stmt->fetch();
+if ($user) { print("El usuario existe :)");
     // username already exists
-//} else {print("El usuario no existe :(");
+} else {print("El usuario no existe :(");
     // username does not exist
-//} 
+} 
 
 //  $select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = '".$_POST['username']."'");
-  $select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = 'DGAC'");
-  if(mysqli_num_rows($select)> 0) { 
-    $holahola = "ya existe :)";
+  //$select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = 'DGAC'");
+  //if(mysqli_num_rows($select)> 0) { 
+    //$holahola = "ya existe :)";
     //exit('This username already exists')
-  } else { 
-    $holahola = "no existe :(";
-  }
+  //} else { 
+    //$holahola = "no existe :(";
+  //}
 
     // Se guardan estos valores en la sesión
     // falta que de alguna parte salgan el user_id y User_name que están hardcodeados arriba
