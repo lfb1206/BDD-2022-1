@@ -8,7 +8,7 @@
   if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
     $fecha_minima = $_POST["fecha_minima"];
     $fecha_maxima = $_POST["fecha_maxima"];
-    $query = "SELECT id_vuelo, numero_vuelo 
+    $query = "SELECT *
               FROM vuelo
               WHERE estado = 'pendiente' 
               AND '$fecha_minima' <= fecha_salida 
@@ -18,7 +18,7 @@
     $result -> execute();
     $vuelos = $result -> fetchAll();
   } else {
-    $query = "SELECT id_vuelo, numero_vuelo 
+    $query = "SELECT *
               FROM vuelo
               WHERE estado = 'pendiente' ;";
     $result = $db -> prepare($query);
@@ -41,10 +41,10 @@
         <td><?php echo "$vuelo[0]"; ?></td> 
         <td><?php echo "$vuelo[1]"; ?></td> 
         <td><?php
-          echo "<a href=\"aceptar_vuelo.php?id_vuelo=$vuelo[0]\"> Aceptar </a>"
+          echo "<a href=\"aceptar_vuelo.php?id_vuelo=$vuelo\"> Aceptar </a>"
         ?></td>
         <td><?php
-            echo "<a href=\"rechazar_vuelo.php?id_vuelo=$vuelo[0]\"> Rechazar </a>"
+            echo "<a href=\"rechazar_vuelo.php?id_vuelo=$vuelo\"> Rechazar </a>"
         ?></td>
       </tr>
       <?php
