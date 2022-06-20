@@ -30,9 +30,11 @@
                 </div>
             </div>
             <div class="navbar-item has-dropdown is-hoverable is-black">
-                <div href="index.php" style="border: 5px; width: 150px; padding: 10px;";>
-                    <h4 class="title is-3 has-text-info">Menú</h4>
-                </div>
+                <a href="index.php">
+                    <div style="border: 5px; width: 150px; padding: 10px;";>
+                        <h4 class="title is-3 has-text-info">Menú</h4>
+                    </div>
+                </a>
 
                 <div class="navbar-dropdown is-center is-boxed">
                     <div class="dropdown-content">
@@ -52,7 +54,7 @@
                             </form>
                         <?php } else { ?>
                             <a href="login.php" class="title is-5 has-text-black is-active">
-                                Iniciar sesión
+                                <div align="center"  class="title is-5 has-text-black is-active">Iniciar sesión</div>
                             </a>
                         <?php } ?>
                     </div>
