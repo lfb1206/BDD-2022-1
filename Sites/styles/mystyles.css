@@ -94,7 +94,7 @@ tr:nth-child(even) {
     width: 100%;
     padding: 100px 15%;
     background: #333;
-    color: #efefef;
+    color: #333;
     display: flex;
 }
 
