@@ -1,5 +1,5 @@
 <?php
-require_once './__init__.php';
+include './templates/header.php';
 
 $falla_inicio = false;
 
@@ -27,10 +27,12 @@ if ($request_method  === 'POST') {
     $falla_inicio = true;
   }
 }
+
 // En este caso, que se trata de obtener la página de inicio de sesión
 // y no hay una sesión iniciada, se muestra el form
+?>
 
-include './templates/header.php'; ?>
+
 <!-- https://bulma.io/documentation/columns -->
 <section class="section">
 
@@ -63,6 +65,6 @@ include './templates/header.php'; ?>
     </div>
   </div>
 </section>
-<?php include './templates/footer.php';
-?>
+
+<?php include './templates/footer.php'; ?>
 

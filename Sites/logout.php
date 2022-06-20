@@ -1,5 +1,5 @@
 <?php
-require_once './__init__.php';
+include './templates/header.php';
 session_destroy();
 go_home();
 ?>
