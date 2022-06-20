@@ -19,24 +19,14 @@
         </div>
         <div class="col-2">
             <h3>NEWSLETTER</h3>
-            <a href="">
-
-            </a>
-            <a href="">
-
-            </a>
-            <a href="">
-
-            </a>
-            <a href="">
-
-            </a>
-            <a href="">
-
-            </a>
+            <form>
+                <input type="text" placeholder="Your email address">
+                <br>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
         </div>
         <div class="col-3">
-            
+            <h3>CONTACT</h3>
         </div>
     </div>
     </body>

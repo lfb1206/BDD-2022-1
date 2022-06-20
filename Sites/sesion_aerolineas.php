@@ -5,7 +5,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("config/conexion.php");
 
-  $aerolinea_escogida = $_SESSION['user_name'];
+  $aerolinea_escogida = $_SESSION['username'];
 
   $query = "SELECT Vuelo.numero_vuelo, Origen.codigo_icao, Origen.nombre as origen,
               Destino.codigo_icao, Destino.nombre as destino,
