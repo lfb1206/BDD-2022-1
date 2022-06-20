@@ -13,7 +13,9 @@ require("config/conexion.php");
     $result -> execute();
     $vuelos = $result -> fetchAll();
 ?>
+
 <?php
+/*
     $query = "SELECT *
               FROM vuelo 
               WHERE id_vuelo = $vuelo";
@@ -24,12 +26,17 @@ require("config/conexion.php");
 
 <?php
     $query = "SELECT *
-              FROM vuelo 
-              WHERE id_vuelo = $vuelo";
+              FROM dblink
+              ('dbname=grupo42e3
+               port=5432
+               password=grupo42
+               user=grupo42', INSERT TO 
+              );
     $result = $db -> prepare($query);
     $result -> execute();
     $vuelos = $result -> fetchAll();
-?>
+*/?>
+
 
 <div class="buttons">
     <a class="button is-info is-rounded is-outlined is-right" href="sesion_admin.php">
