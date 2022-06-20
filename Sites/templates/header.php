@@ -39,19 +39,27 @@
                 <div class="navbar-dropdown is-center is-boxed" style = "background-color: hsl(0, 0%, 4%);">
                     <div class="dropdown-content" style = "background-color: hsl(0, 0%, 4%);">
                         <?php if (isset($_SESSION['user_name'])) { ?>
-                            
+                            <a href="login.php" class="title is-5 has-text-info is-active">
+                                <div align="center"  class="title is-5 has-text-info is-active">Iniciar sesión</div>
+                            </a>
                         <?php } elseif (isset($_SESSION['user_name'])) { ?>
-                            
+                            <a href="login.php" class="title is-5 has-text-info is-active">
+                                <div align="center"  class="title is-5 has-text-info is-active">Iniciar sesión</div>
+                            </a>
                         <?php } elseif (isset($_SESSION['user_name'])) { ?>
-                            
+                            <a href="login.php" class="title is-5 has-text-info is-active">
+                                <div align="center"  class="title is-5 has-text-info is-active">Iniciar sesión</div>
+                            </a>
                         <?php } else { ?>
-                            
+                            <a href="login.php" class="title is-5 has-text-info is-active">
+                                <div align="center"  class="title is-5 has-text-info is-active">Iniciar sesión</div>
+                            </a>
                         <?php } ?>
                         <hr class="dropdown-divider" style = "background-color: hsl(0, 0%, 4%);">
                         <?php if (isset($_SESSION['user_name'])) { ?>
-                            <form class="title is-5 has-text-info is-active" action="logout.php">
-                                <input class="title is-5 has-text-info is-active" type="submit" value="Cerrar Sesión">
-                            </form>
+                            <a href="logout.php" class="title is-5 has-text-info is-active">
+                                <div align="center"  class="title is-5 has-text-info is-active">Cerrar Sesión</div>
+                            </a>
                         <?php } else { ?>
                             <a href="login.php" class="title is-5 has-text-info is-active">
                                 <div align="center"  class="title is-5 has-text-info is-active">Iniciar sesión</div>
