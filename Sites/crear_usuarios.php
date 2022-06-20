@@ -1,6 +1,4 @@
-<?php
-#Llama a conexión, crea el objeto PDO y obtiene la variable $db
-require("config/conexion.php");
+<?php include('templates/header.html');
 
 $query = "
 SELECT count(Src.username), tipo
@@ -40,48 +38,44 @@ $q = $db -> prepare($query);
 $q -> execute();
 ?>
 
-<?php include('templates/header.php');?>
+<section class="section">
 
-<body>
+	<div class="columns is-mobile is-centered is-vcentered cover-all">
+		<div class="column is-half">
 
-	<section class="section">
-
-		<div class="columns is-mobile is-centered is-vcentered cover-all">
-			<div class="column is-half">
-
-				<?php
-				if (empty($result)) {
-					?>
-					<h1 class="title">Todos los usuarios fueron creados</h1>
-					<?php
-				} else {
-					?>
-					<!-- https://bulma.io/documentation/form/general/ -->
-					<h1 class="title">Usuarios que no pudieron ser creados</h1>
-
-					<table>
-						<thead>
-							<tr>
-								<th>Cantidad de usuarios</th>
-								<th>Tipo</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php
-							foreach ($result as $r) {
-								echo "<tr>
-									<td>$r[0]</td>
-									<td>$r[1]</td>
-								</tr>";
-							}
-							?>
-						</tbody>
-					</table>
-					<?php
-				}
+			<?php
+			if (empty($result)) {
 				?>
-			</div>
-		</div>
-	</section>
+				<h1 class="title">Todos los usuarios fueron creados</h1>
+				<?php
+			} else {
+				?>
+				<!-- https://bulma.io/documentation/form/general/ -->
+				<h1 class="title">Usuarios que no pudieron ser creados</h1>
 
-	<?php include('templates/footer.php'); ?>
+				<table>
+					<thead>
+						<tr>
+							<th>Cantidad de usuarios</th>
+							<th>Tipo</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						foreach ($result as $r) {
+							echo "<tr>
+								<td>$r[0]</td>
+								<td>$r[1]</td>
+							</tr>";
+						}
+						?>
+					</tbody>
+				</table>
+				<?php
+			}
+			?>
+		</div>
+	</div>
+</section>
+
+<?php include('templates/footer.php'); ?>

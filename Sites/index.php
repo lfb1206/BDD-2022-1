@@ -1,11 +1,3 @@
-<?php
-require_once "./__init__.php";
-
-// Hay que obtener los pokemones a elegir
-// $query = $DB->query('SELECT id, name FROM poke1;');
-// $pokemones = $query->fetchAll(PDO::FETCH_ASSOC);
-?>
-
 <?php include('templates/header.php'); ?>
 
 <section class="section">
@@ -30,7 +22,7 @@ require_once "./__init__.php";
 
 <!-- https://bulma.io/documentation/layout/tiles/ -->
 <main class="section">
-  <div style="height: 75%; display: flex; align-items: center; justify-content: center;";>
+  <div style="height: 85%; display: flex; align-items: center; justify-content: center;";>
     <div align="center"  class="title is-1 has-text-danger is-active">
       Un espacio para  
       <br/>

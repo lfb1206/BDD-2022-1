@@ -1,7 +1,6 @@
 <?php include('templates/header.php');
 
 $vuelo = $_GET['vuelo'];
-require("config/conexion.php");
 ?>
 <h2 class="title">Aceptar vuelo <?php echo "$vuelo" ?></h2>
 
