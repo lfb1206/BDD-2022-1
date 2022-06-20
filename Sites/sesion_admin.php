@@ -37,11 +37,11 @@
   <?php
 	foreach ($vuelos as $vuelo) {
   		echo "<tr> 
-            <td>$vuelo[0]</td> 
-            <td>$vuelo[1]</td> 
-            <td><a href="aceptar_vuelo.php?id_vuelo=<? echo $row[$vuelo[0]]; ?>">Aceptar</a></td>
-            <td><a href="rechazar_vuelo.php?id_vuelo=<? echo $row["Id_persona"]; ?>">Rechazar</a></td>
-            </tr>";
+        <td>$vuelo[0]</td> 
+        <td>$vuelo[1]</td> 
+        <td> <a href="aceptar_vuelo.php?id_vuelo=<? echo $row[$vuelo[0]]; ?>"> Aceptar </a> </td>
+        <td><a href="rechazar_vuelo.php?id_vuelo=<? echo $row[$vuelo[0]]; ?>"> Rechazar </a> </td>
+        </tr>";
 	}
   ?>
 	</table> 
