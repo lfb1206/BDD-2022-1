@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="navbar-item has-dropdown is-hoverable is-black">
-                <div style="border: 5px; width: 150px; padding: 10px;";>
+                <div href="index.php" style="border: 5px; width: 150px; padding: 10px;";>
                     <h4 class="title is-3 has-text-info">Menú</h4>
                 </div>
 
