@@ -1,7 +1,6 @@
 <?php
 require_once './__init__.php';
 
-// HOLA
 // Vemos si se esta mandando el form o se está recibiendo
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method  === 'POST') {
@@ -10,35 +9,25 @@ if ($request_method  === 'POST') {
   // Aquí se tendría que buscar el id del usuario en la BDD con el mail y la contraseña
   $user_name = $_POST['username'];
   $password = $_POST['password'];
-//prepare the statement
-// DESCOMENTAR 
-$stmt = $db->prepare("SELECT * FROM usuarios WHERE username=? AND contrasena=?;");
-$stmt->execute([$user_name, $password]); 
-//fetch result
-$user = $stmt->fetch();
-if ($user) { print("El usuario existe :)");
-    // username already exists
-} else {print("El usuario no existe :(");
-    // username does not exist
-} 
+  //prepare the statement
+  $stmt = $db->prepare("SELECT username, tipo FROM usuarios WHERE username=? AND contrasena=?;");
+  $stmt->execute([$user_name, $password]);
 
-//  $select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = '".$_POST['username']."'");
-  //$select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = 'DGAC'");
-  //if(mysqli_num_rows($select)> 0) { 
-    //$holahola = "ya existe :)";
-    //exit('This username already exists')
-  //} else { 
-    //$holahola = "no existe :(";
-  //}
+  $falla_inicio = false;
 
-    // Se guardan estos valores en la sesión
-    // falta que de alguna parte salgan el user_id y User_name que están hardcodeados arriba
-  $_SESSION['user_name'] = $user_name;
-  $_SESSION['password'] = $password;
-  $_SESSION['holahola'] = $holahola;
-  $_SESSION['tipo'] = "dgac";
-  // Mandamos al usuario al inicio
-  go_home();
+  //fetch result
+  $user = $stmt->fetch();
+
+  if (empty($user)) {
+    // username o contrasena incorrecta
+    $falla_inicio = true;
+  }else{
+    // se inicia sesion
+    $_SESSION['user_name'] = $user[0][0];
+    $_SESSION['tipo'] = $user[0][1];
+    // Mandamos al usuario al inicio
+    go_home();
+  }
 } elseif ($request_method === 'GET') {
   // En este caso, que se trata de obtener la página de inicio de sesión
   // y no hay una sesión iniciada, se muestra el form
@@ -68,6 +57,6 @@ if ($user) { print("El usuario existe :)");
       </div>
     </div>
   </section>
-<?php include './templates/footer.php';
+  <?php include './templates/footer.php';
 } ?>
 
