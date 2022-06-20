@@ -39,7 +39,7 @@ if(mysqli_num_rows($select)) {
   // En este caso, que se trata de obtener la página de inicio de sesión
   // y no hay una sesión iniciada, se muestra el form
 
-  include './templates/header.html'; ?>
+  include './templates/header.php'; ?>
   <!-- https://bulma.io/documentation/columns -->
   <section class="section">
 
@@ -64,6 +64,6 @@ if(mysqli_num_rows($select)) {
       </div>
     </div>
   </section>
-<?php include './templates/footer.html';
+<?php include './templates/footer.php';
 } ?>
 

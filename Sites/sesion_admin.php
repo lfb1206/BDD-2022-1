@@ -4,7 +4,7 @@
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../conexion.php");
+  require("config/conexion.php");
 
  	$query = "SELECT propuesta_vuelo_id, codigo 
               FROM propuesta_vuelo
