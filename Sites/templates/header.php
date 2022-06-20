@@ -22,6 +22,13 @@
             <div class="title is-3 has-text-info">Gestión comercial de vuelos</div>
         </div>
         <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-info" href="crear_usuarios.php">
+                        Importar usuarios
+                    </a>
+                </div>
+            </div>
             <div class="navbar-item has-dropdown is-hoverable is-black">
                 <div style="border: 5px; width: 150px; padding: 10px;";>
                     <h4 class="title is-3 has-text-info">Menú</h4>
@@ -45,9 +52,6 @@
                             </form>
                         <?php } else { ?>
                             <div class="buttons">
-                                <a class="button is-primary" href="crear_usuarios.php">
-                                    Importar usuarios
-                                </a>
                                 <a href="login.php" class="button is-light">
                                     Iniciar sesión
                                 </a>
