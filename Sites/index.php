@@ -62,8 +62,8 @@ require_once "./__init__.php";
           </form>
         </div>
       </div>
-    </div -->
+    </div 
   <?php } ?>
-</main>
+</main>-->
 
 <?php include('templates/footer.php'); ?>

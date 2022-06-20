@@ -1,4 +1,6 @@
-<?php include('templates/header.php');   ?>
+<?php include('templates/header.php');   
+$id_vuelo = $_GET['id_vuelo']
+?>
     <h2 class="title">Rechazar vuelo</h2>
 <?php
     require("config/conexion.php");
