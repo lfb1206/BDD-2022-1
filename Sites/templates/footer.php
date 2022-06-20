@@ -1,14 +1,43 @@
-    <nav class="navbar is-black" role="navigation" aria-label="dropdown navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" style = "position:relative; left:20px; top:0.001px;" href="https://www.google.com/logos/2010/pacman10-i.html">
-                <ion-icon size="large" name="airplane-outline"></ion-icon>
+    <div class="footer">
+        <div class="col-1">
+            <h3>USEFUL LINKS</h3>
+            <a href="">
+
+            </a>
+            <a href="">
+
+            </a>
+            <a href="">
+
+            </a>
+            <a href="">
+
+            </a>
+            <a href="">
+
             </a>
         </div>
+        <div class="col-2">
+            <h3>NEWSLETTER</h3>
+            <a href="">
 
-        <div style="border: 5px; width: 450px; padding: 10px; text-align: center; margin: 5px; text-align: center; color: #198BB9";>
-            <div class="title is-3 has-text-info">Gestión comercial de vuelos</div>
+            </a>
+            <a href="">
+
+            </a>
+            <a href="">
+
+            </a>
+            <a href="">
+
+            </a>
+            <a href="">
+
+            </a>
         </div>
-    </nav>
-    <br>
+        <div class="col-3">
+            
+        </div>
+    </div>
     </body>
 </html>

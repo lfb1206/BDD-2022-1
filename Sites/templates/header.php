@@ -38,7 +38,7 @@
 
                 <div class="navbar-dropdown is-center is-boxed" style = "background-color: hsl(0, 0%, 4%);">
                     <div class="dropdown-content" style = "background-color: hsl(0, 0%, 4%);">
-                        <?php if (isset($_SESSION['user_name'])) { ?>
+                        <?php if (isset($_SESSION['username'])) { ?>
                             <?php if ($_SESSION['tipo'] == "dgac") { ?>
                                 <a href="sesion_admin.php" class="title is-5 has-text-info is-active">
                                     <div align="center"  class="title is-5 has-text-info is-active">Sesión admin</div>
@@ -67,7 +67,7 @@
                         <?php } ?>
                         
                         <hr class="dropdown-divider" style = "background-color: hsl(0, 0%, 4%);">
-                        <?php if (isset($_SESSION['user_name'])) { ?>
+                        <?php if (isset($_SESSION['username'])) { ?>
                             <br/>
                             <a href="logout.php" class="title is-5 has-text-info is-active">
                                 <div align="center"  class="title is-5 has-text-info is-active">Cerrar Sesión</div>

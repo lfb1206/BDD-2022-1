@@ -9,16 +9,16 @@ require_once "./__init__.php";
 <?php include('templates/header.php'); ?>
 
 <section class="section">
-  <?php if (isset($_SESSION['user_name'])) { ?>
+  <?php if (isset($_SESSION['username'])) { ?>
     <!-- Se muestra un mensaje si hay una sesión de usuario -->
-    <h2 class="title is-1"> Hola <?php echo $_SESSION['user_name'] ?></h2>
+    <h2 class="title is-1"> Hola <?php echo $_SESSION['username'] ?></h2>
     <h2 class="title is-1"> El usuario ingresado <?php echo $_SESSION['holahola'] ?></h2>
   <?php } ?>
 </section>
 
 <!-- https://bulma.io/documentation/layout/tiles/ -->
 <main class="section">
-  <?php if (isset($_SESSION['user_name'])) { ?>
+  <?php if (isset($_SESSION['username'])) { ?>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <div class="tile is-child box">
