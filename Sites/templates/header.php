@@ -48,7 +48,7 @@
                         <hr class="dropdown-divider">
                         <?php if (isset($_SESSION['user_name'])) { ?>
                             <form class="title is-5 has-text-black is-active" action="logout.php">
-                                <input class="button" type="submit" value="Cerrar Sesión">
+                                <input class="title is-5 has-text-black is-active" type="submit" value="Cerrar Sesión">
                             </form>
                         <?php } else { ?>
                             <a href="login.php" class="title is-5 has-text-black is-active">

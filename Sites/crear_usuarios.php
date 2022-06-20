@@ -84,14 +84,4 @@ $q -> execute();
 		</div>
 	</section>
 
-	<h1 align="center">
-		<?php
-		echo "Usuarios que no pudieron ser creados"
-		?>
-	</h1>
-
-	<div class="surface">
-		
-	</div>
-
 	<?php include('templates/footer.php'); ?>
