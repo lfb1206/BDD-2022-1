@@ -10,8 +10,8 @@
   $fecha_maxima = $_POST["fecha_maxima"];
 
   if (empty($fecha_minima) or empty($fecha_maxima)) {
-	$query = "SELECT propuesta_vuelo_id, codigo 
-              FROM propuesta_vuelo
+	$query = "SELECT id_vuelo, numero_vuelo 
+              FROM vuelo
               WHERE estado = 'pendiente' ;";
 	$result = $db -> prepare($query);
 	$result -> execute();
@@ -19,8 +19,8 @@
     ;}
 
     else {
- 	$query = "SELECT propuesta_vuelo_id, codigo 
-              FROM propuesta_vuelo
+ 	$query = "SELECT id_vuelo, numero_vuelo 
+              FROM vuelo
               WHERE estado = 'pendiente' ;";
 	$result = $db -> prepare($query);
 	$result -> execute();

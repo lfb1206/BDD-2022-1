@@ -39,13 +39,9 @@
                             
                         <?php } ?>
                         <hr class="dropdown-divider">
-                        <div align="center"  class="title is-5 has-text-black is-active has-text-center">Cerrar sesion de
                         <?php if (isset($_SESSION['user_name'])) { ?>
                             <form class="buttons" action="logout.php">
                                 <input class="button" type="submit" value="Cerrar Sesión">
-                                <a class="button is-primary" href="crear_usuarios.php">
-                                    Importar usuarios
-                                </a>
                             </form>
                         <?php } else { ?>
                             <div class="buttons">
