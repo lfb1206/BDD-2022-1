@@ -20,11 +20,6 @@ $q = $db -> prepare($query);
 $q -> execute();
 $result = $q -> fetchAll();
 
-if (empty($result)) {
-	header('Location: /index.php');
-	die();
-}
-
 $query = "
 MERGE Usuarios as Dst
 USING (
@@ -52,7 +47,7 @@ $q -> execute();
 
 	<h1 align="center">
 		<?php
-		echo "Usuarios que no "
+		echo "Usuarios que no pudieron ser creados"
 		?>
 	</h1>
 
@@ -63,10 +58,10 @@ $q -> execute();
 				<th>Tipo</th>
 			</tr>
 			<?php
-			foreach ($pokemones as $pokemon) {
+			foreach ($result as $r) {
 				echo "<tr>
-					<td>$pokemon[0]</td>
-					<td>$pokemon[1]</td>
+					<td>$r[0]</td>
+					<td>$r[1]</td>
 				</tr>";
 			}
 			?>

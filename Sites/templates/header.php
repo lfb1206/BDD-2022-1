@@ -29,17 +29,22 @@
 
                 <div class="navbar-dropdown is-center is-boxed">
                     <div class="dropdown-content">
-                        <div align="center"  class="title is-5 has-text-black is-active"></div>
-                        <div align="center"  class="title is-5 has-text-black is-active"></div>
-                        <div align="center"  class="title is-5 has-text-black is-active">Turnos <br/>Pasajero</div>
-                        <div align="center"  class="title is-5 has-text-black is-active"></div>
-                        <div align="center"  class="title is-5 has-text-black is-active"></div>
-                        <div align="center"  class="title is-5 has-text-black is-active"></div>
+                        <?php if (isset($_SESSION['user_name'])) { ?>
+                            
+                        <?php } if (isset($_SESSION['user_name'])) { ?>
+                            
+                        <?php } if (isset($_SESSION['user_name'])) { ?>
+                            
+                        <?php } else { ?>
+                            
+                        <?php } ?>
                         <hr class="dropdown-divider">
                         <div align="center"  class="title is-5 has-text-black is-active has-text-center">Cerrar sesion de
-                        <div align="center"  class="title is-5 has-text-black is-active"></div>
-                        <div align="center"  class="title is-5 has-text-black is-active"></div>
-                    </a>
+                        <?php if (isset($_SESSION['user_name'])) { ?>
+                            
+                        <?php } else { ?>
+                        
+                        <?php } ?>
                     </div>
             </div>
             </div>
