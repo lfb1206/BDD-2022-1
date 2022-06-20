@@ -29,14 +29,14 @@
                     </a>
                 </div>
             </div>
-            <div class="navbar-item has-dropdown is-hoverable is-black">
+            <div class="navbar-item has-dropdown is-hoverable is-black" style = "background-color: hsl(0, 0%, 4%);">
                 <a href="index.php">
                     <div style="border: 5px; width: 150px; padding: 10px;";>
                         <h4 class="title is-3 has-text-info">Menú</h4>
                     </div>
                 </a>
 
-                <div class="navbar-dropdown is-center is-boxed">
+                <div class="navbar-dropdown is-center is-boxed" style = "background-color: hsl(0, 0%, 4%);">
                     <div class="dropdown-content" style = "background-color: hsl(0, 0%, 4%);">
                         <?php if (isset($_SESSION['user_name'])) { ?>
                             
@@ -49,12 +49,12 @@
                         <?php } ?>
                         <hr class="dropdown-divider">
                         <?php if (isset($_SESSION['user_name'])) { ?>
-                            <form class="title is-5 has-text-black is-active" action="logout.php">
-                                <input class="title is-5 has-text-black is-active" type="submit" value="Cerrar Sesión">
+                            <form class="title is-5 has-text-info is-active" action="logout.php">
+                                <input class="title is-5 has-text-info is-active" type="submit" value="Cerrar Sesión">
                             </form>
                         <?php } else { ?>
-                            <a href="login.php" class="title is-5 has-text-black is-active">
-                                <div align="center"  class="title is-5 has-text-black is-active">Iniciar sesión</div>
+                            <a href="login.php" class="title is-5 has-text-info is-active">
+                                <div align="center"  class="title is-5 has-text-info is-active">Iniciar sesión</div>
                             </a>
                         <?php } ?>
                     </div>
