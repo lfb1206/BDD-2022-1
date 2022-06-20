@@ -12,25 +12,13 @@ require_once "./__init__.php";
   <?php if (isset($_SESSION['user_name'])) { ?>
     <!-- Se muestra un mensaje si hay una sesión de usuario -->
     <h2 class="title is-1"> Hola <?php echo $_SESSION['user_name'] ?></h2>
-    <form class="buttons" action="logout.php">
-      <input class="button" type="submit" value="Cerrar Sesión">
-    </form>
-  <?php } else { ?>
-    <!-- En el caso que no, se muestran los botones para iniciar sesión -->
-    <div class="buttons">
-      <a class="button is-primary" href="crear_usuarios.php">
-        Importar usuarios
-      </a>
-      <a href="login.php" class="button is-light">
-        Iniciar sesión
-      </a>
-    </div>
+    <h2 class="title is-1"> Hola <?php echo $_SESSION['user_name'] ?></h2>
   <?php } ?>
 </section>
 
 <!-- https://bulma.io/documentation/layout/tiles/ -->
 <main class="section">
-  <?php if (isset($_SESSION['user_id'])) { ?>
+  <?php if (isset($_SESSION['user_name'])) { ?>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <div class="tile is-child box">

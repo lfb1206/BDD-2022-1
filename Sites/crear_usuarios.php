@@ -44,6 +44,45 @@ $q -> execute();
 
 <body>
 
+	<section class="section">
+
+		<div class="columns is-mobile is-centered is-vcentered cover-all">
+			<div class="column is-half">
+
+				<?php
+				if (empty($result)) {
+					?>
+					<h1 class="title">Todos los usuarios fueron creados</h1>
+					<?php
+				} else {
+					?>
+					<!-- https://bulma.io/documentation/form/general/ -->
+					<h1 class="title">Usuarios que no pudieron ser creados</h1>
+
+					<table>
+						<thead>
+							<tr>
+								<th>Cantidad de usuarios</th>
+								<th>Tipo</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+							foreach ($result as $r) {
+								echo "<tr>
+									<td>$r[0]</td>
+									<td>$r[1]</td>
+								</tr>";
+							}
+							?>
+						</tbody>
+					</table>
+					<?php
+				}
+				?>
+			</div>
+		</div>
+	</section>
 
 	<h1 align="center">
 		<?php
@@ -52,20 +91,7 @@ $q -> execute();
 	</h1>
 
 	<div class="surface">
-		<table>
-			<tr>
-				<th>Cantidad de usuarios</th>
-				<th>Tipo</th>
-			</tr>
-			<?php
-			foreach ($result as $r) {
-				echo "<tr>
-					<td>$r[0]</td>
-					<td>$r[1]</td>
-				</tr>";
-			}
-			?>
-		</table>
+		
 	</div>
 
 	<?php include('templates/footer.php'); ?>

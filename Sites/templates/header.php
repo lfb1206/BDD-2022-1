@@ -24,7 +24,7 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-info" href="crear_usuarios.php">
+                    <a class="button is-info is-rounded is-outlined is-right" href="crear_usuarios.php">
                         Importar usuarios
                     </a>
                 </div>
@@ -38,24 +38,22 @@
                     <div class="dropdown-content">
                         <?php if (isset($_SESSION['user_name'])) { ?>
                             
-                        <?php } if (isset($_SESSION['user_name'])) { ?>
+                        <?php } elseif (isset($_SESSION['user_name'])) { ?>
                             
-                        <?php } if (isset($_SESSION['user_name'])) { ?>
+                        <?php } elseif (isset($_SESSION['user_name'])) { ?>
                             
                         <?php } else { ?>
                             
                         <?php } ?>
                         <hr class="dropdown-divider">
                         <?php if (isset($_SESSION['user_name'])) { ?>
-                            <form class="buttons" action="logout.php">
+                            <form class="title is-5 has-text-black is-active" action="logout.php">
                                 <input class="button" type="submit" value="Cerrar Sesión">
                             </form>
                         <?php } else { ?>
-                            <div class="buttons">
-                                <a href="login.php" class="button is-light">
-                                    Iniciar sesión
-                                </a>
-                            </div>
+                            <a href="login.php" class="title is-5 has-text-black is-active">
+                                Iniciar sesión
+                            </a>
                         <?php } ?>
                     </div>
             </div>

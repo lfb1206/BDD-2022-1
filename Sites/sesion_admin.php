@@ -21,7 +21,10 @@
     else {
  	$query = "SELECT id_vuelo, numero_vuelo 
               FROM vuelo
-              WHERE estado = 'pendiente' ;";
+              WHERE estado = 'pendiente' 
+              AND '$fecha_minima' <= fecha_salida 
+              AND fecha_salida <= '$fecha_maxima'
+              ORDER BY fecha_salida;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$vuelos = $result -> fetchAll();
