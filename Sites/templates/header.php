@@ -50,6 +50,16 @@
                             <a href="pasajeros.php" class="title is-5 has-text-info is-active">
                                 <div align="center"  class="title is-5 has-text-info is-active">Pasajeros</div>
                             </a>
+                        <?php } else { ?>
+                            <a href="sesion_admin.php" class="title is-5 has-text-info is-active">
+                                <div align="center"  class="title is-5 has-text-info is-active">Sesión admin</div>
+                            </a>
+                            <a href="sesion_aerolineas.php" class="title is-5 has-text-info is-active">
+                                <div align="center"  class="title is-5 has-text-info is-active">Sesion aerolineas</div>
+                            </a>
+                            <a href="pasajeros.php" class="title is-5 has-text-info is-active">
+                                <div align="center"  class="title is-5 has-text-info is-active">Pasajeros</div>
+                            </a>
                         <?php } ?>
                         <hr class="dropdown-divider" style = "background-color: hsl(0, 0%, 4%);">
                         <?php if (isset($_SESSION['user_name'])) { ?>

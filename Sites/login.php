@@ -58,7 +58,7 @@ if ($request_method  === 'POST') {
           <div class="field">
             <label class="label">Contraseña</label>
             <div class="control">
-              <input class="input" type="text" name="password">
+              <input class="input" type="password" name="password">
             </div>
           </div>
           <button class="button is-primary" type="submit" name="login">Login</button>
