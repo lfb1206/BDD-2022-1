@@ -38,10 +38,14 @@
 	foreach ($vuelos as $vuelo) {
       ?>
   		<tr> 
-        <td><?php echo $vuelo[0] ?></td> 
-        <td><?php echo $vuelo[1] ?></td> 
-        <td> <a href="aceptar_vuelo.php?id_vuelo=<?php echo $row[$vuelo[0]]; ?>"> Aceptar </a> </td>
-        <td><a href="rechazar_vuelo.php?id_vuelo=<?php echo $row[$vuelo[0]]; ?>"> Rechazar </a> </td>
+        <td><?php echo "$vuelo[0]"; ?></td> 
+        <td><?php echo "$vuelo[1]"; ?></td> 
+        <td><?php
+          echo "<a href=\"aceptar_vuelo.php?id_vuelo=$vuelo[0]> Aceptar </a>"
+        ?></td>
+        <td> 
+            <a href="rechazar_vuelo.php?id_vuelo=<?php echo "$vuelo[0]"; ?> Rechazar </a> 
+        </td>
       </tr>
       <?php
 	}
