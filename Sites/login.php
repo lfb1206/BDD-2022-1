@@ -58,7 +58,7 @@ if ($request_method  === 'POST') {
         <?php
         if ($falla_inicio) {
           ?>
-          <p class="help is-danger">Username o contraseña incorrecta</p>
+          <p class="help is-danger">Nombre de usuario o contraseña incorrecta</p>
           <?php
         }
         ?>
