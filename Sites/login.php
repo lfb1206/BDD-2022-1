@@ -25,19 +25,19 @@ if ($request_method  === 'POST') {
 
 //  $select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = '".$_POST['username']."'");
   $select = mysqli_query($conn, "SELECT * FROM usuarios WHERE username = 'DGAC'");
-  if(mysqli_num_rows($select)> 0) { $holahola = "ya existe :)";
-      //exit('This username already exists')
-      ;}  else{ $holahola = "no existe :(";}
+  if(mysqli_num_rows($select)> 0) { 
+    $holahola = "ya existe :)";
+    //exit('This username already exists')
+  } else { 
+    $holahola = "no existe :(";
+  }
 
     // Se guardan estos valores en la sesión
     // falta que de alguna parte salgan el user_id y User_name que están hardcodeados arriba
-    $_SESSION['user_name'] = $user_name;
-    $_SESSION['password'] = $password;
-    $_SESSION['holahola'] = $holahola;
-    $_SESSION['tipo'] == "dgac";
-
-
-
+  $_SESSION['user_name'] = $user_name;
+  $_SESSION['password'] = $password;
+  $_SESSION['holahola'] = $holahola;
+  $_SESSION['tipo'] = "dgac";
   // Mandamos al usuario al inicio
   go_home();
 } elseif ($request_method === 'GET') {
