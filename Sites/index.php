@@ -6,7 +6,7 @@ require_once "./__init__.php";
 // $pokemones = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include('templates/header.html'); ?>
+<?php include('templates/header.php'); ?>
 
 <section class="section">
   <?php if (isset($_SESSION['user_name'])) { ?>
@@ -66,4 +66,4 @@ require_once "./__init__.php";
   <?php } ?>
 </main>
 
-<?php include('templates/footer.html'); ?>
+<?php include('templates/footer.php'); ?>

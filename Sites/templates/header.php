@@ -35,9 +35,8 @@
                         <div align="center"  class="title is-5 has-text-black is-active"></div>
                         <div align="center"  class="title is-5 has-text-black is-active"></div>
                         <div align="center"  class="title is-5 has-text-black is-active"></div>
-                    <hr class="dropdown-divider">
+                        <hr class="dropdown-divider">
                         <div align="center"  class="title is-5 has-text-black is-active has-text-center">Cerrar sesion de
-                            <br/>
                         <div align="center"  class="title is-5 has-text-black is-active"></div>
                         <div align="center"  class="title is-5 has-text-black is-active"></div>
                     </a>
