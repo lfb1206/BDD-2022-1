@@ -31,6 +31,8 @@
     <tr>
       <th>ID</th>
       <th>codigo</th>
+      <th><a href="borrar.php?Id_persona=<? echo $row["Id_persona"]; ?>">Borrar</a></th>
+      <th><a href="borrar.php?Id_persona=<? echo $row["Id_persona"]; ?>">Borrar</a></th>
     </tr>
   <?php
 	foreach ($vuelos as $vuelo) {
