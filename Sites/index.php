@@ -8,12 +8,6 @@ require_once "./__init__.php";
 
 <?php include('templates/header.html'); ?>
 
-<section class="hero is-success is-halfheight pokebaner">
-  <div class="hero-body">
-    <h1 class="title">PokeDB</h1>
-  </div>
-</section>
-
 <section class="section">
   <?php if (isset($_SESSION['user_name'])) { ?>
     <!-- Se muestra un mensaje si hay una sesión de usuario -->
