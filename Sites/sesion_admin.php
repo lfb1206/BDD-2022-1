@@ -41,10 +41,10 @@
         <td><?php echo "$vuelo[0]"; ?></td> 
         <td><?php echo "$vuelo[1]"; ?></td> 
         <td><?php
-          echo "<a href=\"aceptar_vuelo.php?vuelo=$vuelo\"> Aceptar </a>"
+          echo "<a href=\"aceptar_vuelo.php?vuelo=$vuelo[0]\"> Aceptar </a>"
         ?></td>
         <td><?php
-            echo "<a href=\"rechazar_vuelo.php?vuelo=$vuelo\"> Rechazar </a>"
+            echo "<a href=\"rechazar_vuelo.php?vuelo=$vuelo[0]\"> Rechazar </a>"
         ?></td>
       </tr>
       <?php
