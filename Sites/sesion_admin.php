@@ -43,4 +43,25 @@
   ?>
 	</table> 
 
+    <div class="columns is-mobile is-centered is-vcentered cover-all">
+      <div class="column is-half">
+        <!-- https://bulma.io/documentation/form/general/ -->
+        <form method="post">
+          <div class="field">
+            <label class="label">Fecha minima de los vuelos</label>
+            <div class="control">
+              <input class="input" type="text" name="fecha_minima">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Fecha maxima de los vuelos</label>
+            <div class="control">
+              <input class="input" type="text" name="fecha_maxima">
+            </div>
+          </div>
+          <button class="button is-primary" type="submit" name="login">Login</button>
+        </form>
+      </div>
+    </div>
+
 <?php include('templates/footer.html'); ?>

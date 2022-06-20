@@ -21,7 +21,7 @@ $q -> execute();
 $result = $q -> fetchAll();
 
 $query = "
-MERGE Usuarios as Dst
+MERGE INTO Usuarios as Dst
 USING (
 	SELECT 'DGAC' as username, 'admin' as contrasena, 'dgac' as tipo
 	UNION ALL
