@@ -11,9 +11,9 @@
     <?php
     if ($tipo == 'dgac') {
       ?> <a class="button is-link" href="sesion_admin.php">Aprobar o rechazar vuelos</a> <?php
-    }elseif ($tipo == 'aerolinea') {
+    } elseif ($tipo == 'aerolinea') {
       ?> <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</a> <?php
-    }elseif ($tipo == 'pasajero') {
+    } elseif ($tipo == 'pasajero') {
       ?> <a class="button is-link" href="sesion_pasajeros.php">Reservar</a> <?php
     }
   }
