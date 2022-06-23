@@ -50,7 +50,7 @@ foreach ($vuelos as $vuelo) {
 </table> 
 
   <div class="columns is-mobile is-centered is-vcentered cover-all">
-    <div class="column is-half">
+    <div class="column is-4 is-offset-4">
       <!-- https://bulma.io/documentation/form/general/ -->
       <form action="sesion_admin.php" method="post">
         <div class="field">
