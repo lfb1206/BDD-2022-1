@@ -35,7 +35,7 @@ $username = $_SESSION['username'];
 require("config/conexion.php");
 $query = "SELECT id_reserva
             FROM reserva
-            WHERE id_eservador = '$dato[2]' ;";
+            WHERE id_reservador = '$dato[2]' ;";
 $result2 = $db -> prepare($query);
 $result2 -> execute();
 $datos2 = $result2 -> fetchAll();
