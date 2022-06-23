@@ -96,13 +96,13 @@ $query = "
         <div class="field">
           <label class="label">Codigo aeronave</label>
           <div class="control">
-            <input class="input" type="text" name="aeronave_codigo" style="border-radius: 10px;">
+            <input class="input" type="text" name="aeronave_codigo">
           </div>
         </div>
         <div class="field">
           <label class="label">Aerodromo salida</label>
           <div class="control">
-            <select name="aerodromo_salida" id="ar">
+            <select name="aerodromo_salida" id="ar" style="border-radius: 10px;">
               <?php
               foreach ($result as $data) {
                   echo "<option value=\"$data[0]\">$data[1]</option>";
