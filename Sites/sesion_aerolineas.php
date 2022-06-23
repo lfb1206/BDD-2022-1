@@ -62,11 +62,11 @@ foreach ($dataCollected as $data) {
 ?>
 </table>
 
-<?php
-echo "<tr><h1 align=\"center\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"<h1></tr>";
-?>
 
 <table>
+  <?php
+  echo "<tr><h1 align=\"center\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"<h1></tr>";
+  ?>
   <tr>
     <th>Código de vuelo</th>
     <th>ICAO origen</th>
