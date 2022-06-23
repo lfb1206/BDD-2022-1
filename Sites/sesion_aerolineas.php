@@ -76,21 +76,9 @@ $query = "
           </div>
         </div>
         <div class="field">
-          <label class="label">Hora salida</label>
-          <div class="control">
-            <input class="input" type="time" name="hora_salida">
-          </div>
-        </div>
-        <div class="field">
           <label class="label">Fecha llegada</label>
           <div class="control">
             <input class="input" type="date" name="fecha_llegada">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Hora llegada</label>
-          <div class="control">
-            <input class="input" type="time" name="horaa_llegada">
           </div>
         </div>
         <div class="field">
@@ -136,7 +124,7 @@ $query = "
       <?php
       if ($falla_inicio) {
         ?>
-        <p class="help is-danger">Nombre de usuario o contraseña incorrecta</p>
+        <p class="help is-danger">Se ingreso algun parametro de forma erronea</p>
         <?php
       }
       ?>
@@ -146,5 +134,9 @@ $query = "
 
 <a class="button is-link" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
 <a class="button is-link" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a>
+
+</br>
+</br>
+</br>
 
 <?php include('templates/footer.php'); ?>
