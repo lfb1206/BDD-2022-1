@@ -89,11 +89,6 @@ tr:nth-child(odd) {
     background-color: #19A3FF;
 }
 
-table {
-    display: grid;
-    gap: 50px 50px;
-}
-
 .surface {
     background-color: #fefef8;
     margin: 16px auto;
