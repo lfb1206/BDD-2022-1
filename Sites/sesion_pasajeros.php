@@ -51,7 +51,7 @@ $query = "
   ";
   $q = $db2 -> prepare($query);
   $q -> execute();
-  $resultado = $q -> fetchAll();
+  $result = $q -> fetchAll();
 ?>
 
 
