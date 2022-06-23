@@ -32,7 +32,7 @@ $dataCollected2 = $result2 -> fetchAll();
 ?>
 
 <?php
-echo "<h1 class=\"has-text-danger\" align=\"center\">Vuelos aprobados para la aerolínea \"$aerolinea_escogida\" ";
+echo "<div class=\"title is-4 has-text-danger is-active\" align=\"center\">Vuelos aprobados para la aerolínea \"$aerolinea_escogida\"</div> ";
 ?>
 
 <table>
@@ -64,7 +64,7 @@ foreach ($dataCollected as $data) {
 
 
 <?php
-echo "<h1 class=\"has-text-danger\" align=\"center\" style=\"color:#4a4a4a;\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"<h1>";
+echo "<div class=\"title is-4 has-text-danger is-active\" align=\"center\" style=\"color:#4a4a4a;\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"</div>";
 ?>
 
 <table>
