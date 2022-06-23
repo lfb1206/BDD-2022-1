@@ -65,7 +65,7 @@ foreach ($dataCollected as $data) {
 
 <table>
   <?php
-  echo "<h1 align=\"center\" style=\"color:#4a4a4a;\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"<h1>";
+  echo "<h1 class=\"has-text-danger\"align=\"center\" style=\"color:#4a4a4a;\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"<h1>";
   ?>
   <tr>
     <th>Código de vuelo</th>
@@ -80,14 +80,14 @@ foreach ($dataCollected as $data) {
 <?php
 foreach ($dataCollected2 as $data2) {
     echo "<tr>
-      <td style=\"color:#4a4a4a;\">$data2[0]</td>
-      <td style=\"color:#4a4a4a;\">$data2[1]</td>
-      <td style=\"color:#4a4a4a;\">$data2[2]</td>
-      <td style=\"color:#4a4a4a;\">$data2[3]</td>
-      <td style=\"color:#4a4a4a;\">$data2[4]</td>
-      <td style=\"color:#4a4a4a;\">$data2[5]</td>
-      <td style=\"color:#4a4a4a;\">$data2[6]</td>
-      <td style=\"color:#4a4a4a;\">$data2[7]</td>
+      <td>$data2[0]</td>
+      <td>$data2[1]</td>
+      <td>$data2[2]</td>
+      <td>$data2[3]</td>
+      <td>$data2[4]</td>
+      <td>$data2[5]</td>
+      <td>$data2[6]</td>
+      <td>$data2[7]</td>
     </tr>";
 }
 ?>
