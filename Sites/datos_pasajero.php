@@ -14,22 +14,24 @@ $username = $_SESSION['username'];
 
 ?>
 
-<table>
-    <tr>
-        <th>Nombre</th>
-        <th>Pasaporte</th>
-    </tr>
-    <?php
-    foreach ($datos as $dato) {
-        ?>
-        <tr> 
-        <td><?php echo "$dato[0]"; ?></td> 
-        <td><?php echo "$dato[1]"; ?></td> 
+<div class="column is-4 is-offset-4">
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Pasaporte</th>
         </tr>
         <?php
-    }
-    ?>
-</table> 
+        foreach ($datos as $dato) {
+            ?>
+            <tr> 
+            <td><?php echo "$dato[0]"; ?></td> 
+            <td><?php echo "$dato[1]"; ?></td> 
+            </tr>
+            <?php
+        }
+        ?>
+    </table> 
+</div>
 
 </br>
 </br>
@@ -45,20 +47,22 @@ $result2 -> execute();
 $datos2 = $result2 -> fetchAll();
 
 ?>
-<table>
-    <tr>
-        <th>Id reservas</th>
-    </tr>
-    <?php
-    foreach ($datos2 as $dato2) {
-        ?>
-        <tr> 
-        <td><?php echo "$dato2[0]"; ?></td> 
+<div class="column is-4 is-offset-4">
+    <table>
+        <tr>
+            <th>Id reservas</th>
         </tr>
         <?php
-    }
-    ?>
-</table> 
+        foreach ($datos2 as $dato2) {
+            ?>
+            <tr> 
+            <td><?php echo "$dato2[0]"; ?></td> 
+            </tr>
+            <?php
+        }
+        ?>
+    </table> 
+</div>
 
 
 <?php include('templates/footer.php'); ?>
