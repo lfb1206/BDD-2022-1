@@ -96,7 +96,7 @@ $query = "
         <div class="field">
           <label class="label">Codigo aeronave</label>
           <div class="control">
-            <input class="input" type="text" name="aeronave_codigo">
+            <input class="input" type="text" name="aeronave_codigo" style="border-radius: 10px;">
           </div>
         </div>
         <div class="field">
@@ -114,7 +114,7 @@ $query = "
         <div class="field">
           <label class="label">Aerodromo llegada</label>
           <div class="control">
-            <select name="aerodromo_llegada" id="ar">
+            <select name="aerodromo_llegada" id="ar" style="border-radius: 10px;">
               <?php
               foreach ($result as $data) {
                   echo "<option value=\"$data[0]\">$data[1]</option>";
