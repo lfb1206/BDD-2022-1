@@ -39,10 +39,10 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
           <td><?php echo "$vuelo[0]"; ?></td> 
           <td><?php echo "$vuelo[1]"; ?></td> 
           <td><?php
-            echo "<a href=\"aceptar_vuelo.php?vuelo=$vuelo[0]\" color=\"#4a4a4a\"> Aceptar </a>"
+            echo "<a href=\"aceptar_vuelo.php?vuelo=$vuelo[0]\" style=\"color:#4a4a4a;\"> Aceptar </a>"
           ?></td>
           <td><?php
-              echo "<a href=\"rechazar_vuelo.php?vuelo=$vuelo[0]\" color=\"#4a4a4a\"> Rechazar </a>"
+              echo "<a href=\"rechazar_vuelo.php?vuelo=$vuelo[0]\" style=\"color:#4a4a4a;\"> Rechazar </a>"
           ?></td>
         </tr>
         <?php
