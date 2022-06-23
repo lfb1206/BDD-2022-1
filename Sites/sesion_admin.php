@@ -55,12 +55,12 @@ foreach ($vuelos as $vuelo) {
       <form action="sesion_admin.php" method="post">
         <div class="field">
           <div class="control">
-            <input class="input" type="text" name="fecha_minima" placeholder="Fecha minima de los vuelos (yyyy-mm-dd)">
+            <input text-align="center" class="input" type="text" name="fecha_minima" placeholder="Fecha minima de los vuelos (yyyy-mm-dd)">
           </div>
         </div>
         <div class="field">
           <div class="control">
-            <input class="input" type="text" name="fecha_maxima" placeholder="Fecha maxima de los vuelos (yyyy-mm-dd)">
+            <input text-align="center" class="input" type="text" name="fecha_maxima" placeholder="Fecha maxima de los vuelos (yyyy-mm-dd)">
           </div>
         </div>
         <button class="button is-info" type="submit" name="login">Filtrar</button>
