@@ -4,47 +4,26 @@
 <?php
 #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 require("config/conexion.php");
-if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
-    $fecha_minima = $_POST["fecha_minima"];
-    $fecha_maxima = $_POST["fecha_maxima"];
-    $query = "SELECT *
-                FROM vuelo
-                WHERE estado = 'pendiente' 
-                AND '$fecha_minima' <= fecha_salida 
-                AND fecha_salida <= '$fecha_maxima'
-                ORDER BY fecha_salida;";
+$username = $_SESSION['username']; 
+    $query = "SELECT nombre, pasaporte
+                FROM pasajero
+                WHERE pasaporte = '$username' ;";
     $result = $db -> prepare($query);
     $result -> execute();
-    $vuelos = $result -> fetchAll();
-} else {
-    $query = "SELECT *
-                FROM vuelo
-                WHERE estado = 'pendiente' ;";
-    $result = $db -> prepare($query);
-    $result -> execute();
-    $vuelos = $result -> fetchAll();
-}
+    $datos = $result -> fetchAll();
 
 ?>
 <table>
     <tr>
-        <th>ID</th>
-        <th>codigo</th>
-        <th>Aceptar</th>
-        <th>Rechazar</th>
+        <th>Nombre</th>
+        <th>Pasaporte</th>
     </tr>
     <?php
-    foreach ($vuelos as $vuelo) {
+    foreach ($datos as $dato) {
         ?>
         <tr> 
-        <td><?php echo "$vuelo[0]"; ?></td> 
-        <td><?php echo "$vuelo[1]"; ?></td> 
-        <td><?php
-            echo "<a href=\"aceptar_vuelo.php?vuelo=$vuelo[0]\"> Aceptar </a>"
-        ?></td>
-        <td><?php
-            echo "<a href=\"rechazar_vuelo.php?vuelo=$vuelo[0]\"> Rechazar </a>"
-        ?></td>
+        <td><?php echo "$dato[0]"; ?></td> 
+        <td><?php echo "$dato[1]"; ?></td> 
         </tr>
         <?php
     }
