@@ -73,7 +73,7 @@ select, input {
 }
 
 th {
-    background-color: #94930C;
+    background-color: #B36900;
     color: white;
 }
 
@@ -86,7 +86,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-    background-color: #E01F1D;
+    background-color: #19A3FF;
 }
 
 .surface {
