@@ -35,68 +35,62 @@ $dataCollected2 = $result2 -> fetchAll();
 echo "<h1 align=\"center\">Vuelos aprobados para la aerolínea \"$aerolinea_escogida\" ";
 ?>
 
-<div class="surface">
-
-  <table>
-    <tr>
-      <th>Código de vuelo</th>
-      <th>ICAO origen</th>
-      <th>Aeródromo origen</th>
-      <th>ICAO destino</th>
-      <th>Aeródromo destino</th>
-      <th>Fecha salida</th>
-      <th>Fecha llegada</th>
-      <th>Estado</th>
-    </tr>
-  <?php
-  foreach ($dataCollected as $data) {
-      echo "<tr>
-        <td>$data[0]</td>
-        <td>$data[1]</td>
-        <td>$data[2]</td>
-        <td>$data[3]</td>
-        <td>$data[4]</td>
-        <td>$data[5]</td>
-        <td>$data[6]</td>
-        <td>$data[7]</td>
-      </tr>";
-  }
-  ?>
-  </table>
-</div>
+<table>
+  <tr>
+    <th>Código de vuelo</th>
+    <th>ICAO origen</th>
+    <th>Aeródromo origen</th>
+    <th>ICAO destino</th>
+    <th>Aeródromo destino</th>
+    <th>Fecha salida</th>
+    <th>Fecha llegada</th>
+    <th>Estado</th>
+  </tr>
+<?php
+foreach ($dataCollected as $data) {
+    echo "<tr>
+      <td>$data[0]</td>
+      <td>$data[1]</td>
+      <td>$data[2]</td>
+      <td>$data[3]</td>
+      <td>$data[4]</td>
+      <td>$data[5]</td>
+      <td>$data[6]</td>
+      <td>$data[7]</td>
+    </tr>";
+}
+?>
+</table>
 
 <?php
 echo "<h1 align=\"center\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\" ";
 ?>
 
-<div class="surface">
-
-  <table>
-    <tr>
-      <th>Código de vuelo</th>
-      <th>ICAO origen</th>
-      <th>Aeródromo origen</th>
-      <th>ICAO destino</th>
-      <th>Aeródromo destino</th>
-      <th>Fecha salida</th>
-      <th>Fecha llegada</th>
-      <th>Estado</th>
-    </tr>
-  <?php
-  foreach ($dataCollected2 as $data2) {
-      echo "<tr>
-        <td>$data2[0]</td>
-        <td>$data2[1]</td>
-        <td>$data2[2]</td>
-        <td>$data2[3]</td>
-        <td>$data2[4]</td>
-        <td>$data2[5]</td>
-        <td>$data2[6]</td>
-        <td>$data2[7]</td>
-      </tr>";
-  }
-  ?>
-  </table>
-</div>
+<table>
+  <tr>
+    <th>Código de vuelo</th>
+    <th>ICAO origen</th>
+    <th>Aeródromo origen</th>
+    <th>ICAO destino</th>
+    <th>Aeródromo destino</th>
+    <th>Fecha salida</th>
+    <th>Fecha llegada</th>
+    <th>Estado</th>
+  </tr>
+<?php
+foreach ($dataCollected2 as $data2) {
+    echo "<tr>
+      <td>$data2[0]</td>
+      <td>$data2[1]</td>
+      <td>$data2[2]</td>
+      <td>$data2[3]</td>
+      <td>$data2[4]</td>
+      <td>$data2[5]</td>
+      <td>$data2[6]</td>
+      <td>$data2[7]</td>
+    </tr>";
+}
+?>
+</table>
 
 <?php include('templates/footer.php'); ?>
