@@ -62,11 +62,11 @@ if ($request_method  === 'POST') {
         <?php
       }
       ?>
-    </div>
-    <div class="buttons">
-      <a class="button is-info is-rounded is-outlined is-right" href="crear_usuarios.php">
-          Importar usuarios
-      </a>
+      <div class="buttons">
+        <a class="button is-info is-rounded is-outlined is-right" href="crear_usuarios.php">
+            Importar usuarios
+        </a>
+      </div>
     </div>
   </div>
 </section>
