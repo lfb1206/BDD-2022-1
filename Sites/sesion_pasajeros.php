@@ -16,14 +16,7 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
     $result = $db -> prepare($query);
     $result -> execute();
     $vuelos = $result -> fetchAll();
-} else {
-    $query = "SELECT *
-                FROM vuelo
-                WHERE estado = 'pendiente' ;";
-    $result = $db -> prepare($query);
-    $result -> execute();
-    $vuelos = $result -> fetchAll();
-}
+} 
 
 ?>
 <table>
@@ -51,20 +44,47 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
     ?>
 </table> 
 
+<?php
+$query = "
+  SELECT aerodromo_id, nombre
+  FROM Aerodromo
+  ";
+  $q = $db2 -> prepare($query);
+  $q -> execute();
+  $resultado = $q -> fetchAll();
+?>
+
+
 <div class="columns is-mobile is-centered is-vcentered cover-all">
     <div class="column is-half">
     <!-- https://bulma.io/documentation/form/general/ -->
     <form action="sesion_admin.php" method="post">
         <div class="field">
-        <label class="label">Fecha minima de los vuelos (yyyy-mm-dd)</label>
+        <label class="label"> Ciudad de origen </label>
         <div class="control">
-            <input class="input" type="text" name="fecha_minima">
+            <select name="ciudad_origen" id="ar" style="border-radius: 10px; height: 48px;">
+              <?php
+              foreach ($result as $data) {
+                  echo "<option value=\"$data[0]\">$data[1]</option>";
+              }
+              ?>
+            </select>
         </div>
         </div>
         <div class="field">
-        <label class="label">Fecha maxima de los vuelos (yyyy-mm-dd)</label>
+        <label class="label">Ciudad de destino</label>
         <div class="control">
-            <input class="input" type="text" name="fecha_maxima">
+            <select name="ciudad_destino" id="ar" style="border-radius: 10px; height: 48px;">
+              <?php
+              foreach ($result as $data) {
+                  echo "<option value=\"$data[0]\">$data[1]</option>";
+              }
+              ?>
+            </select>
+        </div>
+        <label class="label">Fecha de despegue</label>
+        <div class="control">
+            <input class="input" type="date" name="fecha_despegue">
         </div>
         </div>
         <button class="button is-primary" type="submit" name="login">Recargar</button>
