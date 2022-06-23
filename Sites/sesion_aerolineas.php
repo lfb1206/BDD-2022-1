@@ -63,7 +63,7 @@ foreach ($dataCollected as $data) {
 </table>
 
 <?php
-echo "<h1 align=\"center\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\" ";
+echo "<tr><h1 align=\"center\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"<h1></tr>";
 ?>
 
 <table>
