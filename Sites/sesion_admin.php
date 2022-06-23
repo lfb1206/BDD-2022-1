@@ -11,14 +11,14 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
             AND '$fecha_minima' <= fecha_salida 
             AND fecha_salida <= '$fecha_maxima'
             ORDER BY fecha_salida;";
-  $result = $db -> prepare($query);
+  $result = $db2 -> prepare($query);
   $result -> execute();
   $vuelos = $result -> fetchAll();
 } else {
   $query = "SELECT *
             FROM vuelo
             WHERE estado = 'pendiente' ;";
-  $result = $db -> prepare($query);
+  $result = $db2 -> prepare($query);
   $result -> execute();
   $vuelos = $result -> fetchAll();
 }

@@ -45,14 +45,14 @@ if ($request_method  === 'POST') {
   }
 }
 $query = "
-  SELECT count(Src.username), tipo
+  SELECT id, nombre
   FROM Aerodromo
   WHERE Src.username IN (
     SELECT username FROM Usuarios
   )
   GROUP BY tipo;
   ";
-  $q = $db2 -> prepare($query);
+  $q = $db -> prepare($query);
   $q -> execute();
   $result = $q -> fetchAll();
 // En este caso, que se trata de obtener la página de inicio de sesión
