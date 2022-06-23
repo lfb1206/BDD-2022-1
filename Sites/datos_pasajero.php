@@ -46,7 +46,7 @@ $datos2 = $result2 -> fetchAll();
         <th>Id reservas</th>
     </tr>
     <?php
-    foreach ($datos2 as $dato) {
+    foreach ($datos2 as $dato2) {
         ?>
         <tr> 
         <td><?php echo "$dato2[0]"; ?></td> 

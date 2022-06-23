@@ -6,6 +6,37 @@ $falla_inicio = false;
 // Vemos si se esta mandando el form o se está recibiendo
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method  === 'POST') {
+
+  if ($user) {
+    // se inicia sesion
+    $_SESSION['username'] = $user[0];
+    $_SESSION['tipo'] = $user[1];
+    // Mandamos al usuario al inicio
+    go_home();
+  }else{
+    // username o contrasena incorrecta
+    $falla_inicio = true;
+  }
+  $codigo_vuelo = $_POST['codigo_vuelo'];
+  
+  $fecha_salida = $_POST['fecha_salida'];
+
+  $fecha_llegada = $_POST['fecha_llegada'];
+
+  $aeronave_codigo = $_POST['aeronave_codigo'];
+
+  $aerodromo_salida = $_POST['aerodromo_salida'];
+    
+  $aerodromo_llegada = $_POST['aerodromo_llegada'];
+
+  $estado = $_POST['estado'];
+
+  $compagnia_codigo = $_POST['compagnia_codigo'];
+
+  $realizado = $_POST['realizado'];
+
+  $fecha_envio_propuesta = date("Y-m-d");
+
   $query = "
   INSERT INTO Vuelo (username, contrasena, tipo)
   SELECT *
@@ -22,27 +53,6 @@ if ($request_method  === 'POST') {
   ";
   $q = $db2 -> prepare($query);
   $q -> execute();
-
-  // Aquí se tendría que buscar el id del usuario en la BDD con el mail y la contraseña
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  //prepare the statement
-  $stmt = $db->prepare("SELECT username, tipo FROM usuarios WHERE username=? AND contrasena=?;");
-  $stmt->execute([$username, $password]);
-
-  //fetch result
-  $user = $stmt->fetch();
-
-  if ($user) {
-    // se inicia sesion
-    $_SESSION['username'] = $user[0];
-    $_SESSION['tipo'] = $user[1];
-    // Mandamos al usuario al inicio
-    go_home();
-  }else{
-    // username o contrasena incorrecta
-    $falla_inicio = true;
-  }
 }
 $query = "
   SELECT aerodromo_id, nombre
