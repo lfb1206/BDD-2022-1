@@ -26,7 +26,7 @@ $query2 = "SELECT Vuelo.numero_vuelo, Origen.codigo_icao, Origen.nombre as orige
             AND Vuelo.estado = 'rechazado'
             AND Vuelo.origen_icao = Origen.codigo_icao
             AND Vuelo.destino_icao = Destino.codigo_icao;";
-$result2 = $db -> prepare($query);
+$result2 = $db -> prepare($query2);
 $result2 -> execute();
 $dataCollected2 = $result2 -> fetchAll();
 ?>
