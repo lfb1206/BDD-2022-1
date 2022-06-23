@@ -13,6 +13,7 @@ $username = $_SESSION['username'];
     $datos = $result -> fetchAll();
 
 ?>
+
 <table>
     <tr>
         <th>Nombre</th>
@@ -29,6 +30,9 @@ $username = $_SESSION['username'];
     }
     ?>
 </table> 
+
+</br>
+</br>
 
 <?php
 #Llama a conexión, crea el objeto PDO y obtiene la variable $db
