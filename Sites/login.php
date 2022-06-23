@@ -62,7 +62,7 @@ if ($request_method  === 'POST') {
         <?php
       }
       ?>
-      <div class="buttons" style="display: flex; justify-content: center; align-items: center; height: 50px;">
+      <div class="buttons" style="display: flex; justify-content: center; align-items: center; height: 100px;">
         <a class="button is-info is-rounded is-outlined is-centered" href="crear_usuarios.php">
             Importar usuarios
         </a>

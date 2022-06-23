@@ -7,26 +7,6 @@ $falla_inicio = false;
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method  === 'POST') {
   $query = "
-  SELECT count(Src.username), tipo
-  FROM (
-    SELECT 'DGAC' as username, 'admin' as contrasena, 'dgac' as tipo
-    UNION ALL
-    SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RANDOM()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
-    FROM CompaniaAerea
-    UNION ALL
-    SELECT Pasajero.pasaporte as username, CONCAT(LEFT(MD5(Pasajero.nombre), 8), LEFT(MD5(Pasajero.pasaporte), 8)) as contrasena, 'pasajero' as tipo
-    FROM Pasajero 
-  ) as Src
-  WHERE Src.username IN (
-    SELECT username FROM Usuarios
-  )
-  GROUP BY tipo;
-  ";
-  $q = $db -> prepare($query);
-  $q -> execute();
-  $result = $q -> fetchAll();
-
-  $query = "
   INSERT INTO Vuelo (username, contrasena, tipo)
   SELECT *
   FROM (
@@ -40,7 +20,7 @@ if ($request_method  === 'POST') {
   ) as Src
   ON CONFLICT (username) DO NOTHING;
   ";
-  $q = $db -> prepare($query);
+  $q = $db2 -> prepare($query);
   $q -> execute();
 
   // Aquí se tendría que buscar el id del usuario en la BDD con el mail y la contraseña
@@ -64,7 +44,17 @@ if ($request_method  === 'POST') {
     $falla_inicio = true;
   }
 }
-
+$query = "
+  SELECT count(Src.username), tipo
+  FROM Aerodromo
+  WHERE Src.username IN (
+    SELECT username FROM Usuarios
+  )
+  GROUP BY tipo;
+  ";
+  $q = $db2 -> prepare($query);
+  $q -> execute();
+  $result = $q -> fetchAll();
 // En este caso, que se trata de obtener la página de inicio de sesión
 // y no hay una sesión iniciada, se muestra el form
 ?>
@@ -86,13 +76,13 @@ if ($request_method  === 'POST') {
         <div class="field">
           <label class="label">Fecha salida</label>
           <div class="control">
-            <input class="input" type="date" name="fecha_salida">
+            <input class="input" type="datetime" name="fecha_salida">
           </div>
         </div>
         <div class="field">
           <label class="label">Fecha llegada</label>
           <div class="control">
-            <input class="input" type="date" name="fecha_llegada">
+            <input class="input" type="datetime" name="fecha_llegada">
           </div>
         </div>
         <div class="field">

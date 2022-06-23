@@ -15,6 +15,7 @@
       ?> <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</a> <?php
     } elseif ($tipo == 'pasajero') {
       ?> <a class="button is-link" href="sesion_pasajeros.php">Reservar</a> <?php
+      ?> <a class="button is-link" href="sesion_pasajeros.php">Datos</a> <?php
     }
   }
   ?>
