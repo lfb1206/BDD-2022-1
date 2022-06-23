@@ -1,5 +1,6 @@
-<?php include('templates/header.php');   
-$vuelo = $_GET['id_vuelo']
+<?php include('templates/header.php');  
+
+$vuelo = $_GET['vuelo']
 ?>
 
 <h2 class="title">Rechazar vuelo <?php echo "$vuelo" ?></h2>
