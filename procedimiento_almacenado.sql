@@ -1,2 +1,5 @@
 # Procedimiento almacenado
 
+begin
+  
+end;
