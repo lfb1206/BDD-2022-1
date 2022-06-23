@@ -62,6 +62,8 @@ foreach ($dataCollected as $data) {
 ?>
 </table>
 
+<br/>
+<br/>
 
 <?php
 echo "<div class=\"title is-4 is-active\" align=\"center\" style=\"color:#006BB3;\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"</div>";
