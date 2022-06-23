@@ -60,7 +60,7 @@ $query = "
 <section class="section">
 
   <div class="columns is-mobile is-centered is-vcentered cover-all">
-    <div class="column is-half">
+    <div class="column is-4" align="center">
       <!-- https://bulma.io/documentation/form/general/ -->
       <form method="post">
         <div class="field">
@@ -102,7 +102,7 @@ $query = "
         <div class="field">
           <label class="label">Aerodromo salida</label>
           <div class="control">
-            <select name="aerodromo_salida" id="ar" style="border-radius: 10px;">
+            <select name="aerodromo_salida" id="ar" style="border-radius: 10px; height: 48px;">
               <?php
               foreach ($result as $data) {
                   echo "<option value=\"$data[0]\">$data[1]</option>";
@@ -114,7 +114,7 @@ $query = "
         <div class="field">
           <label class="label">Aerodromo llegada</label>
           <div class="control">
-            <select name="aerodromo_llegada" id="ar" style="border-radius: 10px;">
+            <select name="aerodromo_llegada" id="ar" style="border-radius: 10px; height: 48px;">
               <?php
               foreach ($result as $data) {
                   echo "<option value=\"$data[0]\">$data[1]</option>";
