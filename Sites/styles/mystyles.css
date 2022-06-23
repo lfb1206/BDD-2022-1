@@ -75,7 +75,6 @@ select, input {
 th {
     background-color: #B36900;
     color: white;
-    width: auto;
 }
 
 tr:hover {
@@ -84,12 +83,14 @@ tr:hover {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
-    width: auto;
 }
 
 tr:nth-child(odd) {
     background-color: #19A3FF;
-    width: auto;
+}
+
+table {
+    width: fit-content;
 }
 
 .surface {
