@@ -32,7 +32,7 @@ $dataCollected2 = $result2 -> fetchAll();
 ?>
 
 <?php
-echo "<h1 align=\"center\">Vuelos aprobados para la aerolínea \"$aerolinea_escogida\" ";
+echo "<h1 class=\"has-text-danger\" align=\"center\">Vuelos aprobados para la aerolínea \"$aerolinea_escogida\" ";
 ?>
 
 <table>
@@ -63,10 +63,11 @@ foreach ($dataCollected as $data) {
 </table>
 
 
+<?php
+echo "<h1 class=\"has-text-danger\" align=\"center\" style=\"color:#4a4a4a;\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"<h1>";
+?>
+
 <table>
-  <?php
-  echo "<h1 class=\"has-text-danger\"align=\"center\" style=\"color:#4a4a4a;\">Vuelos rechazados para la aerolínea \"$aerolinea_escogida\"<h1>";
-  ?>
   <tr>
     <th>Código de vuelo</th>
     <th>ICAO origen</th>
