@@ -54,18 +54,16 @@ foreach ($vuelos as $vuelo) {
       <!-- https://bulma.io/documentation/form/general/ -->
       <form action="sesion_admin.php" method="post">
         <div class="field">
-          <label class="label">Fecha minima de los vuelos (yyyy-mm-dd)</label>
           <div class="control">
-            <input class="input" type="text" name="fecha_minima">
+            <input class="input" type="text" name="fecha_minima" placeholder="Fecha minima de los vuelos (yyyy-mm-dd)">
           </div>
         </div>
         <div class="field">
-          <label class="label">Fecha maxima de los vuelos (yyyy-mm-dd)</label>
           <div class="control">
-            <input class="input" type="text" name="fecha_maxima">
+            <input class="input" type="text" name="fecha_maxima" placeholder="Fecha maxima de los vuelos (yyyy-mm-dd)">
           </div>
         </div>
-        <button class="button is-primary" type="submit" name="login">Recargar</button>
+        <button class="button is-info" type="submit" name="login">Filtrar</button>
       </form>
     </div>
   </div>
