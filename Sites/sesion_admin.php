@@ -16,7 +16,7 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
   $vuelos = $result -> fetchAll();
 } else {
   $query = "SELECT *
-            FROM vuelo
+            FROM propuesta_vuelo
             WHERE estado = 'pendiente' ;";
   $result = $db2 -> prepare($query);
   $result -> execute();
