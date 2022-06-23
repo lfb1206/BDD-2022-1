@@ -27,7 +27,7 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
 <div class="column is-4 is-offset-4">
   <table>
     <tr>
-      <th>ID</th>
+      <th>IDD</th>
       <th>codigo</th>
       <th>Aceptar</th>
       <th>Rechazar</th>
