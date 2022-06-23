@@ -7,7 +7,7 @@ $vuelo = $_GET['vuelo'];
 <?php
     $query = "UPDATE vuelo 
               SET estado = 'aceptado' 
-              WHERE id_vuelo = $id_vuelo";
+              WHERE id_vuelo = $vuelo";
     $result = $db -> prepare($query);
     $result -> execute();
     $vuelos = $result -> fetchAll();

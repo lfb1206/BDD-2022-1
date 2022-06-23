@@ -68,21 +68,33 @@ $query = "
       <!-- https://bulma.io/documentation/form/general/ -->
       <form method="post">
         <div class="field">
-          <label class="label">Codigo</label>
+          <label class="label">Codigo vuelo</label>
           <div class="control">
-            <input class="input" type="text" name="codigo">
+            <input class="input" type="text" name="codigo_vuelo">
           </div>
         </div>
         <div class="field">
           <label class="label">Fecha salida</label>
           <div class="control">
-            <input class="input" type="datetime" name="fecha_salida">
+            <input class="input" type="date" name="fecha_salida">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Hora salida</label>
+          <div class="control">
+            <input class="input" type="time" name="hora_salida">
           </div>
         </div>
         <div class="field">
           <label class="label">Fecha llegada</label>
           <div class="control">
-            <input class="input" type="datetime" name="fecha_llegada">
+            <input class="input" type="date" name="fecha_llegada">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Hora llegada</label>
+          <div class="control">
+            <input class="input" type="time" name="horaa_llegada">
           </div>
         </div>
         <div class="field">
@@ -103,18 +115,13 @@ $query = "
             <input class="input" type="text" name="id_aerodromo_llegada">
           </div>
         </div>
-        <div class="field">
-          <label class="label">Codigo aeronave</label>
-          <div class="control">
-            <input class="input" type="text" name="aeronave_codigo">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Codigo aeronave</label>
-          <div class="control">
-            <input class="input" type="text" name="aeronave_codigo">
-          </div>
-        </div>
+
+        <input type="hidden" name="estado" value="pendiente">
+        
+        <input type="hidden" name="compagnia_codigo" value="">
+
+        <input type="hidden" name="realizado" value="no realizado">
+        
         <button class="button is-primary" type="submit" name="Crear propuesta">Crear propuesta</button>
       </form>
 

@@ -6,7 +6,7 @@ $id_vuelo = $_GET['id_vuelo']
 <?php
     $query = "UPDATE vuelo 
               SET estado = 'rechazado' 
-              WHERE id_vuelo = $id_vuelo";
+              WHERE id_vuelo = $vuelo";
     $result = $db -> prepare($query);
     $result -> execute();
     $vuelos = $result -> fetchAll();
