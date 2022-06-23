@@ -29,6 +29,14 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
     <tr>
       <th>IDD</th>
       <th>codigo</th>
+      <th>Fecha de salida</th>
+      <th>Fecha de llegada</th>
+      <th>Fecha envio propuesta</th>
+      <th>Código de aeronave</th>
+      <th>Id aerodromo de salida</th>
+      <th>Id aerodromo de llegada</th>
+      <th>Estado</th>
+      <th>Código de la compania</th>
       <th>Aceptar</th>
       <th>Rechazar</th>
     </tr>
@@ -38,6 +46,14 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
         <tr> 
           <td><?php echo "$vuelo[0]"; ?></td> 
           <td><?php echo "$vuelo[1]"; ?></td> 
+          <td><?php echo "$vuelo[2]"; ?></td>
+          <td><?php echo "$vuelo[3]"; ?></td>
+          <td><?php echo "$vuelo[4]"; ?></td>
+          <td><?php echo "$vuelo[5]"; ?></td>
+          <td><?php echo "$vuelo[6]"; ?></td>
+          <td><?php echo "$vuelo[7]"; ?></td>
+          <td><?php echo "$vuelo[8]"; ?></td>
+          <td><?php echo "$vuelo[9]"; ?></td>
           <td><?php
             echo "<a href=\"aceptar_vuelo.php?vuelo=$vuelo[0]\"> Aceptar </a>"
           ?></td>
