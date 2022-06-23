@@ -46,7 +46,7 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
 
 <?php
 $query = "
-  SELECT aerodromo_id, nombre
+  SELECT DISTINCT codigo_icao, nombre
   FROM Aerodromo
   ";
   $q = $db2 -> prepare($query);
