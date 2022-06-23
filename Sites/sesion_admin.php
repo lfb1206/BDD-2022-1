@@ -6,7 +6,7 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
   $fecha_minima = $_POST["fecha_minima"];
   $fecha_maxima = $_POST["fecha_maxima"];
   $query = "SELECT *
-            FROM vuelo
+            FROM propuesta_vuelo
             WHERE estado = 'pendiente' 
             AND '$fecha_minima' <= fecha_salida 
             AND fecha_salida <= '$fecha_maxima'

@@ -45,14 +45,10 @@ if ($request_method  === 'POST') {
   }
 }
 $query = "
-  SELECT id, nombre
+  SELECT aerodromo_id, nombre
   FROM Aerodromo
-  WHERE Src.username IN (
-    SELECT username FROM Usuarios
-  )
-  GROUP BY tipo;
   ";
-  $q = $db -> prepare($query);
+  $q = $db2 -> prepare($query);
   $q -> execute();
   $result = $q -> fetchAll();
 // En este caso, que se trata de obtener la página de inicio de sesión
@@ -106,13 +102,25 @@ $query = "
         <div class="field">
           <label class="label">Aerodromo salida</label>
           <div class="control">
-            <input class="input" type="text" name="id_aerodromo_salida">
+            <select name="aerodromo_salida" id="ar">
+              <?php
+              foreach ($result as $data) {
+                  echo "<option value=\"$data[0]\">$data[1]</option>";
+              }
+              ?>
+            </select>
           </div>
         </div>
         <div class="field">
           <label class="label">Aerodromo llegada</label>
           <div class="control">
-            <input class="input" type="text" name="id_aerodromo_llegada">
+            <select name="aerodromo_llegada" id="ar">
+              <?php
+              foreach ($result as $data) {
+                  echo "<option value=\"$data[0]\">$data[1]</option>";
+              }
+              ?>
+            </select>
           </div>
         </div>
 

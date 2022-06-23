@@ -5,9 +5,9 @@ $vuelo = $_GET['vuelo'];
 <h2 class="title">Aceptar vuelo <?php echo "$vuelo" ?></h2>
 
 <?php
-    $query = "UPDATE vuelo 
+    $query = "UPDATE propuesta_vuelo 
               SET estado = 'aceptado' 
-              WHERE id_vuelo = $vuelo";
+              WHERE propuesta_vuelo_id = $vuelo";
     $result = $db2 -> prepare($query);
     $result -> execute();
     $vuelos = $result -> fetchAll();
