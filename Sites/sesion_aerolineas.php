@@ -17,6 +17,7 @@ if ($request_method  === 'POST') {
     // username o contrasena incorrecta
     $falla_inicio = true;
   }
+
   $codigo_vuelo = $_POST['codigo_vuelo'];
   
   $fecha_salida = $_POST['fecha_salida'];
@@ -38,18 +39,7 @@ if ($request_method  === 'POST') {
   $fecha_envio_propuesta = date("Y-m-d");
 
   $query = "
-  INSERT INTO Vuelo (username, contrasena, tipo)
-  SELECT *
-  FROM (
-    SELECT 'DGAC' as username, 'admin' as contrasena, 'dgac' as tipo
-    UNION ALL
-    SELECT CompaniaAerea.codigo_aerolinea as username, CAST(FLOOR(RANDOM()*1000000000) as varchar(255)) as contrasena, 'aerolinea' as tipo
-    FROM CompaniaAerea
-    UNION ALL
-    SELECT Pasajero.pasaporte as username, CONCAT(LEFT(MD5(Pasajero.nombre), 8), LEFT(MD5(Pasajero.pasaporte), 8)) as contrasena, 'pasajero' as tipo
-    FROM Pasajero
-  ) as Src
-  ON CONFLICT (username) DO NOTHING;
+  INSERT INTO Propuesta_vuelo ( $codigo_vuelo, $fecha_salida, $fecha_llegada, $fecha_envio_propuesta, $aeronave_codigo, $aerodromo_salida,  $aerodromo_llegada, $estado, $compagnia_codigo, $realizado)
   ";
   $q = $db2 -> prepare($query);
   $q -> execute();
