@@ -1,4 +1,4 @@
-Para logearse en la aplicación las contraseñas son las siguientes:
+Para logearse en la aplicación los usuarios y las contraseñas son las siguientes:
 
 username  |    contrasena    |   tipo    
 ----------+------------------+-----------
