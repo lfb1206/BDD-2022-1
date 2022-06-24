@@ -16,6 +16,8 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
     $q -> execute();
     $vuelos = $q -> fetchAll();
     ?>
+    <h2 class="title is-1"> Hola <?php echo "$ciudad_origen"; ?> </h2>
+    <h2 class="title is-1"> Hola <?php echo "$ciudad_destino"; ?> </h2>
     <table>
         <tr>
             <th>Numero de vuelo</th>
@@ -69,7 +71,6 @@ $query = "
               foreach ($result as $data) {
                   echo "<option value=\"$data[0]\">$data[1]</option>";
               }
-              echo "<option value=\"hola\">hola</option>";
               ?>
             </select>
         </div>
@@ -82,7 +83,6 @@ $query = "
               foreach ($result as $data) {
                   echo "<option value=\"$data[0]\">$data[1]</option>";
               }
-              echo "<option value=\"hola\">hola</option>";
               ?>
             </select>
         </div>
