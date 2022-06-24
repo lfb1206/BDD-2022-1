@@ -3,7 +3,7 @@
 $id = $_GET['id'];
 $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado
         FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
-        WHERE Vuelo.id_vuelo = $id
+        WHERE Vuelo.id_vuelo = '$id'
             AND Aerodromo1.origen_icao = Vuelo.origen_icao 
             AND Aerodromo2.destino_icao = Vuelo.destino_icao
             AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
@@ -44,7 +44,7 @@ $vuelos = $q -> fetchAll();
 <div class="columns is-mobile is-centered is-vcentered cover-all">
     <div class="column is-half">
     <!-- https://bulma.io/documentation/form/general/ -->
-        <button class="button is-info" href="sesion_pasajeros.php" >Volver</button>
+        <a class="button is-link" href="sesion_pasajeros.php">Volver</a>
     </div>
 </div>
 
