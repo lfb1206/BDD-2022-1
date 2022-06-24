@@ -13,7 +13,7 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
                 AND Aerodromo1.origen_icao = '$ciudad_origen'
                 AND Aerodromo2.destino_icao = '$ciudad_destino'
                 AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
-    $q = $db1 -> prepare($query);
+    $q = $db -> prepare($query);
     $q -> execute();
     $vuelos = $q -> fetchAll();
     ?>
@@ -52,7 +52,7 @@ $query = "
   SELECT DISTINCT codigo_icao, nombre
   FROM Aerodromo
   ";
-  $q = $db2 -> prepare($query);
+  $q = $db -> prepare($query);
   $q -> execute();
   $result = $q -> fetchAll();
 ?>
