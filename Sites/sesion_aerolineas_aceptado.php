@@ -8,7 +8,7 @@ $query = "SELECT Vuelo.numero_vuelo, Origen.codigo_icao, Origen.nombre as origen
             Destino.codigo_icao, Destino.nombre as destino,
             Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.estado
           FROM Vuelo, CompaniaAerea, Aerodromo as Origen, Aerodromo as Destino
-          WHERE UPPER(CompaniaAerea.nombre_aerolinea) LIKE '%$aerolinea_escogida%'
+          WHERE UPPER(CompaniaAerea.codigo_aerolinea) LIKE '%$aerolinea_escogida%'
             AND CompaniaAerea.codigo_aerolinea = Vuelo.codigo_aerolinea 
             AND Vuelo.estado = 'aceptado'
             AND Vuelo.origen_icao = Origen.codigo_icao
