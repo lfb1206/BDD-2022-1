@@ -74,6 +74,7 @@ $query = "
               foreach ($result as $data) {
                   echo "<option value=\"$data[0]\">$data[1]</option>";
               }
+              echo "<option value=\"hola\">hola</option>";
               ?>
             </select>
         </div>
@@ -86,6 +87,7 @@ $query = "
               foreach ($result as $data) {
                   echo "<option value=\"$data[0]\">$data[1]</option>";
               }
+              echo "<option value=\"hola\">hola</option>";
               ?>
             </select>
         </div>
