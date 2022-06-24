@@ -1,4 +1,4 @@
-<?php include('../templates/header.php');  
+<?php include('templates/header.php');  
 
 $vuelo = $_GET['vuelo']
 ?>
@@ -19,4 +19,4 @@ $vuelo = $_GET['vuelo']
     </a>
 </div>
 
-<?php include('../templates/footer.php'); ?>
+<?php include('templates/footer.php'); ?>

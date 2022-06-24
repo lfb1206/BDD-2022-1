@@ -1,4 +1,4 @@
-<?php include('../templates/header.php');   ?>
+<?php include('templates/header.php');   ?>
 
 <?php
 
@@ -49,4 +49,4 @@ foreach ($dataCollected2 as $data2) {
 ?>
 </table>
 
-<?php include('../templates/footer.php'); ?>
+<?php include('templates/footer.php'); ?>

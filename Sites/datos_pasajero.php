@@ -1,4 +1,4 @@
-<?php include('../templates/header.php');
+<?php include('templates/header.php');
 
 $username = $_SESSION['username']; 
     $query = "SELECT nombre, pasaporte, id_pasajero
@@ -59,4 +59,4 @@ $datos2 = $result2 -> fetchAll();
 </div>
 
 
-<?php include('../templates/footer.php'); ?>
+<?php include('templates/footer.php'); ?>

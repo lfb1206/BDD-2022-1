@@ -1,5 +1,5 @@
 <?php
-include '../templates/header.php';
+include 'templates/header.php';
 
 $falla_inicio = false;
 
@@ -71,5 +71,5 @@ if ($request_method  === 'POST') {
   </div>
 </section>
 
-<?php include '../templates/footer.php'; ?>
+<?php include 'templates/footer.php'; ?>
 

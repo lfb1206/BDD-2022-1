@@ -68,7 +68,7 @@ function table_from_query($query) { ?>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="../styles/mystyles.css">
+        <link rel="stylesheet" href=<?php echo "$style"; ?>>
         <title> Plataforma de gestión comercial de vuelos </title>
         <link rel="icon" href="https://icon-library.com/images/airplane-icon/airplane-icon-29.jpg">
     </head>
@@ -93,7 +93,7 @@ function table_from_query($query) { ?>
                     </div>
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable is-black" style = "background-color: hsl(0, 0%, 4%);">
-                    <a href="index.php">
+                    <a href=<?php echo "$crear"; ?>>
                         <div style="border: 5px; width: 150px; padding: 10px;";>
                             <h4 class="title is-3 has-text-info">Menú</h4>
                         </div>

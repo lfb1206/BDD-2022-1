@@ -9,7 +9,7 @@
     if ($tipo == 'dgac') {
       ?>
       <h2 class="title is-1"> ¡Hola administrador! </h2> 
-      <a class="button is-link" href="admin/sesion_admin.php">Aprobar o rechazar vuelos</a> 
+      <a class="button is-link" href="sesion_admin.php">Aprobar o rechazar vuelos</a> 
       <?php
     } elseif ($tipo == 'aerolinea') {
       $query = "SELECT nombre_aerolinea
@@ -21,9 +21,9 @@
       $aerolinea = $dataCollected[0][0];
       ?>
       <h2 class="title is-1"> Hola <?php echo "$aerolinea"; ?> </h2>
-      <a class="button is-link" href="aerolinea/sesion_aerolineas.php">Proponer vuelos</a>
-      <a class="button is-link" href="aerolinea/sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
-      <a class="button is-link" href="aerolinea/sesion_aerolineas_rechazado.php">Vuelos rechazado</a> 
+      <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</a>
+      <a class="button is-link" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
+      <a class="button is-link" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a> 
       <?php
     } elseif ($tipo == 'pasajero') {
       $query = "SELECT DISTINCT nombre
@@ -35,8 +35,8 @@
       $usuario = $dataCollected[0][0];
       ?>
       <h2 class="title is-1"> Hola <?php echo "$usuario"; ?> </h2>
-      <a class="button is-link" href="pasajero/sesion_pasajeros.php">Reservar</a>
-      <a class="button is-link" href="pasajero/datos_pasajero.php">Datos</a> 
+      <a class="button is-link" href="sesion_pasajeros.php">Reservar</a>
+      <a class="button is-link" href="datos_pasajero.php">Datos</a> 
       <?php
     }
   }

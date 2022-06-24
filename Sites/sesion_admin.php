@@ -1,4 +1,4 @@
-<?php include('../templates/header.php');   ?>
+<?php include('templates/header.php');   ?>
 
 <?php
 #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -8,7 +8,7 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
   $query = "SELECT *
             FROM propuesta_vuelo
             WHERE estado = 'pendiente' 
-            AND '$fecha_minima' <= fecha_salida 
+            AND '$fecha_minima' <= fecha_llegada 
             AND fecha_salida <= '$fecha_maxima'
             ORDER BY fecha_salida;";
   $result = $db2 -> prepare($query);
@@ -89,4 +89,4 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
   </table> 
   </div>
 
-<?php include('../templates/footer.php'); ?>
+<?php include('templates/footer.php'); ?>
