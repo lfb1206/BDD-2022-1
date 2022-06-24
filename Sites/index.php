@@ -22,8 +22,10 @@
         <h2><?php echo "$vuelo[0]"; ?></h2>
       <?php
       }
+      $aerolinea = $dataCollected[0][0];
       ?>
-      <h2 class="title is-1"> Hola <?php echo "$dataCollected"; ?> </h2>
+      <h2 class="title is-1"> Hola <?php echo "$aerolinea"; ?> </h2>
+      <h2 class="title is-1"> Hola <?php echo "$dataCollected[0][0]"; ?> </h2>
       <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</a>
       <a class="button is-link" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
       <a class="button is-link" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a> 
@@ -36,7 +38,7 @@
       $result -> execute();
       $dataCollected = $result -> fetchAll();
       ?>
-      <h2 class="title is-1"> Hola <?php echo "$dataCollected"; ?> </h2>
+      <h2 class="title is-1"> Hola <?php echo "$dataCollected[0][0]"; ?> </h2>
       <a class="button is-link" href="sesion_pasajeros.php">Reservar</a>
       <a class="button is-link" href="datos_pasajero.php">Datos</a> 
       <?php
