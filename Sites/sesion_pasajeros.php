@@ -17,6 +17,7 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
     $q -> execute();
     $vuelos = $q -> fetchAll();
     ?>
+    <h2 class="title is-1"> Hola <?php echo "$fecha_despegue"; ?> </h2>
     <table>
         <tr>
             <th>Numero de vuelo</th>
