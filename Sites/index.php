@@ -12,9 +12,9 @@
       <a class="button is-link" href="sesion_admin.php">Aprobar o rechazar vuelos</a> 
       <?php
     } elseif ($tipo == 'aerolinea') {
-      $query = "SELECT DISTINCT nombre_aerolinea
+      $query = "SELECT nombre_aerolinea
                 FROM CompaniaAerea
-                WHERE $username = codigo_aerolinea;";
+                WHERE '$username' = codigo_aerolinea;";
       $result = $db -> prepare($query);
       $result -> execute();
       $dataCollected = $result -> fetchAll();
@@ -31,7 +31,7 @@
     } elseif ($tipo == 'pasajero') {
       $query = "SELECT DISTINCT nombre
                 FROM Pasajero
-                WHERE $username = pasaporte;";
+                WHERE '$username' = pasaporte;";
       $result = $db -> prepare($query);
       $result -> execute();
       $dataCollected = $result -> fetchAll();
