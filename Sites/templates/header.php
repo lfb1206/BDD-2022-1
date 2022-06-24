@@ -110,16 +110,19 @@ function table_from_query($query) { ?>
                                     <a href="sesion_aerolineas.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Proponer vuelo</div>
                                     </a>
+                                    <br/>
                                     <a href="sesion_aerolineas_aceptado.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Vuelos aceptados</div>
                                     </a>
+                                    <br/>
                                     <a href="sesion_aerolineas_rechazado.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Vuelos rechazado</div>
                                     </a>
                                 <?php } elseif ($_SESSION['tipo'] == "pasajero") { ?>
-                                    <a href="sesion_pasajeros.php"" class="title is-5 has-text-info is-active">
+                                    <a href="sesion_pasajeros.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Reservar</div>
                                     </a>
+                                    <br/>
                                     <a href="datos_pasajero.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Datos</div>
                                     </a>
