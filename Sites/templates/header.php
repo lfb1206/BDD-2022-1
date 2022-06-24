@@ -59,6 +59,7 @@ function table_from_query($query) { ?>
   </div>
 <?php
 }
+$logeado = isset($_SESSION['username'])
 ?>
 
 <!DOCTYPE html>
@@ -92,7 +93,7 @@ function table_from_query($query) { ?>
                         </a>
                     </div>
                 </div>
-                <?php if (isset($_SESSION['username'])) { ?>
+                <?php if ($logeado) { ?>
                     <div class="navbar-item">
                         <div class="buttons">
                             <a class="button is-info is-rounded is-outlined is-right" href="logout.php">
@@ -118,7 +119,7 @@ function table_from_query($query) { ?>
 
                     <div class="navbar-dropdown is-center is-boxed" style = "background-color: hsl(0, 0%, 4%);">
                         <div class="dropdown-content" style = "background-color: hsl(0, 0%, 4%);">
-                            <?php if (isset($_SESSION['username'])) { ?>
+                            <?php if ($logeado) { ?>
                                 <?php if ($_SESSION['tipo'] == "dgac") { ?>
                                     <a href="sesion_admin.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Gestionar vuelos</div>
@@ -146,7 +147,7 @@ function table_from_query($query) { ?>
                                 <?php } ?>
                             <?php } ?>
                             <hr class="dropdown-divider" style = "background-color: hsl(0, 0%, 4%);">
-                            <?php if (isset($_SESSION['username'])) { ?>
+                            <?php if ($logeado) { ?>
                                 <br/>
                                 <a href="logout.php" class="title is-5 has-text-info is-active">
                                     <div align="center"  class="title is-5 has-text-info is-active">Cerrar Sesión</div>
