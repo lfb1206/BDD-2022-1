@@ -9,7 +9,6 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
             WHERE Vuelo.estado = 'aceptado'
                 AND Vuelo.origen_icao = '$ciudad_origen'
                 AND Vuelo.destino_icao = '$ciudad_destino'
-                AND Vuelo.fecha_salida = '$fecha_despegue'
                 AND Aerodromo1.codigo_icao = '$ciudad_origen'
                 AND Aerodromo2.codigo_icao = '$ciudad_destino'
                 AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
