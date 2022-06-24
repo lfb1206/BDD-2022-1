@@ -104,15 +104,24 @@ function table_from_query($query) { ?>
                             <?php if (isset($_SESSION['username'])) { ?>
                                 <?php if ($_SESSION['tipo'] == "dgac") { ?>
                                     <a href="sesion_admin.php" class="title is-5 has-text-info is-active">
-                                        <div align="center"  class="title is-5 has-text-info is-active">Sesión admin</div>
+                                        <div align="center"  class="title is-5 has-text-info is-active">Gestionar vuelos</div>
                                     </a>
                                 <?php } elseif ($_SESSION['tipo'] == "aerolinea") { ?>
                                     <a href="sesion_aerolineas.php" class="title is-5 has-text-info is-active">
-                                        <div align="center"  class="title is-5 has-text-info is-active">Sesion aerolineas</div>
+                                        <div align="center"  class="title is-5 has-text-info is-active">Proponer vuelo</div>
+                                    </a>
+                                    <a href="sesion_aerolineas_aceptado.php" class="title is-5 has-text-info is-active">
+                                        <div align="center"  class="title is-5 has-text-info is-active">Vuelos aceptados</div>
+                                    </a>
+                                    <a href="sesion_aerolineas_rechazado.php" class="title is-5 has-text-info is-active">
+                                        <div align="center"  class="title is-5 has-text-info is-active">Vuelos rechazado</div>
                                     </a>
                                 <?php } elseif ($_SESSION['tipo'] == "pasajero") { ?>
-                                    <a href="pasajeros.php" class="title is-5 has-text-info is-active">
-                                        <div align="center"  class="title is-5 has-text-info is-active">Pasajeros</div>
+                                    <a href="sesion_pasajeros.php"" class="title is-5 has-text-info is-active">
+                                        <div align="center"  class="title is-5 has-text-info is-active">Reservar</div>
+                                    </a>
+                                    <a href="datos_pasajero.php" class="title is-5 has-text-info is-active">
+                                        <div align="center"  class="title is-5 has-text-info is-active">Datos</div>
                                     </a>
                                 <?php } ?>
                             <?php } ?>
