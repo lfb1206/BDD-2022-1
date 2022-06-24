@@ -3,10 +3,15 @@
 if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset($_POST["fecha_despegue"])) {
     $ciudad_origen = $_POST["ciudad_origen"];
     $ciudad_destino = $_POST["ciudad_destino"];
-    $fecha_despegue = $_POST["fecha_despegue"];
+    $fecha_despegue1 = $_POST["fecha_despegue"];
+    $fecha_despegue2 = $_POST["fecha_despegue"];
+    $fecha_despegue2 -> modify('+1 day');
     $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado, Vuelo.id_vuelo
             FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
-            WHERE Vuelo.fecha_salida >= '$fecha_despegue'
+            WHERE Vuelo.origen_icao = '$ciudad_origen'
+                AND Vuelo.destino_icao = '$ciudad_destino'
+                AND Vuelo.fecha_salida >= '$fecha_despegue1' 
+                AND Vuelo.fecha_salida < '$fecha_despegue2'
                 AND Aerodromo1.codigo_icao = '$ciudad_origen'
                 AND Aerodromo2.codigo_icao = '$ciudad_destino'
                 AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
@@ -14,7 +19,6 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
     $q -> execute();
     $vuelos = $q -> fetchAll();
     ?>
-    <h2 class="title is-1"> Hola <?php echo "$fecha_despegue"; ?> </h2>
     <table>
         <tr>
             <th>Numero de vuelo</th>
