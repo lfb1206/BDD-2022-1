@@ -1,6 +1,5 @@
 <?php include('templates/header.php');
 
-$request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset($_POST["fecha_despegue"])) {
     $ciudad_origen = $_POST["ciudad_origen"];
     $ciudad_destino = $_POST["ciudad_destino"];
@@ -49,9 +48,6 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
     </table>
     <?php
 }
-?>
-
-<?php
 $query = "
   SELECT DISTINCT codigo_icao, nombre
   FROM Aerodromo
@@ -65,7 +61,7 @@ $query = "
 <div class="columns is-mobile is-centered is-vcentered cover-all">
     <div class="column is-half">
     <!-- https://bulma.io/documentation/form/general/ -->
-    <form action="sesion_pasajero.php" method="post">
+    <form action="sesion_pasajeros.php" method="post">
         <div class="field">
         <label class="label"> Ciudad de origen </label>
         <div class="control">
