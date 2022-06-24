@@ -44,7 +44,7 @@
 </section>
 
 <!-- https://bulma.io/documentation/layout/tiles/ -->
-<div class="buttons">
+<div class="buttons" style="justify-content: center;">
   <a class="button is-link is-rounded" href="crear_usuarios.php">
       Importar usuarios
   </a>
