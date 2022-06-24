@@ -19,11 +19,11 @@
       $result -> execute();
       $dataCollected = $result -> fetchAll();
       foreach ($dataCollected as $vuelo) {?>
-        <h2><?php echo "$vuelo"; ?></h2>
+        <h2><?php echo "$vuelo[0]"; ?></h2>
       <?php
       }
       ?>
-      <h2 class="title is-1"> Hola <?php echo "$dataCollected[0]"; ?> </h2>
+      <h2 class="title is-1"> Hola <?php echo "$dataCollected"; ?> </h2>
       <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</a>
       <a class="button is-link" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
       <a class="button is-link" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a> 
@@ -36,7 +36,7 @@
       $result -> execute();
       $dataCollected = $result -> fetchAll();
       ?>
-      <h2 class="title is-1"> Hola <?php echo "$dataCollected[0]"; ?> </h2>
+      <h2 class="title is-1"> Hola <?php echo "$dataCollected"; ?> </h2>
       <a class="button is-link" href="sesion_pasajeros.php">Reservar</a>
       <a class="button is-link" href="datos_pasajero.php">Datos</a> 
       <?php
