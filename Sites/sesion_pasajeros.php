@@ -8,6 +8,7 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
             FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
             WHERE Vuelo.origen_icao = '$ciudad_origen'
                 AND Vuelo.destino_icao = '$ciudad_destino'
+                AND Vuelo.fecha_salida LIKE '%$fecha_despegue%'
                 AND Aerodromo1.codigo_icao = '$ciudad_origen'
                 AND Aerodromo2.codigo_icao = '$ciudad_destino'
                 AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
