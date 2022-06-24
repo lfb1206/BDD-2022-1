@@ -51,32 +51,32 @@ $query = "
     <div class="column is-4" align="center">
       <!-- https://bulma.io/documentation/form/general/ -->
       <form method="post">
-
-        <label class="label">Codigo vuelo</label>
+        <div class="field">
+          <label class="label">Codigo vuelo</label>
           <div class="control">
             <input class="input" type="text" name="codigo_vuelo">
           </div>
         </div>
-
-        <label class="label">Fecha salida</label>
+        <div class="field">
+          <label class="label">Fecha salida</label>
           <div class="control">
             <input class="input" type="date" name="fecha_salida">
           </div>
         </div>
-        
-        <label class="label">Fecha llegada</label>
+        <div class="field">
+          <label class="label">Fecha llegada</label>
           <div class="control">
             <input class="input" type="date" name="fecha_llegada">
           </div>
         </div>
-        
-        <label class="label">Codigo aeronave</label>
+        <div class="field">
+          <label class="label">Codigo aeronave</label>
           <div class="control">
             <input class="input" type="text" name="aeronave_codigo">
           </div>
         </div>
-        
-        <label class="label">Aerodromo salida</label>
+        <div class="field">
+          <label class="label">Aerodromo salida</label>
           <div class="control">
             <select name="aerodromo_salida" id="ar" style="border-radius: 10px; height: 48px;">
               <?php
@@ -87,8 +87,8 @@ $query = "
             </select>
           </div>
         </div>
-        
-        <label class="label">Aerodromo llegada</label>
+        <div class="field">
+          <label class="label">Aerodromo llegada</label>
           <div class="control">
             <select name="aerodromo_llegada" id="ar" style="border-radius: 10px; height: 48px;">
               <?php

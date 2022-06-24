@@ -49,23 +49,20 @@ $vuelos = $q -> fetchAll();
         <form method="post">
             <div class="field">
                 <label class="label">Pasaporte primer pasajero</label>
-                    <div class="control">
-                        <input class="input" type="text" name="pasaporte1">
-                    </div>
+                <div class="control">
+                    <input class="input" type="text" name="pasaporte1">
                 </div>
             </div>
             <div class="field">
                 <label class="label">Pasaporte segundo pasajero</label>
-                    <div class="control">
-                        <input class="input" type="text" name="pasaporte2" placeholder="opcional">
-                    </div>
+                <div class="control">
+                    <input class="input" type="text" name="pasaporte2" placeholder="opcional">
                 </div>
             </div>
             <div class="field">
                 <label class="label">Pasaporte tercer pasajero</label>
-                    <div class="control">
-                        <input class="input" type="text" name="pasaporte3" placeholder="opcional">
-                    </div>
+                <div class="control">
+                    <input class="input" type="text" name="pasaporte3" placeholder="opcional">
                 </div>
             </div>
 
