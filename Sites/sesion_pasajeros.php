@@ -6,8 +6,7 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
     $fecha_despegue = $_POST["fecha_despegue"];
     $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado, Vuelo.id_vuelo
             FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
-            WHERE Vuelo.fecha_salida >= '$fecha_despegue' 
-                AND Vuelo.fecha_salida < dateadd(day,1,'$fecha_despegue');";
+            WHERE Vuelo.fecha_salida >= '$fecha_despegue';";
     $q = $db -> prepare($query);
     $q -> execute();
     $vuelos = $q -> fetchAll();
