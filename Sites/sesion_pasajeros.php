@@ -6,11 +6,11 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
     $fecha_despegue = $_POST["fecha_despegue"];
     $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado, Vuelo.id_vuelo
             FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
-            WHERE Vuelo.estado = 'aceptado'
-                AND UPPER(Vuelo.origen_icao) = '$ciudad_origen'
-                AND UPPER(Vuelo.destino_icao) = '$ciudad_destino'
-                AND UPPER(Aerodromo1.codigo_icao) = '$ciudad_origen'
-                AND UPPER(Aerodromo2.codigo_icao) = '$ciudad_destino'
+            WHERE Vuelo.origen_icao = '$ciudad_origen'
+                AND Vuelo.destino_icao = '$ciudad_destino'
+                AND Vuelo.fecha_salida = '$fecha_despegue'
+                AND Aerodromo1.codigo_icao = '$ciudad_origen'
+                AND Aerodromo2.codigo_icao = '$ciudad_destino'
                 AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
     $q = $db -> prepare($query);
     $q -> execute();
