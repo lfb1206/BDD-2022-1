@@ -3,7 +3,7 @@
 $vuelo = $_GET['vuelo']
 ?>
 
-<h2 class="title">Rechazar vuelo <?php echo "$vuelo" ?></h2>
+<h2 class="title">Vuelo rechazado</h2>
 <?php
     $query = "UPDATE propuesta_vuelo 
               SET estado = 'rechazado' 
@@ -13,8 +13,8 @@ $vuelo = $_GET['vuelo']
     $vuelos = $result -> fetchAll();
 ?>
 
-<div class="buttons">
-    <a class="button is-info is-rounded is-outlined is-right" href="sesion_admin.php">
+<div class="buttons" style="justify-content: center;">
+    <a class="button is-info is-rounded" href="sesion_admin.php">
         Volver
     </a>
 </div>
