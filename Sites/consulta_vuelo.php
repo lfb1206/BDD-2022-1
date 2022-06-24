@@ -9,7 +9,7 @@ $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, Compa
             AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
 $q = $db -> prepare($query);
 $q -> execute();
-$vuelos = $q -> fetchAll();
+$vuelo = $q -> fetchAll();
 ?>
 <table>
     <tr>
@@ -23,22 +23,16 @@ $vuelos = $q -> fetchAll();
         <th>Estado</th>
         <th>Estado</th>
     </tr>
-    <?php
-    foreach ($vuelos as $vuelo) {
-        ?>
-        <tr>
-            <td><?php echo "$vuelo[0]"; ?></td>
-            <td><?php echo "$vuelo[1]"; ?></td>
-            <td><?php echo "$vuelo[2]"; ?></td>
-            <td><?php echo "$vuelo[3]"; ?></td>
-            <td><?php echo "$vuelo[4]"; ?></td>
-            <td><?php echo "$vuelo[5]"; ?></td>
-            <td><?php echo "$vuelo[6]"; ?></td>
-            <td><?php echo "$vuelo[7]"; ?></td>
-        </tr>
-        <?php
-    }
-    ?>
+    <tr>
+        <td><?php echo "$vuelo[0]"; ?></td>
+        <td><?php echo "$vuelo[1]"; ?></td>
+        <td><?php echo "$vuelo[2]"; ?></td>
+        <td><?php echo "$vuelo[3]"; ?></td>
+        <td><?php echo "$vuelo[4]"; ?></td>
+        <td><?php echo "$vuelo[5]"; ?></td>
+        <td><?php echo "$vuelo[6]"; ?></td>
+        <td><?php echo "$vuelo[7]"; ?></td>
+    </tr>
 </table>
 
 <div class="columns is-mobile is-centered is-vcentered cover-all">
