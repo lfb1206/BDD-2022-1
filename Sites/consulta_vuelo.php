@@ -42,13 +42,12 @@ $vuelos = $q -> fetchAll();
 
 </br>
 </br>
-
-<div class="columns is-mobile is-centered is-vcentered cover-all">
-    <h2 class="title is-4">
-        Para realizar una reserva ingresa 
-        </br>
-        por lo menos un numero de pasaporte 
-    </h2>     
+<h2 class="title is-4">
+    Para realizar una reserva ingresa 
+    </br>
+    por lo menos un numero de pasaporte 
+</h2>   
+<div class="columns is-mobile is-centered is-vcentered cover-all">  
     <div class="column is-4">
     <!-- https://bulma.io/documentation/form/general/ -->
         <form method="post">
