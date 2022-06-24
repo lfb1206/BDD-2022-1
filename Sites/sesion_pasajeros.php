@@ -30,19 +30,20 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
             <th>Estado</th>
         </tr>
         <?php
-        foreach ($vuelos as $vuelo) {
-            echo '<a href="consulta_vuelo.php?id='.urlencode($vuelo[8]).'">';?>
-                <tr>
-                    <td><?php echo "$vuelo[0]"; ?></td>
-                    <td><?php echo "$vuelo[1]"; ?></td>
-                    <td><?php echo "$vuelo[2]"; ?></td>
-                    <td><?php echo "$vuelo[3]"; ?></td>
-                    <td><?php echo "$vuelo[4]"; ?></td>
-                    <td><?php echo "$vuelo[5]"; ?></td>
-                    <td><?php echo "$vuelo[6]"; ?></td>
-                    <td><?php echo "$vuelo[7]"; ?></td>
-                </tr>
-            </a>
+        foreach ($vuelos as $vuelo) {?>
+            <tr>
+                <td><?php
+                    echo "<a href=\"consulta_vuelo.php?id=$vuelo[8]\"> $vuelo[0] </a>"
+                ?></td>
+                <td><?php echo "$vuelo[0]"; ?></td>
+                <td><?php echo "$vuelo[1]"; ?></td>
+                <td><?php echo "$vuelo[2]"; ?></td>
+                <td><?php echo "$vuelo[3]"; ?></td>
+                <td><?php echo "$vuelo[4]"; ?></td>
+                <td><?php echo "$vuelo[5]"; ?></td>
+                <td><?php echo "$vuelo[6]"; ?></td>
+                <td><?php echo "$vuelo[7]"; ?></td>
+            </tr>
             <?php
         }
         ?>
