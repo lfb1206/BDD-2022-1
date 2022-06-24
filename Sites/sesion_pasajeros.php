@@ -9,15 +9,14 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
             WHERE Vuelo.estado = 'aceptado'
                 AND Vuelo.origen_icao = '$ciudad_origen'
                 AND Vuelo.destino_icao = '$ciudad_destino'
-                AND Aerodromo1.origen_icao = '$ciudad_origen'
-                AND Aerodromo2.destino_icao = '$ciudad_destino'
+                AND Vuelo.fecha_salida = '$fecha_despegue'
+                AND Aerodromo1.codigo_icao = '$ciudad_origen'
+                AND Aerodromo2.codigo_icao = '$ciudad_destino'
                 AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
     $q = $db -> prepare($query);
     $q -> execute();
     $vuelos = $q -> fetchAll();
     ?>
-    <h2 class="title is-1"> Hola <?php echo "$ciudad_origen"; ?> </h2>
-    <h2 class="title is-1"> Hola <?php echo "$ciudad_destino"; ?> </h2>
     <table>
         <tr>
             <th>Numero de vuelo</th>
