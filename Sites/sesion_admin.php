@@ -24,6 +24,28 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
 }
 
 ?>
+  <details>
+    <summary class = "title is-5 has-text-black">Filtrar</summary>
+    <div class="columns is-mobile is-centered is-vcentered cover-all">
+      <div class="column is-4">
+        <!-- https://bulma.io/documentation/form/general/ -->
+        <form action="sesion_admin.php" method="post">
+          <div class="field">
+            <div class="control">
+              <input text-align="center" class="input" type="date" name="fecha_minima">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <input text-align="center" class="input" type="date" name="fecha_maxima">
+            </div>
+          </div>
+          <button class="button is-info" type="submit" name="login">Filtrar</button>
+        </form>
+      </div>
+    </div>
+  </details>
+
 <div class="column is-centered">
   <table>
     <tr>
@@ -65,25 +87,6 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
     }
     ?>
   </table> 
-  </div>
-
-  <div class="columns is-mobile is-centered is-vcentered cover-all">
-    <div class="column is-4">
-      <!-- https://bulma.io/documentation/form/general/ -->
-      <form action="sesion_admin.php" method="post">
-        <div class="field">
-          <div class="control">
-            <input text-align="center" class="input" type="text" name="fecha_minima" placeholder="Fecha minima de los vuelos (yyyy-mm-dd)">
-          </div>
-        </div>
-        <div class="field">
-          <div class="control">
-            <input text-align="center" class="input" type="text" name="fecha_maxima" placeholder="Fecha maxima de los vuelos (yyyy-mm-dd)">
-          </div>
-        </div>
-        <button class="button is-info" type="submit" name="login">Filtrar</button>
-      </form>
-    </div>
   </div>
 
 <?php include('templates/footer.php'); ?>
