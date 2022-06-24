@@ -65,7 +65,7 @@ $query = "
 <div class="columns is-mobile is-centered is-vcentered cover-all">
     <div class="column is-half">
     <!-- https://bulma.io/documentation/form/general/ -->
-    <form action="sesion_admin.php" method="post">
+    <form action="sesion_pasajero.php" method="post">
         <div class="field">
         <label class="label"> Ciudad de origen </label>
         <div class="control">
