@@ -5,14 +5,13 @@ $id = $_GET['id'];
 $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado
         FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
         WHERE Vuelo.id_vuelo = '$id'
-            AND Aerodromo1.origen_icao = Vuelo.origen_icao 
-            AND Aerodromo2.destino_icao = Vuelo.destino_icao
+            AND Aerodromo1.codigo_icao = Vuelo.origen_icao 
+            AND Aerodromo2.codigo_icao = Vuelo.destino_icao
             AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
 $q = $db -> prepare($query);
 $q -> execute();
 $vuelo = $q -> fetchAll();
 ?>
-<h2 class="title is-1"> Hola <?php echo "$id"; ?> </h2>
 <table>
     <tr>
         <th>Numero de vuelo</th>
