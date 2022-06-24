@@ -43,13 +43,7 @@ if ($request_method  === 'POST') {
   ";
   $q = $db2 -> prepare($query);
   $q -> execute();
-  ?>
-  <div class="buttons">
-    <a class="button is-info is-rounded is-outlined is-right" href="sesion_admin.php">
-        Volver
-    </a>
-  </div>
-  <?php
+  go_home();
 }
 ?>
 <?php
