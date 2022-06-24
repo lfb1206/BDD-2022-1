@@ -92,6 +92,23 @@ function table_from_query($query) { ?>
                         </a>
                     </div>
                 </div>
+                <?php if (isset($_SESSION['username'])) { ?>
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-info is-rounded is-outlined is-right" href="logout.php">
+                                Cerrar sesión
+                            </a>
+                        </div>
+                    </div>
+                <?php } else { ?>
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-info is-rounded is-outlined is-right" href="login.php">
+                                Iniciar sesión
+                            </a>
+                        </div>
+                    </div>
+                <?php } ?>
                 <div class="navbar-item has-dropdown is-hoverable is-black" style = "background-color: hsl(0, 0%, 4%);">
                     <a href="index.php">
                         <div style="border: 5px; width: 150px; padding: 10px;";>
