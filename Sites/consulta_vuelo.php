@@ -44,7 +44,7 @@ $vuelos = $q -> fetchAll();
 </br>
 
 <div class="columns is-mobile is-centered is-vcentered cover-all">
-    <div class="column is-half">
+    <div class="column is-4">
     <!-- https://bulma.io/documentation/form/general/ -->
         <form method="post">
             <div class="field">
@@ -57,14 +57,14 @@ $vuelos = $q -> fetchAll();
             <div class="field">
                 <label class="label">Pasaporte segundo pasajero</label>
                     <div class="control">
-                        <input class="input" type="date" name="pasaporte2" placeholder="opcional">
+                        <input class="input" type="text" name="pasaporte2" placeholder="opcional">
                     </div>
                 </div>
             </div>
             <div class="field">
                 <label class="label">Pasaporte tercer pasajero</label>
                     <div class="control">
-                        <input class="input" type="date" name="pasaporte3" placeholder="opcional">
+                        <input class="input" type="text" name="pasaporte3" placeholder="opcional">
                     </div>
                 </div>
             </div>
