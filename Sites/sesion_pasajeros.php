@@ -35,7 +35,6 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
                 <td><?php
                     echo "<a href=\"consulta_vuelo.php?id=$vuelo[8]\"> $vuelo[0] </a>"
                 ?></td>
-                <td><?php echo "$vuelo[0]"; ?></td>
                 <td><?php echo "$vuelo[1]"; ?></td>
                 <td><?php echo "$vuelo[2]"; ?></td>
                 <td><?php echo "$vuelo[3]"; ?></td>

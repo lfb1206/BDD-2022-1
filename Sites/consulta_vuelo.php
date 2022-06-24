@@ -1,6 +1,5 @@
 <?php include('templates/header.php');
 
-$request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado
@@ -9,7 +8,7 @@ if (isset($_GET['id'])) {
                 AND Aerodromo1.origen_icao = Vuelo.origen_icao 
                 AND Aerodromo2.destino_icao = Vuelo.destino_icao
                 AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
-    $q = $db1 -> prepare($query);
+    $q = $db -> prepare($query);
     $q -> execute();
     $vuelos = $q -> fetchAll();
     ?>
