@@ -4,8 +4,7 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
     $ciudad_origen = $_POST["ciudad_origen"];
     $ciudad_destino = $_POST["ciudad_destino"];
     $fecha_despegue1 = $_POST["fecha_despegue"];
-    $fecha_despegue2 = $_POST["fecha_despegue"];
-    $fecha_despegue2 -> modify('+1 day');
+    $fecha_despegue2 = date('Y-m-d',strtotime($fecha_despegue1 . "+1 days"));
     $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado, Vuelo.id_vuelo
             FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
             WHERE Vuelo.origen_icao = '$ciudad_origen'
