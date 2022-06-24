@@ -50,7 +50,7 @@ $vuelos = $q -> fetchAll();
 <div class="columns is-mobile is-centered is-vcentered cover-all">  
     <div class="column is-4">
     <!-- https://bulma.io/documentation/form/general/ -->
-        <form method="post">
+        <form method="post" action="hacer_reserva.php">
             <div class="field">
                 <div class="control">
                     <input class="input" type="text" name="pasaporte1" placeholder="Pasaporte primer pasajero">

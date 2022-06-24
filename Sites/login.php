@@ -52,7 +52,7 @@ if ($request_method  === 'POST') {
             <input class="input" type="password" name="password">
           </div>
         </div>
-        <button class="button is-primary" type="submit" name="login">Login</button>
+        <button class="button is-info" type="submit" name="login">Login</button>
       </form>
 
       <?php
