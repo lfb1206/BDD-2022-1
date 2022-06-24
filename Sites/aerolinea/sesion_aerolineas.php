@@ -1,5 +1,5 @@
 <?php
-include 'templates/header.php';
+include '../templates/header.php';
 
 // Vemos si se esta mandando el form o se está recibiendo
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
@@ -119,4 +119,4 @@ $query = "
 </br>
 </br>
 
-<?php include('templates/footer.php'); ?>
+<?php include('../templates/footer.php'); ?>
