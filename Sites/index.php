@@ -12,27 +12,27 @@
       <a class="button is-link" href="sesion_admin.php">Aprobar o rechazar vuelos</a> 
       <?php
     } elseif ($tipo == 'aerolinea') {
-      $query2 = "SELECT nombre_aerolinea
+      $query2 = "SELECT DISTINCT nombre_aerolinea
                 FROM CompaniaAerea
                 WHERE $username == codigo_aerolinea;";
       $result2 = $db -> prepare($query2);
       $result2 -> execute();
       $dataCollected2 = $result2 -> fetchAll();
       ?>
-      <h2 class="title is-1"> Hola <?php echo "$dataCollected2"; ?> </h2>
+      <h2 class="title is-1"> Hola <?php echo "$dataCollected2[0]"; ?> </h2>
       <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</a>
       <a class="button is-link" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
       <a class="button is-link" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a> 
       <?php
     } elseif ($tipo == 'pasajero') {
-      $query2 = "SELECT nombre
+      $query2 = "SELECT DISTINCT nombre
                 FROM Pasajero
                 WHERE $username == pasaporte;";
       $result2 = $db -> prepare($query2);
       $result2 -> execute();
       $dataCollected2 = $result2 -> fetchAll();
       ?>
-      <h2 class="title is-1"> Hola <?php echo "$dataCollected2"; ?> </h2>
+      <h2 class="title is-1"> Hola <?php echo "$dataCollected2[0]"; ?> </h2>
       <a class="button is-link" href="sesion_pasajeros.php">Reservar</a>
       <a class="button is-link" href="datos_pasajero.php">Datos</a> 
       <?php
