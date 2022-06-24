@@ -87,7 +87,7 @@ function table_from_query($query) { ?>
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-info is-rounded is-outlined is-right" href="log/crear_usuarios.php">
+                        <a class="button is-info is-rounded is-outlined is-right" href="crear_usuarios.php">
                             Importar usuarios
                         </a>
                     </div>
@@ -103,27 +103,27 @@ function table_from_query($query) { ?>
                         <div class="dropdown-content" style = "background-color: hsl(0, 0%, 4%);">
                             <?php if (isset($_SESSION['username'])) { ?>
                                 <?php if ($_SESSION['tipo'] == "dgac") { ?>
-                                    <a href="admin/sesion_admin.php" class="title is-5 has-text-info is-active">
+                                    <a href="sesion_admin.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Gestionar vuelos</div>
                                     </a>
                                 <?php } elseif ($_SESSION['tipo'] == "aerolinea") { ?>
-                                    <a href="aerolinea/sesion_aerolineas.php" class="title is-5 has-text-info is-active">
+                                    <a href="sesion_aerolineas.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Proponer vuelo</div>
                                     </a>
                                     <br/>
-                                    <a href="aerolinea/sesion_aerolineas_aceptado.php" class="title is-5 has-text-info is-active">
+                                    <a href="sesion_aerolineas_aceptado.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Vuelos aceptados</div>
                                     </a>
                                     <br/>
-                                    <a href="aerolinea/sesion_aerolineas_rechazado.php" class="title is-5 has-text-info is-active">
+                                    <a href="sesion_aerolineas_rechazado.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Vuelos rechazado</div>
                                     </a>
                                 <?php } elseif ($_SESSION['tipo'] == "pasajero") { ?>
-                                    <a href="pasajero/sesion_pasajeros.php" class="title is-5 has-text-info is-active">
+                                    <a href="sesion_pasajeros.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Reservar</div>
                                     </a>
                                     <br/>
-                                    <a href="pasajero/datos_pasajero.php" class="title is-5 has-text-info is-active">
+                                    <a href="datos_pasajero.php" class="title is-5 has-text-info is-active">
                                         <div align="center"  class="title is-5 has-text-info is-active">Datos</div>
                                     </a>
                                 <?php } ?>
@@ -131,11 +131,11 @@ function table_from_query($query) { ?>
                             <hr class="dropdown-divider" style = "background-color: hsl(0, 0%, 4%);">
                             <?php if (isset($_SESSION['username'])) { ?>
                                 <br/>
-                                <a href="log/logout.php" class="title is-5 has-text-info is-active">
+                                <a href="logout.php" class="title is-5 has-text-info is-active">
                                     <div align="center"  class="title is-5 has-text-info is-active">Cerrar Sesión</div>
                                 </a>
                             <?php } else { ?>
-                                <a href="log/login.php" class="title is-5 has-text-info is-active">
+                                <a href="login.php" class="title is-5 has-text-info is-active">
                                     <div align="center"  class="title is-5 has-text-info is-active">Iniciar sesión</div>
                                 </a>
                             <?php } ?>
