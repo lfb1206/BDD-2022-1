@@ -68,7 +68,7 @@ function table_from_query($query) { ?>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="../styles/mystyles.css">
+        <link rel="stylesheet" href="styles/mystyles.css">
         <title> Plataforma de gestión comercial de vuelos </title>
         <link rel="icon" href="https://icon-library.com/images/airplane-icon/airplane-icon-29.jpg">
     </head>
