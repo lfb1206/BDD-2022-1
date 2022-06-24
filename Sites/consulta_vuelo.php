@@ -1,18 +1,13 @@
 <?php include('templates/header.php');
 
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
-if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset($_POST["fecha_despegue"])) {
-    $ciudad_origen = $_POST["ciudad_origen"];
-    $ciudad_destino = $_POST["ciudad_destino"];
-    $fecha_despegue = $_POST["fecha_despegue"];
-    $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado, Vuelo.id_vuelo
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado
             FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
-            WHERE Vuelo.estado = 'aceptado'
-                AND Vuelo.origen_icao = '$ciudad_origen'
-                AND Vuelo.destino_icao = '$ciudad_destino'
-                AND Vuelo.fecha_salida = '$fecha_despegue'
-                AND Aerodromo1.origen_icao = '$ciudad_origen'
-                AND Aerodromo2.destino_icao = '$ciudad_destino'
+            WHERE Vuelo.id_vuelo = '$id'
+                AND Aerodromo1.origen_icao = Vuelo.origen_icao 
+                AND Aerodromo2.destino_icao = Vuelo.destino_icao
                 AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
     $q = $db1 -> prepare($query);
     $q -> execute();
@@ -28,21 +23,21 @@ if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset
             <th>Fecha llegada</th>
             <th>Codigo aeronave</th>
             <th>Estado</th>
+            <th>Estado</th>
         </tr>
         <?php
         foreach ($vuelos as $vuelo) {
-            echo '<a href="consulta_vuelo.php?id='.urlencode($vuelo[8]).'">';?>
-                <tr>
-                    <td><?php echo "$vuelo[0]"; ?></td>
-                    <td><?php echo "$vuelo[1]"; ?></td>
-                    <td><?php echo "$vuelo[2]"; ?></td>
-                    <td><?php echo "$vuelo[3]"; ?></td>
-                    <td><?php echo "$vuelo[4]"; ?></td>
-                    <td><?php echo "$vuelo[5]"; ?></td>
-                    <td><?php echo "$vuelo[6]"; ?></td>
-                    <td><?php echo "$vuelo[7]"; ?></td>
-                </tr>
-            </a>
+            ?>
+            <tr>
+                <td><?php echo "$vuelo[0]"; ?></td>
+                <td><?php echo "$vuelo[1]"; ?></td>
+                <td><?php echo "$vuelo[2]"; ?></td>
+                <td><?php echo "$vuelo[3]"; ?></td>
+                <td><?php echo "$vuelo[4]"; ?></td>
+                <td><?php echo "$vuelo[5]"; ?></td>
+                <td><?php echo "$vuelo[6]"; ?></td>
+                <td><?php echo "$vuelo[7]"; ?></td>
+            </tr>
             <?php
         }
         ?>

@@ -1,22 +1,9 @@
 <?php
 include './templates/header.php';
 
-$falla_inicio = false;
-
 // Vemos si se esta mandando el form o se está recibiendo
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method  === 'POST') {
-
-  if ($user) {
-    // se inicia sesion
-    $_SESSION['username'] = $user[0];
-    $_SESSION['tipo'] = $user[1];
-    // Mandamos al usuario al inicio
-    go_home();
-  }else{
-    // username o contrasena incorrecta
-    $falla_inicio = true;
-  }
 
   $codigo_vuelo = $_POST['codigo_vuelo'];
   
@@ -45,8 +32,6 @@ if ($request_method  === 'POST') {
   $q -> execute();
   go_home();
 }
-?>
-<?php
 $query = "
   SELECT aerodromo_id, nombre
   FROM Aerodromo
