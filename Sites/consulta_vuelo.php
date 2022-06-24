@@ -10,7 +10,7 @@ $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, Compa
             AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
 $q = $db -> prepare($query);
 $q -> execute();
-$vuelo = $q -> fetchAll();
+$vuelos = $q -> fetchAll();
 ?>
 <table>
     <tr>
@@ -24,16 +24,23 @@ $vuelo = $q -> fetchAll();
         <th>Estado</th>
         <th>Estado</th>
     </tr>
-    <tr>
-        <td><?php echo "$vuelo[0]"; ?></td>
-        <td><?php echo "$vuelo[1]"; ?></td>
-        <td><?php echo "$vuelo[2]"; ?></td>
-        <td><?php echo "$vuelo[3]"; ?></td>
-        <td><?php echo "$vuelo[4]"; ?></td>
-        <td><?php echo "$vuelo[5]"; ?></td>
-        <td><?php echo "$vuelo[6]"; ?></td>
-        <td><?php echo "$vuelo[7]"; ?></td>
-    </tr>
+    <?php
+    foreach ($vuelos as $vuelo) {?>
+        <tr>
+            <td><?php
+                echo "<a href=\"consulta_vuelo.php?id=$vuelo[8]\"> $vuelo[0] </a>"
+            ?></td>
+            <td><?php echo "$vuelo[1]"; ?></td>
+            <td><?php echo "$vuelo[2]"; ?></td>
+            <td><?php echo "$vuelo[3]"; ?></td>
+            <td><?php echo "$vuelo[4]"; ?></td>
+            <td><?php echo "$vuelo[5]"; ?></td>
+            <td><?php echo "$vuelo[6]"; ?></td>
+            <td><?php echo "$vuelo[7]"; ?></td>
+        </tr>
+        <?php
+    }
+    ?>
 </table>
 
 <div class="columns is-mobile is-centered is-vcentered cover-all">
