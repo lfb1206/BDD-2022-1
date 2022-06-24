@@ -23,7 +23,7 @@
       <?php
       }
       ?>
-      <h2 class="title is-1"> Hola <?php echo "$dataCollected2[0]"; ?> </h2>
+      <h2 class="title is-1"> Hola <?php echo "$username"; ?> </h2>
       <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</a>
       <a class="button is-link" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
       <a class="button is-link" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a> 
