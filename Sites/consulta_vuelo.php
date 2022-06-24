@@ -44,6 +44,11 @@ $vuelos = $q -> fetchAll();
 </br>
 
 <div class="columns is-mobile is-centered is-vcentered cover-all">
+    <h2 class="title is-4">
+        Para realizar una reserva ingresa 
+        </br>
+        por lo menos un numero de pasaporte 
+    </h2>     
     <div class="column is-4">
     <!-- https://bulma.io/documentation/form/general/ -->
         <form method="post">
@@ -56,13 +61,13 @@ $vuelos = $q -> fetchAll();
             <div class="field">
                 <label class="label">Pasaporte segundo pasajero</label>
                 <div class="control">
-                    <input class="input" type="text" name="pasaporte2" placeholder="opcional">
+                    <input class="input" type="text" name="pasaporte2">
                 </div>
             </div>
             <div class="field">
                 <label class="label">Pasaporte tercer pasajero</label>
                 <div class="control">
-                    <input class="input" type="text" name="pasaporte3" placeholder="opcional">
+                    <input class="input" type="text" name="pasaporte3">
                 </div>
             </div>
 
@@ -71,7 +76,7 @@ $vuelos = $q -> fetchAll();
             <button class="button is-info" type="submit" name="Generar reserva">Generar reserva</button>
         </form>
         </br>
-        <a class="button is-link" href="sesion_pasajeros.php">Volver</a>
+        <a class="button is-info" href="sesion_pasajeros.php">Volver</a>
     </div>
 </div>
 
