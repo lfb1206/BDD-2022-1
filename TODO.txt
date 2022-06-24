@@ -1,0 +1,16 @@
+- login case-insensitive
+- no funciona revisar vuelos con la aerolinea 'ADC'
+- al aceptar/rechazar vuelos se deben crear/actualizar en la bdd impar
+- arreglar el atributo 'realizado' y agregar a la vista de propuestas de vuelo de la sesion_admin
+- filtrar correctamente las fechas
+- falta numero de pasaporte en la vista de pasajero
+
+
+seria bacan:
+
+- boton de login en la pagina principal
+- mover botón "importar usuarios" a la página principal en lugar del header?
+- cambiar texto "filtrar" de la pagina admin por un boton que de hints de la interactividad
+- boton volver esta super escondido en aceptar/rechazar admin
+- ya no se pueden ver las tres paginas de manejo cuando la sesion esta cerrada?
+- mostrar 2 listas en paralelo (aceptados/rechazados) para las companias aereas, en lugar de dos paginas distintas con listas

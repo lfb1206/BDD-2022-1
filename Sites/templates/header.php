@@ -86,13 +86,6 @@ $logeado = isset($_SESSION['username'])
                 <div class="title is-3 has-text-info">Gestión comercial de vuelos</div>
             </div>
             <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-info is-rounded is-outlined is-right" href="crear_usuarios.php">
-                            Importar usuarios
-                        </a>
-                    </div>
-                </div>
                 <?php if ($logeado) { ?>
                     <div class="navbar-item">
                         <div class="buttons">

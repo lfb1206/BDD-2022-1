@@ -49,7 +49,7 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
 <div class="column is-centered">
   <table>
     <tr>
-      <th>IDD</th>
+      <th>ID</th>
       <th>codigo</th>
       <th>Fecha de salida</th>
       <th>Fecha de llegada</th>
