@@ -7,10 +7,10 @@ $falla_inicio = false;
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method  === 'POST') {
   // Aquí se tendría que buscar el id del usuario en la BDD con el mail y la contraseña
-  $username = $_POST['username'];
+  $username = strtolower($_POST['username']);
   $password = $_POST['password'];
   //prepare the statement
-  $stmt = $db->prepare("SELECT username, tipo FROM usuarios WHERE username=? AND contrasena=?;");
+  $stmt = $db->prepare("SELECT username, tipo FROM usuarios WHERE LOWER(username)=? AND contrasena=?;");
   $stmt->execute([$username, $password]);
 
   //fetch result
