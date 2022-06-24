@@ -53,50 +53,56 @@ $query = "
       <form method="post">
         <div class="field">
           <label class="label">Codigo vuelo</label>
-          <div class="control">
-            <input class="input" type="text" name="codigo_vuelo">
+            <div class="control">
+              <input class="input" type="text" name="codigo_vuelo">
+            </div>
           </div>
         </div>
         <div class="field">
           <label class="label">Fecha salida</label>
-          <div class="control">
-            <input class="input" type="date" name="fecha_salida">
+            <div class="control">
+              <input class="input" type="date" name="fecha_salida">
+            </div>
           </div>
         </div>
         <div class="field">
           <label class="label">Fecha llegada</label>
-          <div class="control">
-            <input class="input" type="date" name="fecha_llegada">
+            <div class="control">
+              <input class="input" type="date" name="fecha_llegada">
+            </div>
           </div>
         </div>
         <div class="field">
           <label class="label">Codigo aeronave</label>
-          <div class="control">
-            <input class="input" type="text" name="aeronave_codigo">
+            <div class="control">
+              <input class="input" type="text" name="aeronave_codigo">
+            </div>
           </div>
         </div>
         <div class="field">
           <label class="label">Aerodromo salida</label>
-          <div class="control">
-            <select name="aerodromo_salida" id="ar" style="border-radius: 10px; height: 48px;">
-              <?php
-              foreach ($result as $data) {
-                  echo "<option value=\"$data[0]\">$data[1]</option>";
-              }
-              ?>
-            </select>
+            <div class="control">
+              <select name="aerodromo_salida" id="ar" style="border-radius: 10px; height: 48px;">
+                <?php
+                foreach ($result as $data) {
+                    echo "<option value=\"$data[0]\">$data[1]</option>";
+                }
+                ?>
+              </select>
+            </div>
           </div>
         </div>
         <div class="field">
           <label class="label">Aerodromo llegada</label>
-          <div class="control">
-            <select name="aerodromo_llegada" id="ar" style="border-radius: 10px; height: 48px;">
-              <?php
-              foreach ($result as $data) {
-                  echo "<option value=\"$data[0]\">$data[1]</option>";
-              }
-              ?>
-            </select>
+            <div class="control">
+              <select name="aerodromo_llegada" id="ar" style="border-radius: 10px; height: 48px;">
+                <?php
+                foreach ($result as $data) {
+                    echo "<option value=\"$data[0]\">$data[1]</option>";
+                }
+                ?>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -106,7 +112,7 @@ $query = "
 
         <input type="hidden" name="realizado" value="no realizado">
         
-        <button class="button is-primary" type="submit" name="Crear propuesta">Crear propuesta</button>
+        <button class="button is-info" type="submit" name="Crear propuesta">Crear propuesta</button>
       </form>
 
       <?php
