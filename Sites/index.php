@@ -18,8 +18,11 @@
       $result2 = $db -> prepare($query2);
       $result2 -> execute();
       $dataCollected2 = $result2 -> fetchAll();
+      foreach ($dataCollected2 as $vuelo) {?>
+        <h2><?php echo "$vuelo"; ?></h2>
+      <?php
+      }
       ?>
-      <?php echo $dataCollected2; ?>
       <h2 class="title is-1"> Hola <?php echo "$dataCollected2[0]"; ?> </h2>
       <a class="button is-link" href="sesion_aerolineas.php">Proponer vuelos</a>
       <a class="button is-link" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
