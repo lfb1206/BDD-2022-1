@@ -93,7 +93,7 @@ function table_from_query($query) { ?>
                     </div>
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable is-black" style = "background-color: hsl(0, 0%, 4%);">
-                    <a href=<?php echo "$crear"; ?>>
+                    <a href="index.php">
                         <div style="border: 5px; width: 150px; padding: 10px;";>
                             <h4 class="title is-3 has-text-info">Menú</h4>
                         </div>
