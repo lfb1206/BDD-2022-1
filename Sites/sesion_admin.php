@@ -25,17 +25,19 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
 
 ?>
   <details>
-    <summary class = "title is-5 has-text-black">Filtrar</summary>
+    <summary class = "title is-5 has-text-black">Filtrar vuelos por fechas de salida o llegada</summary>
     <div class="columns is-mobile is-centered is-vcentered cover-all">
       <div class="column is-4">
         <!-- https://bulma.io/documentation/form/general/ -->
         <form action="sesion_admin.php" method="post">
           <div class="field">
+          <label class="label">Fecha mínima</label>
             <div class="control">
               <input text-align="center" class="input" type="date" name="fecha_minima">
             </div>
           </div>
           <div class="field">
+          <label class="label">Fecha máxima</label>
             <div class="control">
               <input text-align="center" class="input" type="date" name="fecha_maxima">
             </div>
