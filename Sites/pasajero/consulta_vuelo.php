@@ -1,4 +1,4 @@
-<?php include('templates/header.php');
+<?php include('../templates/header.php');
 
 $id = $_GET['id'];
 
@@ -76,4 +76,4 @@ $vuelos = $q -> fetchAll();
     </div>
 </div>
 
-<?php include('templates/footer.php'); ?>
+<?php include('../templates/footer.php'); ?>

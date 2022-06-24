@@ -1,9 +1,5 @@
-<?php include('templates/header.php');   ?>
+<?php include('../templates/header.php');
 
-
-<?php
-#Llama a conexión, crea el objeto PDO y obtiene la variable $db
-require("config/conexion.php");
 $username = $_SESSION['username']; 
     $query = "SELECT nombre, pasaporte, id_pasajero
                 FROM pasajero
@@ -37,8 +33,6 @@ $username = $_SESSION['username'];
 </br>
 
 <?php
-#Llama a conexión, crea el objeto PDO y obtiene la variable $db
-require("config/conexion.php");
 $query = "SELECT id_reserva
             FROM reserva
             WHERE id_reservador = '$dato[2]' ;";
@@ -65,4 +59,4 @@ $datos2 = $result2 -> fetchAll();
 </div>
 
 
-<?php include('templates/footer.php'); ?>
+<?php include('../templates/footer.php'); ?>

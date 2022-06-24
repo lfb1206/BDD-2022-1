@@ -1,4 +1,4 @@
-<?php include('templates/header.php');   ?>
+<?php include('../templates/header.php');   ?>
 
 <?php
 #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -89,4 +89,4 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
   </table> 
   </div>
 
-<?php include('templates/footer.php'); ?>
+<?php include('../templates/footer.php'); ?>

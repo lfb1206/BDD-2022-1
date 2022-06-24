@@ -1,5 +1,5 @@
 <?php
-include './templates/header.php';
+include '../templates/header.php';
 
 // Vemos si se esta mandando el form o se está recibiendo
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
@@ -19,14 +19,14 @@ if ($request_method  === 'POST') {
 
   $estado = $_POST['estado'];
 
-  $compagnia_codigo = $_POST['compagnia_codigo'];
+  $compagnia_codigo = $_SESSION['username'];
 
   $realizado = $_POST['realizado'];
 
   $fecha_envio_propuesta = date("Y-m-d");
 
   $query = "
-  INSERT INTO Propuesta_vuelo ( $codigo_vuelo, $fecha_salida, $fecha_llegada, $fecha_envio_propuesta, $aeronave_codigo, $aerodromo_salida,  $aerodromo_llegada, $estado, $compagnia_codigo, $realizado)
+  INSERT INTO propuesta_vuelo ( $codigo_vuelo, $fecha_salida, $fecha_llegada, $fecha_envio_propuesta, $aeronave_codigo, $aerodromo_salida,  $aerodromo_llegada, $estado, $compagnia_codigo, $realizado)
   ";
   $q = $db2 -> prepare($query);
   $q -> execute();
@@ -112,11 +112,11 @@ $query = "
   </div>
 </section>
 
-<a class="button is-link" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
-<a class="button is-link" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a>
+<a class="button is-info" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
+<a class="button is-info" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a>
 
 </br>
 </br>
 </br>
 
-<?php include('templates/footer.php'); ?>
+<?php include('../templates/footer.php'); ?>

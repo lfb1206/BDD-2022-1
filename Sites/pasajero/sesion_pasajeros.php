@@ -1,4 +1,4 @@
-<?php include('templates/header.php');
+<?php include('../templates/header.php');
 
 if (isset($_POST["ciudad_origen"]) and isset($_POST["ciudad_destino"]) and isset($_POST["fecha_despegue"])) {
     $ciudad_origen = $_POST["ciudad_origen"];
@@ -96,4 +96,4 @@ $query = "
     </div>
 </div>
 
-<?php include('templates/footer.php'); ?>
+<?php include('../templates/footer.php'); ?>
