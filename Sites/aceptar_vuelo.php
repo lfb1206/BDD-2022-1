@@ -46,7 +46,8 @@ $id_ruta = rand(1, 200)
 ?>
 
 <?php
-    $query = "INSERT INTO Vuelo($vuelos2[0], $icao3[0], $icao4[0],$vuelos2[9],$vuelos2[2], $vuelos2[3], $velocidad,  $altitud,  $id_ruta,  $vuelos2[5], 'aceptado') ";
+    $query = "INSERT INTO Vuelo (numero_vuelo, origen_icao, destino_icao, codigo_aerolinea, fecha_salida, fecha_llegada, velocidad, altitud, id_ruta, codigo_aeronave, estado)
+    Values ($vuelos2[1], $icao3[0], $icao4[0],$vuelos2[9],$vuelos2[2], $vuelos2[3], $velocidad,  $altitud,  $id_ruta,  $vuelos2[5], 'aceptado') ";
     $result = $db -> prepare($query);
     $result -> execute();
     $vuelos = $result -> fetchAll();

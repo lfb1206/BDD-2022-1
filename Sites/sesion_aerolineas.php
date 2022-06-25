@@ -27,11 +27,13 @@ if ($request_method  === 'POST') {
 
   $query = "
   INSERT INTO propuesta_vuelo (codigo, fecha_salida, fecha_llegada, fecha_envio_propuesta, aeronave_codigo, id_aerodromo_salida, id_aerodromo_llegada, estado, compagnia_codigo, realizado)
-  VALUES ( $codigo_vuelo, $fecha_salida, $fecha_llegada, $fecha_envio_propuesta, $aeronave_codigo, $aerodromo_salida,  $aerodromo_llegada, $estado, $compagnia_codigo, $realizado)
+  VALUES ($codigo_vuelo, $fecha_salida, $fecha_llegada, $fecha_envio_propuesta, $aeronave_codigo, $aerodromo_salida,  $aerodromo_llegada, $estado, $compagnia_codigo, $realizado)
   ";
   $q = $db2 -> prepare($query);
   $q -> execute();
   go_home();
+  ?>
+<?php
 }
 $query = "
   SELECT aerodromo_id, nombre
@@ -119,3 +121,7 @@ $query = "
 </br>
 
 <?php include('templates/footer.php'); ?>
+
+
+INSERT INTO propuesta_vuelo (codigo, fecha_salida, fecha_llegada, fecha_envio_propuesta, aeronave_codigo, id_aerodromo_salida, id_aerodromo_llegada, estado, compagnia_codigo, realizado)
+  VALUES ( 'ADC4488', 2022-06-26, 2022-06-27, 2022-06-25, 'TEWSDBH' , 4,  5, 'pendiente', 'ADC', 'No realizado');
