@@ -26,7 +26,8 @@ if ($request_method  === 'POST') {
   $fecha_envio_propuesta = date("Y-m-d");
 
   $query = "
-  INSERT INTO propuesta_vuelo ( $codigo_vuelo, $fecha_salida, $fecha_llegada, $fecha_envio_propuesta, $aeronave_codigo, $aerodromo_salida,  $aerodromo_llegada, $estado, $compagnia_codigo, $realizado)
+  INSERT INTO propuesta_vuelo (propuesta_vuelo_id, codigo, fecha_salida, fecha_llegada, fecha_envio_propuesta, aeronave_codigo, id_aerodromo_salida, id_aerodromo_llegada, estado, compagnia_codigo, realizado)
+  VALUES ( $codigo_vuelo, $fecha_salida, $fecha_llegada, $fecha_envio_propuesta, $aeronave_codigo, $aerodromo_salida,  $aerodromo_llegada, $estado, $compagnia_codigo, $realizado)
   ";
   $q = $db2 -> prepare($query);
   $q -> execute();
@@ -101,8 +102,6 @@ $query = "
         </div>
 
         <input type="hidden" name="estado" value="pendiente">
-        
-        <input type="hidden" name="compagnia_codigo" value="">
 
         <input type="hidden" name="realizado" value="no realizado">
         

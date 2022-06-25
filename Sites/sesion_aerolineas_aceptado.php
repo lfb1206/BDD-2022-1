@@ -16,6 +16,7 @@ $query = "SELECT Vuelo.numero_vuelo, Origen.codigo_icao, Origen.nombre as origen
 $result = $db -> prepare($query);
 $result -> execute();
 $dataCollected = $result -> fetchAll();
+
 ?>
 
 <?php
