@@ -114,15 +114,17 @@ D76513142 | bf47e84de0838f16 | pasajero
 X66304032 | ad6887a4e491ac77 | pasajero
 R17782317 | 6b25a694a889ecf9 | pasajero
 
-
-
-
-
 Para las funcionalidades adicionales..
-
 
 Para corregir los requerimientos se debe...
 
 Asignamos las contraseñas de la siguiente forma...
 
 El personal administrativo lo registramos como usuarios de la siguiente forma...
+
+Se realizaron los siguientes supuestos:
+
+- Datos de pasaporte y nombre se ven con boton datos en la pagina principal al entrar como usuario
+- Las listas de vuelos aceptados y rechazados para las compañias aereas se separo en dos paginas para facilitar su vista, los botones para llegar se ecnuentra en la pagina de inicio, la pagina de propuesta de vuelo y el dropdown de menú
+- Issue numero 330 tenia tanta información contradictoria que concluimos como grupo que las propuestas de vuelos van en tabla propuestas de vuelo (bdd par) y cuando estas propuestan son aceptadas por el admin se crea la instancia de vuelo en la tabla vuelos (bdd impar)
+- El filtro de admin selecciona los vuelos que lleguen, partan o se encuentren en ejecucion en el intervalo seleccionado

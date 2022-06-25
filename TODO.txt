@@ -1,6 +1,7 @@
 - Que se cree la prpuesta de vuelo en la bases de datos
 - al aceptar/rechazar vuelos se deben crear/actualizar en la bdd impar
 - Crear tabla vuelos del grupo19 con valor id automatico
+- Arreglar ids automaticos de grupo19e3::Vuelos y grupo42e3::propuesta_vuelo
 
 - datos de pasaporte y nombre se ven con boton datos en la pagina principal al entrar como usuario
 - mostrar 2 listas en paralelo (aceptados/rechazados) para las companias aereas, en lugar de dos paginas distintas con listas

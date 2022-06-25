@@ -7,7 +7,8 @@
 
   $aerolinea_escogida = $_POST["aerolinea_escogida"];
   $codigo = $_POST["codigo"];
-  $codigo = strtoupper($codigo);
+  $codigo = strtoupper($codigo);   
+  
 
   $query = "SELECT Vuelo.numero_vuelo, Origen.codigo_icao, Origen.nombre as origen,
               Destino.codigo_icao, Destino.nombre as destino,
