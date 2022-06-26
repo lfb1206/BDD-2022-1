@@ -1,5 +1,5 @@
 create or replace function hacer_reserva(pasaporte_reservador varchar, id_vuelo_a_reservar integer, pasaportes varchar[])
-returns record as $$
+returns text[] as $$
 declare
     cnt integer;
     p varchar;
@@ -16,7 +16,7 @@ begin
     where Vuelo.id_vuelo = id_vuelo_a_reservar;
 
     if not found then
-        select 'error', format('El vuelo con id %s no existe', id_vuelo_a_reservar)
+        select array['error', format('El vuelo con id %s no existe', id_vuelo_a_reservar)]
         into ret;
         return ret;
     end if;
@@ -27,7 +27,7 @@ begin
     where Pasajero.pasaporte = pasaporte_reservador;
 
     if not found then
-        select 'error', format('Pasaporte del reservador "%s" no existe', pasaporte_reservador)
+        select array['error', format('Pasaporte del reservador "%s" no existe', pasaporte_reservador)]
         into ret;
         return ret;
     end if;
@@ -43,7 +43,7 @@ begin
         where Pasajero.pasaporte = p;
 
         if not found then
-            select 'error', format('El pasaporte "%s" es inválido', p)
+            select array['error', format('El pasaporte "%s" es inválido', p)]
             into ret;
             return ret;
         end if;
@@ -56,7 +56,7 @@ begin
                 and Vuelo.fecha_salida <= to_reserve.fecha_llegada
                 and Vuelo.fecha_llegada >= to_reserve.fecha_salida
         ) then
-            select 'error', format('El pasajero %s (%s) tiene un tope de horario', passenger.nombre, passenger.pasaporte)
+            select array['error', format('El pasajero %s (%s) tiene un tope de horario', passenger.nombre, passenger.pasaporte)]
             into ret;
             return ret;
         end if;
@@ -65,7 +65,7 @@ begin
     end loop;
 
     if passenger_count = 0 then
-        select 'error', 'Se debe ingresar al menos 1 pasaporte'
+        select array['error', 'Se debe ingresar al menos 1 pasaporte']
         into ret;
         return ret;
     end if;
@@ -79,7 +79,7 @@ begin
     from Pasajero
     where Pasajero.pasaporte = any(pasaportes);
 
-    select 'ok', format('Se creo una reserva para %s pasajeros', passenger_count)
+    select array['ok', format('Se creo una reserva para %s pasajeros', passenger_count)]
     into ret;
     return ret;
 end;
