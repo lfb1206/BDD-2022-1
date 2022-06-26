@@ -21,6 +21,8 @@ if ($request_method  === 'POST') {
     $_SESSION['username'], # compagnia_codigo
     $_POST['realizado'],
   ]);
+  $propuesta = $q->fetch();
+  
   go_home();
   ?>
 <?php

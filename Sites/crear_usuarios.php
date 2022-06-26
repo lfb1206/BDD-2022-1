@@ -20,6 +20,8 @@ $q = $db -> prepare($query);
 $q -> execute();
 $result = $q -> fetchAll();
 
+
+
 $query = "
 INSERT INTO Usuarios (username, contrasena, tipo)
 SELECT *
