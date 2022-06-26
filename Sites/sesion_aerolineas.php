@@ -111,7 +111,3 @@ $query = "
 </br>
 
 <?php include('templates/footer.php'); ?>
-
-
-INSERT INTO propuesta_vuelo (codigo, fecha_salida, fecha_llegada, fecha_envio_propuesta, aeronave_codigo, id_aerodromo_salida, id_aerodromo_llegada, estado, compagnia_codigo, realizado)
-  VALUES ( 'ADC4488', 2022-06-26, 2022-06-27, 2022-06-25, 'TEWSDBH' , 4,  5, 'pendiente', 'ADC', 'No realizado');
