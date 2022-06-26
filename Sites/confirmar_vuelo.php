@@ -1,6 +1,6 @@
 <?php include('templates/header.php');  
 
-$vuelo = $_GET['vuelo'];
+$id_vuelo = $_GET['vuelo'];
 $estado = $_GET['estado'];
 if (!($estado === 'aceptado' || $estado === 'rechazado')) {
     echo "Estado de vuelo invalido";
@@ -14,18 +14,18 @@ if (!($estado === 'aceptado' || $estado === 'rechazado')) {
 <?php
 
 # Actualizar propuesta_vuelo en BDD 42
-$query = "UPDATE propuesta_vuelo 
+$query = "UPDATE propuesta_vuelo
             SET estado = '$estado'
             WHERE propuesta_vuelo_id = ?;";
 $result = $db2 -> prepare($query);
-$result -> execute([$vuelo]);
+$result -> execute([$id_vuelo]);
 
 # Conseguir informacion del vuelo?
 $query2 = "SELECT *
-          FROM vuelo 
-          WHERE id_vuelo = ?;";
+          FROM propuesta_vuelo
+          WHERE propuesta_vuelo_id = ?;";
 $result2 = $db2 -> prepare($query2);
-$result2 -> execute([$vuelo]);
+$result2 -> execute([$id_vuelo]);
 $vuelos2 = $result2 -> fetchAll();
 
 # Conseguir codigo ICAO origen
@@ -52,7 +52,10 @@ $altitud = rand(10000, 13000);
 $id_ruta = rand(1, 200);
 
 # Insertar vuelo en BDD 19
-$query = "INSERT INTO Vuelo(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '$estado');";
+$query = "
+    INSERT INTO Vuelo(numero_vuelo, origen_icao, destino_icao, codigo_aerolinea, fecha_salida, fecha_llegada, velocidad, altitud, id_ruta, codigo_aeronave, estado)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '$estado');
+";
 $result = $db -> prepare($query);
 $result -> execute([
     $vuelos2[0],

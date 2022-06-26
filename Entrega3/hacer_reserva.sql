@@ -8,7 +8,6 @@ declare
     to_reserve Vuelo%rowtype;
     passenger_count integer := 0;
     reservation_id integer;
-    ret text[];
 begin
     select *
     into to_reserve
