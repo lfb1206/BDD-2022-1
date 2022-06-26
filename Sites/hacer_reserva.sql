@@ -1,5 +1,5 @@
 create or replace function hacer_reserva(pasaporte_reservador varchar, id_vuelo_a_reservar integer, pasaportes varchar[])
-returns text[] as $$
+returns varchar as $$
 declare
     cnt integer;
     p varchar;
@@ -8,7 +8,7 @@ declare
     to_reserve Vuelo%rowtype;
     passenger_count integer := 0;
     reservation_id integer;
-    ret record;
+    ret text[];
 begin
     select *
     into to_reserve
@@ -16,9 +16,7 @@ begin
     where Vuelo.id_vuelo = id_vuelo_a_reservar;
 
     if not found then
-        select array['error', format('El vuelo con id %s no existe', id_vuelo_a_reservar)]
-        into ret;
-        return ret;
+        return format('!El vuelo con id %s no existe', id_vuelo_a_reservar);
     end if;
 
     select *
@@ -27,9 +25,7 @@ begin
     where Pasajero.pasaporte = pasaporte_reservador;
 
     if not found then
-        select array['error', format('Pasaporte del reservador "%s" no existe', pasaporte_reservador)]
-        into ret;
-        return ret;
+        return format('!Pasaporte del reservador "%s" no existe', pasaporte_reservador);
     end if;
 
     foreach p in array pasaportes loop
@@ -43,9 +39,7 @@ begin
         where Pasajero.pasaporte = p;
 
         if not found then
-            select array['error', format('El pasaporte "%s" es inválido', p)]
-            into ret;
-            return ret;
+            return format('!El pasaporte "%s" es inválido', p);
         end if;
 
         if exists(
@@ -56,18 +50,14 @@ begin
                 and Vuelo.fecha_salida <= to_reserve.fecha_llegada
                 and Vuelo.fecha_llegada >= to_reserve.fecha_salida
         ) then
-            select array['error', format('El pasajero %s (%s) tiene un tope de horario', passenger.nombre, passenger.pasaporte)]
-            into ret;
-            return ret;
+            return format('!El pasajero %s (%s) tiene un tope de horario', passenger.nombre, passenger.pasaporte);
         end if;
 
         passenger_count := passenger_count + 1;
     end loop;
 
     if passenger_count = 0 then
-        select array['error', 'Se debe ingresar al menos 1 pasaporte']
-        into ret;
-        return ret;
+        return '!Se debe ingresar al menos 1 pasaporte';
     end if;
 
     insert into Reserva(id_reservador)
@@ -79,8 +69,6 @@ begin
     from Pasajero
     where Pasajero.pasaporte = any(pasaportes);
 
-    select array['ok', format('Se creo una reserva para %s pasajeros', passenger_count)]
-    into ret;
-    return ret;
+    return format('+Se creo una reserva para %s pasajeros', passenger_count);
 end;
 $$ language plpgsql;
