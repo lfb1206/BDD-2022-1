@@ -1,18 +1,20 @@
 
 # Entrega 3
 
+Para esta entrega se implementó una plataforma para la gestión comercial de vuelos.
 
-
-Alumnos:
+Integrantes:
 
 - Martín Andrighetti
 - Antonia Blanco
 - Lucas Fernández
 - Catalina Lebedina
 
-Para esta 
+## Información de login
 
-Para logearse en la aplicación los usuarios y las contraseñas son las siguientes:
+Se implementó un botón en la página principal que transforma los datos de aerolíneas y pasajeros en
+cuentas a las que se puede realizar login. Este botón ya fue activado, por lo que se presenta la
+información generada a continuación para conveniencia:
 
 | username  |    contraseña    |   tipo    |
 |-----------|------------------|-----------|
@@ -128,19 +130,53 @@ Para logearse en la aplicación los usuarios y las contraseñas son las siguient
 | X66304032 | ad6887a4e491ac77 | pasajero  |
 | R17782317 | 6b25a694a889ecf9 | pasajero  |
 
-La funcionalidad adicional escogida es la creación de un nuevo vuelo por parte de las aerolineas.
+Como anexo, para generar las contraseñas de las distintas cuentas se utilizan las siguientes reglas:
 
-CREACIÓN USUARIOS
+- Para la cuenta DGAC, la contraseña es siempre `admin`.
+- Para las cuentas de tipo `aerolinea`, la contraseña es un número aleatorio entre `0` y `1000000000`.
+- Para las cuentas de tipo `pasajero`, la contraseña se compone de 2 partes. La primera son los primeros 8 caracteres del hash MD5 del nombre del pasajero. La segunda son los primeros 8 caracteres del hash MD5 del pasaporte del pasajero. Esto resulta en una contraseña de 16 caracteres hexadecimales.
 
-Para asignarle las contraseñas a los usuarios se escogió una contraseña aleatoria para cada uno. 
-En el caso de los pasajeros se realiza un hash y en el caso de las aerolíneas se utiliza un random(). Este código se encuentra en el archivo crear_usuarios.php. 
-En el caso del usuario admin este fue creado aparte, su nombre es DGAC, su clave admin y su tipo es dgac. 
+La implementación de esta funcionalidad se encuentra en el archivo `Sites/crear_usuarios.php`.
 
-Se realizaron los siguientes supuestos:
+## Funcionalidad adicional
 
-- Datos de pasaporte y nombre se ven con boton datos en la pagina principal al entrar como usuario
-- Las listas de vuelos aceptados y rechazados para las compañias aereas se separo en dos paginas para facilitar su vista, los botones para llegar se ecnuentra en la pagina de inicio, la pagina de propuesta de vuelo y el dropdown de menú
-- Issue numero 330 tenia tanta información contradictoria que concluimos como grupo que las propuestas de vuelos van en tabla propuestas de vuelo (bdd par) y cuando estas propuestan son aceptadas por el admin se crea la instancia de vuelo en la tabla vuelos (bdd impar)
-- El filtro de admin selecciona los vuelos que lleguen, partan o se encuentren en ejecucion en el intervalo seleccionado
-- Para generar reservas es necesario generar algunos atributos, en particular el número de asiento, la clase del pasaje y si incluye comida y maleta. Para el número de asiento se utiliza un entero aleatorio entre 1 y 32. La clase del pasaje es por default "Economica". Por último, por default los pasajes incluyen siempre comida y maleta.
-- Para la creación de vuelos en la base de datos del grupo impar, se utilizaron los datos de las propuestas de vuelo del grupo 42. Al no poseerse todos los datos para poder crear el vuelo, se tuvieron que crear la velocidad, la altitud y el id de ruta. Estos fueron a través de random con rangos de valores escogidos al observar los ya existentes.
+La funcionalidad adicional escogida es la creación de un nuevo vuelo por parte de las aerolíneas.
+
+Este menú es accesible desde la página principal de las aerolíneas como un botón "proponer vuelos".
+
+Esta funcionalidad se implementa en `Sites/sesion_aerolineas.php`.
+
+## Procedimiento almacenado
+
+El archivo que contiene el código del procedimiento almacenado en lenguaje PL/pgSQL se encuentra en la ruta `Entrega3/hacer_reserva.sql`.
+Este archivo implementa la función SQL `hacer_reserva(id_reservador, id_vuelo, pasajeros) -> varchar`.
+
+La utilización de esta función se hace en `Sites/consulta_vuelo.php`.
+
+## Relación entre las localizaciones en el código y la funcionalidad
+
+Se presenta a continuación la funcionalidad que implementan los archivos más importantes dentro de `Sites`:
+
+- `confirmar_vuelo.php`: Acepta o rechaza un vuelo por la DGAC.
+- `consulta_vuelo.php`: Implementa la creación de reservas para un vuelo.
+- `crear_usuarios.php`: Implementa el botón "Importar usuarios".
+- `datos_pasajero.php`: Presenta los datos de los usuarios tipo pasajero.
+- `index.php`: Página principal.
+- `login.php`: Implementa la funcionalidad de *login*.
+- `logout.php`: Cierra la sesión y vuelve a la página principal.
+- `sesion_admin.php`: Muestra los vuelos pendientes a ser aprobados o rechazados por la DGAC.
+- `sesion_aerolineas_aceptado.php`: Muestra los vuelos aceptados de una aerolínea.
+- `sesion_aerolineas_rechazado.php`: Muestra los vuelos rechazados de una aerolínea.
+- `sesion_aerolineas.php`: Implementa la propuesta de vuelos por parte de las aerolíneas.
+- `sesion_pasajeros.php`: Permite a los pasajeros filtrar vuelos por aeródromo de origen, destino y fecha.
+
+## Supuestos
+
+Se realizaron los siguientes supuestos y acotaciones:
+
+- Para los pasjeros, los datos de pasaporte y nombre se ven con el botón datos en la pagina principal al entrar como usuario.
+- Las listas de vuelos aceptados y rechazados para las compañías aéreas se separó en dos páginas para facilitar su vista, los botones para llegar se encuentran en la página de inicio, la página de propuesta de vuelo y el dropdown de menú.
+- El issue número 330 tenía tanta información contradictoria que como grupo establecimos la siguiente política: las propuestas de vuelos van en tabla `Propuesta_vuelo` (BDD par) y cuando estas propuestas son aceptadas o rechazadas por la DGAC se crea la instancia de vuelo en la tabla `Vuelo` (BDD impar).
+- El filtro de tiempo de la DGAC muestra para un rango de fechas cualquier vuelo que tope temporalmente con el rango en cualquier momento de su ejecución.
+- Para generar reservas es necesario generar algunos atributos, en particular el número de asiento, la clase del pasaje y si incluye comida y maleta. Para el número de vuelo se generó un número aleatorio entre 1 y 32. Para la clase del pasaje se utilizó un *default* de `Economica`. Por último, se utilizó un *default* de que todos las reservas creadas incluyen comida y maleta.
+- Para la creación de vuelos en la base de datos del grupo impar, se utilizaron los datos de las propuestas de vuelo del grupo 42. Al no poseerse todos los datos para poder crear el vuelo, se tuvieron que crear la velocidad, la altitud y el id de ruta. Estos fueron a través de random con rangos de valores escogidos al observar los ya existentes. En particular, para la velocidad se utiliza un entero entre 200 y 300, para la altitud un entero entre 10000 y 13000, y para la ruta se utiliza una ruta aleatoria de las 331 rutas existentes.
