@@ -80,6 +80,4 @@ $q -> execute();
 	</div>
 </section>
 
-<a class="button is-info is-rounded" href="index.php">Volver</a>
-
 <?php include('templates/footer.php'); ?>
