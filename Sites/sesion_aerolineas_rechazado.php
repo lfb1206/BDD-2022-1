@@ -49,6 +49,9 @@ foreach ($dataCollected2 as $data2) {
 ?>
 </table>
 
-<a class="button is-info is-rounded" href="sesion_aerolineas.php">Crear propuesta</a>
+</br>
+<div class="buttons" style="justify-content: center;">
+  <a class="button is-info is-rounded" href="sesion_aerolineas.php">Crear propuesta</a>
+</div>
 
 <?php include('templates/footer.php'); ?>

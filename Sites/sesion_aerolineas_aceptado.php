@@ -50,6 +50,7 @@ foreach ($dataCollected as $data) {
 ?>
 </table>
 
+</br>
 <div class="buttons" style="justify-content: center;">
   <a class="button is-info is-rounded" href="sesion_aerolineas.php">Crear propuesta</a>
 </div>
