@@ -127,8 +127,7 @@ Se realizaron los siguientes supuestos:
 - Las listas de vuelos aceptados y rechazados para las compañias aereas se separo en dos paginas para facilitar su vista, los botones para llegar se ecnuentra en la pagina de inicio, la pagina de propuesta de vuelo y el dropdown de menú
 - Issue numero 330 tenia tanta información contradictoria que concluimos como grupo que las propuestas de vuelos van en tabla propuestas de vuelo (bdd par) y cuando estas propuestan son aceptadas por el admin se crea la instancia de vuelo en la tabla vuelos (bdd impar)
 - El filtro de admin selecciona los vuelos que lleguen, partan o se encuentren en ejecucion en el intervalo seleccionado
-- Para generar reservas es necesario generar algunos atributos, en particular el número de asiento, la clase del pasaje y si incluye comida y maleta. 42. Es por ello que Por Al no posseerse todos los datos para poder crear el vuelo, se tuvieron que crear la velocidad del vuelo,., la altitud y el id de ruta. Estos fueron a trave´és de ´és de random utili cio¡on vrangos de valores escogidos al observar los ya existentes.
-
+- Para generar reservas es necesario generar algunos atributos, en particular el número de asiento, la clase del pasaje i
  Pso r dse las propuestyas de vuelo del grupo
 l grupo impar, se utilizaron los dato
 - Para la creación de vuelos en la base de datos de
