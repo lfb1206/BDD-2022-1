@@ -82,9 +82,11 @@ $logeado = isset($_SESSION['username'])
                 </a>
             </div>
 
-            <div style="border: 5px; width: 450px; padding: 10px; text-align: center; margin: 5px; text-align: center; color: #198BB9";>
-                <div class="title is-3 has-text-info"><a href="index.php">Gestión comercial de vuelos</a></div>
-            </div>
+            <a href="index.php">
+                <div style="border: 5px; width: 450px; padding: 10px; text-align: center; margin: 5px; text-align: center; color: #198BB9";>
+                    <div class="title is-3 has-text-info">Gestión comercial de vuelos</div>
+                </div>
+            </a>
             <div class="navbar-end">
                 <?php if ($logeado) { ?>
                     <div class="navbar-item">
