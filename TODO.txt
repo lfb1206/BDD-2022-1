@@ -1,5 +1,10 @@
 Por hacer:
 - boton volver para datos_pasajero.php y sesion_pasajeros.php
+    - sesion_admin.php -> index.php
+    - crear_usuarios.php -> index.php
+    - login.php -> index.php (quizas?)
+    - sesion_aerolineas.php -> index.php
+- titulo "gestion comercial de vuelos" deberia volver a index.php
 - buscar un buen color para "Un espacio para la gestion comercial de vuelos"
 
 Para readme:
