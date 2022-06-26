@@ -50,4 +50,6 @@ foreach ($dataCollected as $data) {
 ?>
 </table>
 
+<a class="button is-info is-rounded" href="sesion_aerolineas.php">Crear propuesta</a>
+
 <?php include('templates/footer.php'); ?>

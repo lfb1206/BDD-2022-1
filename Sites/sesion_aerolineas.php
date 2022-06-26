@@ -105,7 +105,7 @@ $query = "
 
         <input type="hidden" name="realizado" value="no realizado">
         
-        <button class="button is-info" type="submit" name="Crear propuesta">Crear propuesta</button>
+        <button class="button is-info is-rounded" type="submit" name="Crear propuesta">Crear propuesta</button>
       </form>
       <?php
       if ($falla_creacion) {
@@ -118,9 +118,8 @@ $query = "
   </div>
 </section>
 
-<a class="button is-info" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
-<a class="button is-info" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a>
-<a class="button is-info is-rounded" href="index.php">Volver</a>
+<a class="button is-info is-rounded" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
+<a class="button is-info is-rounded" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a>
 
 </br>
 </br>
