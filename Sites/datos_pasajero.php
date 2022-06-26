@@ -58,5 +58,11 @@ $datos2 = $result2 -> fetchAll();
     </table> 
 </div>
 
+<div class="buttons" style="justify-content: center;">
+    <a class="button is-info is-rounded" href="index.php">
+        Volver
+    </a>
+</div>
+
 
 <?php include('templates/footer.php'); ?>

@@ -50,7 +50,7 @@ $icao_destino = ($q -> fetch())[0];
 # Generar datos faltantes
 $velocidad = rand(200, 300);
 $altitud = rand(10000, 13000);
-$id_ruta = rand(1, 200);
+$id_ruta = rand(1, 331);
 
 # Insertar vuelo en BDD 19
 $query = "

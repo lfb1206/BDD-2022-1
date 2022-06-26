@@ -1,6 +1,8 @@
 <?php
 include 'templates/header.php';
 
+$falla_creacion = false;
+
 // Vemos si se esta mandando el form o se está recibiendo
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method  === 'POST') {
@@ -22,10 +24,12 @@ if ($request_method  === 'POST') {
     $_POST['realizado'],
   ]);
   $propuesta = $q->fetch();
-  
-  go_home();
-  ?>
-<?php
+  if ($propuesta) {
+    go_home();
+  }else{
+    // username o contrasena incorrecta
+    $falla_creacion = true;
+  }
 }
 $query = "
   SELECT aerodromo_id, nombre
@@ -101,6 +105,13 @@ $query = "
         
         <button class="button is-info" type="submit" name="Crear propuesta">Crear propuesta</button>
       </form>
+      <?php
+      if ($falla_creacion) {
+        ?>
+        <p class="help is-danger">Se ha ingresado incorrectamente algún parametro</p>
+        <?php
+      }
+      ?>
     </div>
   </div>
 </section>

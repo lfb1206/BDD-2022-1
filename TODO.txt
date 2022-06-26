@@ -1,5 +1,4 @@
 - Que se cree la propuesta de vuelo en la bases de datos
-- al aceptar/rechazar vuelos se deben crear/actualizar en la bdd impar
 - boton volver para datos_pasajero.php y sesion_pasajeros.php
 - mostrar error si no se puede proponer vuelo
 
