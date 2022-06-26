@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $q = $db -> prepare($query);
     $q -> execute([$_SESSION['username'], $id_vuelo, $_POST['pasaporte1'], $_POST['pasaporte2'], $_POST['pasaporte3']]);
     $result = $q -> fetch();
-    $result = $result[0];
+    $result = $result;
     echo "wea = $result";
     $reserve_status = $result[0];
     $reserve_message = $result[1];
