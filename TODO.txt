@@ -5,3 +5,4 @@
 - mostrar 2 listas en paralelo (aceptados/rechazados) para las companias aereas, en lugar de dos paginas distintas con listas
 - Issue numero 330 tenia tanta información contradictoria que concluimos como grupo que las propuestas de vuelos van en tabla propuestas de vuelo (bdd par) y cuando estas propuestan son aceptadas por el admin se crea la instancia de vuelo en la tabla vuelos (bdd impar)
 - El filtro de admin selecciona los vuelos que lleguen, partan o se encuentren en ejecucion en el intervalo seleccionado
+- boton volver para datos_pasajero.php y sesion_pasajeros.php
