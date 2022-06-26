@@ -120,6 +120,7 @@ $query = "
 
 <a class="button is-info" href="sesion_aerolineas_aceptado.php">Vuelos aceptados</a>
 <a class="button is-info" href="sesion_aerolineas_rechazado.php">Vuelos rechazado</a>
+<a class="button is-info is-rounded" href="index.php">Volver</a>
 
 </br>
 </br>

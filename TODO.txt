@@ -1,6 +1,5 @@
 Por hacer:
 - boton volver para datos_pasajero.php y sesion_pasajeros.php
-- mostrar error si no se puede proponer vuelo
 - buscar un buen color para "Un espacio para la gestion comercial de vuelos"
 
 Para readme:
