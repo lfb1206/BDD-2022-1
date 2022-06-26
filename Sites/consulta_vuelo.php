@@ -6,15 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $reserve_message = '';
 } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_vuelo = $_POST['id_vuelo'];
-    $pasaportes = [
-        $_POST['pasaporte1'],
-        $_POST['pasaporte2'],
-        $_POST['pasaporte3']
-    ];
-    $query = "SELECT hacer_reserva(?, ?, ?);";
+    $query = "SELECT hacer_reserva(?, ?, array [?, ?, ?]);";
     $q = $db -> prepare($query);
-    $q -> execute([$_SESSION['username'], $id_vuelo, $pasaportes]);
-    $result = $q -> fetch();
+    $q -> execute([$_SESSION['username'], $id_vuelo, $_POST['pasaporte1'], $_POST['pasaporte2'], $_POST['pasaporte3']]);
+    $result = $q -> fetchAll();
     $reserve_status = $result[0];
     $reserve_message = $result[1];
 }
