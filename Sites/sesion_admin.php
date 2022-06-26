@@ -81,10 +81,10 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
           <td><?php echo "$vuelo[9]"; ?></td>
           <td><?php echo "$vuelo[10]"; ?></td>
           <td><?php
-            echo "<a href=\"aceptar_vuelo.php?vuelo=$vuelo[0]\"> Aceptar </a>"
+            echo "<a href=\"confirmar_vuelo.php?vuelo=$vuelo[0]&estado=aceptado\"> Aceptar </a>"
           ?></td>
           <td><?php
-              echo "<a href=\"rechazar_vuelo.php?vuelo=$vuelo[0]\" > Rechazar </a>"
+              echo "<a href=\"confirmar_vuelo.php?vuelo=$vuelo[0]&estado=rechazado\" > Rechazar </a>"
           ?></td>
         </tr>
         <?php

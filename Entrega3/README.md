@@ -1,6 +1,6 @@
 Para logearse en la aplicación los usuarios y las contraseñas son las siguientes:
 
-username  |    contrasena    |   tipo    
+username  |    contraseña    |   tipo    
 ----------+------------------+-----------
 DGAC      | admin            | dgac
 ADC       | 323370867        | aerolinea
