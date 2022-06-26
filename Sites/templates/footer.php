@@ -1,6 +1,6 @@
     <div class="buttons" style="justify-content: center;">
         <a class="button is-info is-rounded" href="index.php">
-            Volver
+            Ir al menú
         </a>
     </div>
     </body>
