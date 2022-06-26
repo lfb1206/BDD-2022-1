@@ -93,7 +93,7 @@ $query = "
             <input class="input" type="date" name="fecha_despegue">
         </div>
         </div>
-        <button class="button is-info" type="submit" name="login">Buscar</button>
+        <button class="button is-info is-rounded" type="submit" name="login">Buscar</button>
     </form>
     </div>
 </div>
