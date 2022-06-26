@@ -83,7 +83,7 @@ $vuelos = $q -> fetchAll();
             echo "<input type=\"hidden\" name=\"id_vuelo\" value=\"$id_vuelo\">";
             ?>
             
-            <button class="button is-info" type="submit" name="Generar reserva">Generar reserva</button>
+            <button class="button is-info is-rounded" type="submit" name="Generar reserva">Generar reserva</button>
         </form>
         </br>
         <?php
@@ -98,7 +98,7 @@ $vuelos = $q -> fetchAll();
         }
         ?>
         </br>
-        <a class="button is-info" href="sesion_pasajeros.php">Volver</a>
+        <a class="button is-info is-rounded" href="sesion_pasajeros.php">Volver</a>
     </div>
 </div>
 

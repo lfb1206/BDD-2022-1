@@ -42,7 +42,7 @@ if (isset($_POST["fecha_minima"]) and isset($_POST["fecha_maxima"])) {
               <input text-align="center" class="input" type="date" name="fecha_maxima">
             </div>
           </div>
-          <button class="button is-info" type="submit" name="login">Filtrar</button>
+          <button class="button is-info is-rounded" type="submit" name="login">Filtrar</button>
         </form>
       </div>
     </div>
