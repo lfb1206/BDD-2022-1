@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $id_vuelo = $_GET['id'];
-    $reserve_status = 'none';
+    $reserve_status = ' ';
     $reserve_message = '';
 } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_vuelo = $_POST['id_vuelo'];
@@ -10,10 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $q = $db -> prepare($query);
     $q -> execute([$_SESSION['username'], $id_vuelo, $_POST['pasaporte1'], $_POST['pasaporte2'], $_POST['pasaporte3']]);
     $result = $q -> fetch();
-    $result = $result[0];
-    echo "wea = $result";
-    $reserve_status = $result[0];
-    $reserve_message = $result[1];
+    $reserve_status = $result[0][0];
+    $reserve_message = substr($result[0], 1);
 }
 
 $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado
@@ -89,11 +87,11 @@ $vuelos = $q -> fetchAll();
         </form>
         </br>
         <?php
-        if ($reserve_status == 'ok') {
+        if ($reserve_status == '+') {
             ?>
             <p class="help is-success"><?php echo "$reserve_message"; ?></p>
             <?php
-        }else if ($reserve_status == 'error') {
+        }else if ($reserve_status == '!') {
             ?>
             <p class="help is-danger"><?php echo "$reserve_message"; ?></p>
             <?php
