@@ -4,33 +4,23 @@ include 'templates/header.php';
 // Vemos si se esta mandando el form o se está recibiendo
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method  === 'POST') {
-
-  $codigo_vuelo = $_POST['codigo_vuelo'];
-  
-  $fecha_salida = $_POST['fecha_salida'];
-
-  $fecha_llegada = $_POST['fecha_llegada'];
-
-  $aeronave_codigo = $_POST['aeronave_codigo'];
-
-  $aerodromo_salida = $_POST['aerodromo_salida'];
-    
-  $aerodromo_llegada = $_POST['aerodromo_llegada'];
-
-  $estado = $_POST['estado'];
-
-  $compagnia_codigo = $_SESSION['username'];
-
-  $realizado = $_POST['realizado'];
-
-  $fecha_envio_propuesta = date("Y-m-d");
-
   $query = "
   INSERT INTO propuesta_vuelo (codigo, fecha_salida, fecha_llegada, fecha_envio_propuesta, aeronave_codigo, id_aerodromo_salida, id_aerodromo_llegada, estado, compagnia_codigo, realizado)
-  VALUES ($codigo_vuelo, $fecha_salida, $fecha_llegada, $fecha_envio_propuesta, $aeronave_codigo, $aerodromo_salida,  $aerodromo_llegada, $estado, $compagnia_codigo, $realizado)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   ";
   $q = $db2 -> prepare($query);
-  $q -> execute();
+  $q -> execute([
+    $_POST['codigo_vuelo'],
+    $_POST['fecha_salida'],
+    $_POST['fecha_llegada'],
+    date("Y-m-d"), # fecha_envio_propuesta
+    $_POST['aeronave_codigo'],
+    $_POST['aerodromo_salida'],
+    $_POST['aerodromo_llegada'],
+    $_POST['estado'],
+    $_SESSION['username'], # compagnia_codigo
+    $_POST['realizado'],
+  ]);
   go_home();
   ?>
 <?php
