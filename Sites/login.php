@@ -22,7 +22,7 @@ if ($request_method  === 'POST') {
     $_SESSION['tipo'] = $user[1];
     // Mandamos al usuario al inicio
     go_home();
-  }else{
+  } else {
     // username o contrasena incorrecta
     $falla_inicio = true;
   }

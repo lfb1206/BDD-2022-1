@@ -9,6 +9,7 @@ if ($request_method  === 'POST') {
   $query = "
   INSERT INTO propuesta_vuelo (codigo, fecha_salida, fecha_llegada, fecha_envio_propuesta, aeronave_codigo, id_aerodromo_salida, id_aerodromo_llegada, estado, compagnia_codigo, realizado)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  RETURNING true;
   ";
   $q = $db2 -> prepare($query);
   $q -> execute([
@@ -25,8 +26,9 @@ if ($request_method  === 'POST') {
   ]);
   $propuesta = $q->fetch();
   if ($propuesta) {
+    $falla_creacion = true;
     go_home();
-  }else{
+  } else {
     // username o contrasena incorrecta
     $falla_creacion = true;
   }

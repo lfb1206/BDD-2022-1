@@ -1,6 +1,7 @@
-- Que se cree la propuesta de vuelo en la bases de datos
+Por hacer:
 - boton volver para datos_pasajero.php y sesion_pasajeros.php
 - mostrar error si no se puede proponer vuelo
+- buscar un buen color para "Un espacio para la gestion comercial de vuelos"
 
 Para readme:
 - datos de pasaporte y nombre se ven con boton datos en la pagina principal al entrar como usuario
