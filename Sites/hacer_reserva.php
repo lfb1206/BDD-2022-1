@@ -9,12 +9,12 @@ $pasaportes = [
 
 $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado
         FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
-        WHERE Vuelo.id_vuelo = '$id'
+        WHERE Vuelo.id_vuelo = ?
             AND Aerodromo1.codigo_icao = Vuelo.origen_icao 
             AND Aerodromo2.codigo_icao = Vuelo.destino_icao
             AND Vuelo.codigo_aerolinea = CompaniaAerea.codigo_aerolinea;";
 $q = $db -> prepare($query);
-$q -> execute();
+$q -> execute($id_vuelo);
 $vuelos = $q -> fetchAll();
 ?>
 <table>
@@ -72,7 +72,9 @@ $vuelos = $q -> fetchAll();
                 </div>
             </div>
 
-            <input type="hidden" name="id_vuelo" value="<?php "$id";?>">
+            <?php
+            echo "<input type=\"hidden\" name=\"id_vuelo\" value=\"$id_vuelo\">";
+            ?>
             
             <button class="button is-info" type="submit" name="Generar reserva">Generar reserva</button>
         </form>

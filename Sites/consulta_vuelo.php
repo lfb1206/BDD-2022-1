@@ -1,6 +1,23 @@
 <?php include('templates/header.php');
 
-$id = $_GET['id'];
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $id = $_GET['id'];
+    $reserve_status = 'none';
+    $reserve_message = '';
+} else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = $_POST['id_vuelo'];
+    $pasaportes = [
+        $_POST['pasaporte1'],
+        $_POST['pasaporte2'],
+        $_POST['pasaporte3']
+    ];
+    $query = "SELECT hacer_reserva(?, ?, ?);";
+    $q = $db -> prepare($query);
+    $q -> execute([$_SESSION['username'], $id, $pasaportes]);
+    $result = $q -> fetch();
+    $reserve_status = $result[0];
+    $reserve_message = $result[1];
+}
 
 $query = "SELECT Vuelo.numero_vuelo, Aerodromo1.nombre, Aerodromo2.nombre, CompaniaAerea.nombre_aerolinea, Vuelo.fecha_salida, Vuelo.fecha_llegada, Vuelo.codigo_aeronave, Vuelo.estado
         FROM Vuelo, Aerodromo as Aerodromo1, Aerodromo as Aerodromo2, CompaniaAerea
@@ -67,12 +84,26 @@ $vuelos = $q -> fetchAll();
                 </div>
             </div>
 
-            <input type="hidden" name="id_vuelo" value="<?php "$id";?>">
+            <?php
+            echo "<input type=\"hidden\" name=\"id_vuelo\" value=\"$id_vuelo\">";
+            ?>
             
             <button class="button is-info" type="submit" name="Generar reserva">Generar reserva</button>
         </form>
         </br>
-        <a class="button is-info" href="sesion_pasajeros.php">Volver</a>
+        <?php
+        if ($reserve_status == 'ok') {
+            ?>
+            <p class="help is-success"><?php echo "$reserve_message"; ?></p>
+            <?php
+        }else if ($reserve_status == 'error') {
+            ?>
+            <p class="help is-danger"><?php echo "$reserve_message"; ?></p>
+            <?php
+        }
+        ?>
+        </br>
+        <a class="button is-info" href="consulta_vuelo.php">Volver</a>
     </div>
 </div>
 
